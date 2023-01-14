@@ -6,7 +6,7 @@ Aplicação web com frontend e back-office para submissão e gestão de pedidos 
 
 # TODO
 
-Data de apresentação - 31 de Janeiro 2023
+Data de apresentação - 31 de Janeiro 2023 / 
 Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 ### Critério de avaliação
@@ -25,7 +25,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 - [ ] Melhorar a página de contacto
 	- [ ] Incorporar o PHP Mailer
 	- [ ] Incorporar Google Maps iFrame com localização
-	- [ ] Incorporar ReCaptach para submissão de formulário
+	- [ ] Incorporar Recaptcha para submissão de formulário
 
 ### Todo - Painel Cliente
 
