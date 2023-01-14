@@ -19,16 +19,30 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 - [ ] Bootstrap
 - [ ] Hospedagem online
 
-### Todo
+### Todo - Landing Page
 
-- [ ] Work on the website ~3d #feat @john 2020-03-20  
-- [ ] Fix the homepage ~1d #bug @jane  
-  - [ ] Sub-task or description  
+- [ ] Fazer textos de páginas em falta
+- [ ] Melhorar a página de contacto
+	- [ ] Incorporar o PHP Mailer
+	- [ ] Incorporar Google Maps iFrame com localização
+	- [ ] Incorporar ReCaptach para submissão de formulário
+
+### Todo - Painel Cliente
+
+- [ ] 
+
+### Todo - Painel Agente
+
+- [ ] Incorporar gráficos e estatisticas no Painel de Agente
+
+### Todo - Painel Administrador
+
+- [ ] Criar opções para a página de Definições no Painel de Administrador
 
 ### Bugs
 
-- [ ] nada
+- [ ] Anchor redirect de items da nav da KB está a falhar
 
 ### Done ✓
 
-- [x] nada 
+- [x] 
