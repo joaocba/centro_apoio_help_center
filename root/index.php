@@ -32,7 +32,7 @@ include('./components/page-head.php');
         <!-- INICIO CONTEUDO -->
 
         <!-- SOBRE APP (BREVE) -->
-        <section class="py-5">
+        <section class="py-5 bg-light">
             <div class="container px-5">
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xxl-6">

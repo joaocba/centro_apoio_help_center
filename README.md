@@ -1,4 +1,4 @@
-# centro_apoio
+# Projeto Centro de Apoio
 (Web App) - Sistema de Ticketing / Centro de Apoio
 
 
@@ -26,6 +26,11 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 	- [ ] Incorporar o PHP Mailer
 	- [ ] Incorporar Google Maps iFrame com localização
 	- [ ] Incorporar Recaptcha para submissão de formulário
+- [ ] Adicionar anchor top the top
+- [ ] Adicionar seletor de lingua (PT ou FR)
+- [x] Melhorar o alinhamento do footer-bottom
+- [ ] Verificar e corrigir responsividade para modo Tablet/Telefone
+- [ ] Adicionar páginas de Politica de Privacidade e Termos de Utilização
 
 ### Todo - Painel Cliente
 

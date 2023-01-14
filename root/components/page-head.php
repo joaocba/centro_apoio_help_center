@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <base href="http://localhost/centro_apoio/root/" />
+    <base href="http://localhost/centro_apoio/centro_apoio/root/" />
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
     <!-- Core CSS (Bootstrap) -->

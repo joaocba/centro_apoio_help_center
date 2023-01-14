@@ -1,3 +1,4 @@
+<!-- FOOTER TOP -->
 <div id="footer">
     <div class="footer-top text-white">
         <div class="container">
@@ -41,18 +42,19 @@
     </div>
 </div>
 
+<!-- FOOTER BOTTOM -->
 <footer id="footer-bottom" class="bg-dark py-4 mt-auto clearfix">
-    <div class="container px-5">
+    <div class="container">
         <div class="row align-items-center justify-content-between flex-column flex-sm-row">
             <div class="col-auto">
-                <div class="small m-0 text-white">Copyright &copy; Centro de Apoio 2022</div>
+                <div class="small m-0 text-white">&copy; Copyright 2022-<script>document.write(new Date().getFullYear())</script>, Centro de Apoio</div>
             </div>
             <div class="col-auto">
                 <a class="link-light small" href="#!">Politica de Privacidade</a>
                 <span class="text-white mx-1">&middot;</span>
                 <a class="link-light small" href="#!">Termos de Utilização</a>
                 <span class="text-white mx-1">&middot;</span>
-                <a class="link-light small" href="#!">Contacto</a>
+                <a class="link-light small" href="contacto.php">Contacto</a>
             </div>
         </div>
     </div>
