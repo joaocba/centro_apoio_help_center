@@ -9,7 +9,7 @@ Aplicação web com frontend e back-office para submissão e gestão de pedidos 
 Data de apresentação - 31 de Janeiro 2023 / 
 Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
-### Critério de avaliação
+### Critério de avaliação PWEB
 
 - [ ] POO 
 - [ ] PHP Mailer 
@@ -19,6 +19,14 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 - [ ] Bootstrap
 - [ ] Hospedagem online
 
+### Critério de avaliação GPSI / INT
+
+- [ ] Relatório de Gestão de Projeto
+- [ ] Integração de sistema login
+- [ ] Integração de knownledge base na fase de criação de ticket
+
+
+## DEV
 ### Todo - Landing Page
 
 - [ ] Fazer textos de páginas em falta
@@ -34,7 +42,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 ### Todo - Painel Cliente
 
-- [ ] 1
+- [ ] ...
 
 ### Todo - Painel Agente
 
@@ -50,4 +58,4 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 ### Done ✓
 
-- [x] 1
+- [x] ...

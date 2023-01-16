@@ -29,7 +29,7 @@
                 </div>
                 <div class="col-lg-3 col-md-6 footer-links">
                     <h4>Redes sociais</h4>
-                    <p>Siga-nos e subrecreva</p>
+                    <p>Siga-nos e subscreva</p>
                     <div class="social-links mt-3">
                         <a href="#" class="twitter"><i class="bi-twitter"></i></a>
                         <a href="#" class="facebook"><i class="bi-facebook"></i></a>
