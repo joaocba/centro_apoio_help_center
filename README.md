@@ -13,10 +13,10 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 - [ ] POO 
 - [ ] PHP Mailer 
-- [ ] BD
+- [x] BD
 - [ ] Internacionalização
 - [ ] Validação de formulários com JS ou JQuery
-- [ ] Bootstrap
+- [x] Bootstrap
 - [ ] Hospedagem online
 
 ### Critério de avaliação GPSI / INT
