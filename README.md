@@ -39,10 +39,14 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 - [x] Melhorar o alinhamento do footer-bottom
 - [ ] Verificar e corrigir responsividade para modo Tablet/Telefone
 - [ ] Adicionar páginas de Politica de Privacidade e Termos de Utilização
+- [ ] Melhorar página de Criar Conta
+	- [ ] Incorporar Recaptcha para submissão de formulário
+	- [ ] Aplicar validação de campos (password e re-password) com JS / JQuery
+- [ ] Adicionar "loader animation" ao arrancar qualquer página
 
 ### Todo - Painel Cliente
 
-- [ ] ...
+- [ ] Melhorar design de página Ticket
 
 ### Todo - Painel Agente
 
