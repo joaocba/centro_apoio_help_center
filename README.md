@@ -35,7 +35,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 	- [ ] Incorporar Google Maps iFrame com localização
 	- [ ] Incorporar Recaptcha para submissão de formulário
 - [ ] Adicionar anchor top the top
-- [ ] Adicionar seletor de lingua (PT ou FR)
+- [ ] Adicionar seletor de lingua (PT ou EN) em dropdown
 - [x] Melhorar o alinhamento do footer-bottom
 - [ ] Verificar e corrigir responsividade para modo Tablet/Telefone
 - [ ] Adicionar páginas de Politica de Privacidade e Termos de Utilização

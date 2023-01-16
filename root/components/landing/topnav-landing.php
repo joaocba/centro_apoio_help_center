@@ -7,6 +7,9 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" style="filter: grayscale(1);" href="?lang=pt-pt"><img src="./assets/img/landing/pt-pt.png" alt=""></a></li>
+                <li class="nav-item"><a class="nav-link" style="filter: grayscale(1);" href="?lang=en-us"><img src="./assets/img/landing/en-us.png" alt=""></a></li>
+
                 <li class="nav-item"><a class="nav-link" href="index.php"><?php echo $lang['topnav_inicio']; ?></a></li>
                 <li class="nav-item"><a class="nav-link" href="sobre.php"><?php echo $lang['topnav_sobre']; ?></a></li>
                 <li class="nav-item"><a class="nav-link" href="blog.php"><?php echo $lang['topnav_blog']; ?></a></li>

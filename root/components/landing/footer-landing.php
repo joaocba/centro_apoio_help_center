@@ -35,7 +35,8 @@
                         <a href="#" class="facebook"><i class="bi-facebook"></i></a>
                         <a href="#" class="instagram"><i class="bi-instagram"></i></a>
                         <a href="#" class="google-plus"><i class="bi-microsoft-teams"></i></a>
-                        <a href="#" class="linkedin"><i class="bi-telegram"></i></a></div>
+                        <a href="#" class="linkedin"><i class="bi-telegram"></i></a>
+                    </div>
                 </div>
             </div>
         </div>

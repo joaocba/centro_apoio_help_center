@@ -6,7 +6,7 @@ $page_title = '';
 include('./components/page-head.php');
 
 //LANGS
-include('./components/landing/lang/pt-pt.php');
+include('./components/landing/lang/settings.php');
 ?>
 
 <body class="d-flex flex-column h-100">
