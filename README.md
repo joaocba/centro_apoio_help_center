@@ -11,8 +11,8 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 ### Critério de avaliação PWEB
 
-- [ ] POO 
-- [ ] PHP Mailer 
+- [ ] POO
+- [ ] PHP Mailer
 - [x] BD
 - [ ] Internacionalização
 - [ ] Validação de formulários com JS ou JQuery
@@ -43,6 +43,13 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 	- [ ] Incorporar Recaptcha para submissão de formulário
 	- [ ] Aplicar validação de campos (password e re-password) com JS / JQuery
 - [ ] Adicionar "loader animation" ao arrancar qualquer página
+
+### Todo - Backoffice (paineis - global)
+
+- [ ] Melhorar design de topnav
+- [ ] Melhorar design de sidebar
+- [ ] Adicionar footer
+	- [ ] Incorporar copyright, titulo e termos de utilização
 
 ### Todo - Painel Cliente
 
