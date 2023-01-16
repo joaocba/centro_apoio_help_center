@@ -21,9 +21,9 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 ### Critério de avaliação GPSI / INT
 
-- [ ] Relatório de Gestão de Projeto
-- [ ] Integração de sistema login
-- [ ] Integração de knownledge base na fase de criação de ticket
+- [x] Relatório de Gestão de Projeto
+- [x] Integração de sistema login
+- [x] Integração de knownledge base na fase de criação de ticket
 
 
 ## DEV
