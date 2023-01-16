@@ -4,6 +4,9 @@ $page_title = '';
 
 //HTML HEAD
 include('./components/page-head.php');
+
+//LANGS
+include('./components/landing/lang/pt-pt.php');
 ?>
 
 <body class="d-flex flex-column h-100">
