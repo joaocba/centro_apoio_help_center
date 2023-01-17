@@ -4,6 +4,9 @@ $page_title = 'Sobre -';
 
 //HTML HEAD
 include('./components/page-head.php');
+
+//LANGS
+include('./components/landing/lang/settings.php');
 ?>
 
 <body class="d-flex flex-column h-100">
@@ -17,8 +20,8 @@ include('./components/page-head.php');
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-12 col-xl-12 col-xxl-12">
                         <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Sobre</h1>
-                            <p class="lead fw-normal text-white-50 mb-4">Dados sobre o projecto</p>
+                            <h1 class="display-5 fw-bolder text-white mb-2"><?php echo $lang['s_banner_title']; ?></h1>
+                            <p class="lead fw-normal text-white-50 mb-4"><?php echo $lang['s-banner_subtitle']; ?></p>
                         </div>
                     </div>
                 </div>
@@ -33,9 +36,8 @@ include('./components/page-head.php');
                 <div class="row justify-content-center">
                     <div class="col-lg-8 col-xxl-6">
                         <div class="text-center my-5">
-                            <h1 class="fw-bolder mb-3">Objectivo do projecto</h1>
-                            <p class="lead fw-normal text-muted mb-4">Planear e desenvolver uma Web App orientada ao apoio cliente introduzindo paineis de funcionalidades com base num sistema de Ticketing integrando uma Knowledge Base que responde de forma automática perante o formulário de apoio preenchido pelo cliente.</p>
-                            <a class="btn btn-primary btn-lg" href="#">Saber mais</a>
+                            <h1 class="fw-bolder mb-3"><?php echo $lang['s_finalidade_title']; ?></h1>
+                            <p class="lead fw-normal text-muted mb-4"><?php echo $lang['s_finalidade_desc']; ?></p>
                         </div>
                     </div>
                 </div>
@@ -49,8 +51,8 @@ include('./components/page-head.php');
                     <div class="col-lg-5"><img class="img-fluid rounded mb-5 mb-lg-0 logo" src="./assets/img/landing/details-1.png" alt="..." /></div>
                     <!-- <div class="col-lg-6 align-items-stretch logo" style="background-image: url(&quot;./assets/img/landing/details-1.png&quot;);">&nbsp;</div> -->
                     <div class="col-lg-7">
-                        <h2 class="fw-bolder">Our founding</h2>
-                        <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita. Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam expedita, maiores eaque quisquam.</p>
+                        <h2 class="fw-bolder">Objectivo Do Projecto</h2>
+                        <p class="lead fw-normal text-muted mb-0">Este Projeto teve como objetivo, dar apoio a empresas através de uma aplicação web. De modo a ajudar a equipa de IT a fazer toda a gestão de problemas existentes na empresa que por vezes vem de diversos meios. O grande objetivo é centralizar toda a informação em uma só plataforma.</p>
                     </div>
                 </div>
             </div>
@@ -61,8 +63,8 @@ include('./components/page-head.php');
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-5 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="./assets/img/landing/hero-img.png" alt="..." /></div>
                     <div class="col-lg-7">
-                        <h2 class="fw-bolder">Growth &amp; beyond</h2>
-                        <p class="lead fw-normal text-muted mb-0">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto est, ut esse a labore aliquam beatae expedita. Blanditiis impedit numquam libero molestiae et fugit cupiditate, quibusdam expedita, maiores eaque quisquam.</p>
+                        <h2 class="fw-bolder">Web App &amp; Funcionalidades</h2>
+                        <p class="lead fw-normal text-muted mb-0">Esta Web App esta desenhada para ter três modos de gestão, como Administradores, Agentes e Clientes. Introduziu-se painéis de funcionalidades com base num sistema de Tickting integrando, uma Knowledge Base que responde de forma automática perante o formulário de apoio preenchido pelo cliente.</p>
                     </div>
                 </div>
             </div>

@@ -47,6 +47,15 @@
 }
 
 
+
+
+/* LANDING PAGE - TOP NAV */
+.dropdown-menu {
+    min-width: 0 !important;
+}
+
+
+
 /* LANDING PAGE - BANNER */
 #banner .animated {
     animation: up-down 2s ease-in-out infinite alternate-reverse both;

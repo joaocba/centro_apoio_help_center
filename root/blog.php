@@ -4,6 +4,9 @@ $page_title = 'Blog -';
 
 //HTML HEAD
 include('./components/page-head.php');
+
+//LANGS
+include('./components/landing/lang/settings.php');
 ?>
 
 <body class="d-flex flex-column h-100">
@@ -30,15 +33,15 @@ include('./components/page-head.php');
         <!-- BLOG -->
         <section id="blog-featured" class="py-5">
             <div class="container px-5">
-                <h1 class="fw-bolder fs-5 mb-4">Company Blog</h1>
+                <h1 class="fw-bolder fs-5 mb-4">Blog Centro de Apoio</h1>
                 <div class="card border-0 shadow rounded-3 overflow-hidden">
                     <div class="card-body p-0">
                         <div class="row gx-0">
                             <div class="col-lg-6 col-xl-5 py-lg-5">
                                 <div class="p-4 p-md-5">
-                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
-                                    <div class="h2 fw-bolder">Article heading goes here</div>
-                                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique delectus ab doloremque, qui doloribus ea officiis...</p>
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Noticias</div>
+                                    <div class="h2 fw-bolder">Como funciona o helpdesk</div>
+                                    <p>Helpdesk é um trabalho na area de IT que serve para dar apoio aos utilizadores de computadores, de uma empresa...</p>
                                     <a class="stretched-link text-decoration-none" href="#!">
                                         Read more
                                         <i class="bi bi-arrow-right"></i>
@@ -46,7 +49,7 @@ include('./components/page-head.php');
                                 </div>
                             </div>
                             <div class="col-lg-6 col-xl-7">
-                                <div class="bg-featured-blog" style="background-image: url('https://dummyimage.com/700x350/343a40/6c757d')"></div>
+                                <div class="bg-featured-blog"><iframe width="700" height="450" border-radius:10px src="https://www.youtube.com/embed/m_kD9-JVWm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                             </div>
                         </div>
                     </div>
@@ -56,32 +59,32 @@ include('./components/page-head.php');
         <section class="py-5 bg-light">
             <div class="container px-5">
                 <div class="row gx-5">
-                    <div class="col-xl-8">
-                        <h2 class="fw-bolder fs-5 mb-4">News</h2>
+                <div class="col-xl-8">
+                        <h2 class="fw-bolder fs-5 mb-4">Novidades futuras</h2>
                         <!-- News item-->
                         <div class="mb-4">
-                            <div class="small text-muted">May 12, 2022</div>
+                            <div class="small text-muted">janeiro 12, 2023</div>
                             <a class="link-dark" href="#!">
-                                <h3>Start Bootstrap releases Bootstrap 5 updates for templates and themes</h3>
+                                <h3>Recebe as respostas dos tecnicos, aos teus tickets, via SMS</h3>
                             </a>
                         </div>
                         <!-- News item-->
                         <div class="mb-5">
-                            <div class="small text-muted">May 5, 2022</div>
+                            <div class="small text-muted">janeiro 5, 2023</div>
                             <a class="link-dark" href="#!">
-                                <h3>Bootstrap 5 has officially landed</h3>
+                                <h3>Novos Artigos knowledgebase, a partir de Maio!</h3>
                             </a>
                         </div>
                         <!-- News item-->
                         <div class="mb-5">
-                            <div class="small text-muted">Apr 21, 2022</div>
+                            <div class="small text-muted">Dezembro 22, 2022</div>
                             <a class="link-dark" href="#!">
-                                <h3>This is another news article headline, but this one is a little bit longer</h3>
+                                <h3>Customisa as cores do teu perfil</h3>
                             </a>
                         </div>
                         <div class="text-end mb-5 mb-xl-0">
                             <a class="text-decoration-none" href="#!">
-                                More news
+                                Ler mais 
                                 <i class="bi bi-arrow-right"></i>
                             </a>
                         </div>
@@ -91,11 +94,11 @@ include('./components/page-head.php');
                             <div class="card-body p-4">
                                 <div class="d-flex h-100 align-items-center justify-content-center">
                                     <div class="text-center">
-                                        <div class="h6 fw-bolder">Contact</div>
+                                        <div class="h6 fw-bolder">Contacta-nos</div>
                                         <p class="text-muted mb-4">
-                                            For press inquiries, email us at
+                                            Se tiveres alguma questao, envia email para
                                             <br />
-                                            <a href="#!">press@domain.com</a>
+                                            <a href="#!">Admin@admin.com</a>
                                         </p>
                                         <div class="h6 fw-bolder">Follow us</div>
                                         <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
@@ -110,28 +113,36 @@ include('./components/page-head.php');
                 </div>
             </div>
         </section>
-        <!-- Blog preview section-->
+
+        <!-- BLOG PREVIEW -->
         <section class="py-5">
-            <div class="container px-5">
-                <h2 class="fw-bolder fs-5 mb-4">Featured Stories</h2>
+            <div class="container px-5 my-5">
+                <div class="row gx-5 justify-content-center">
+                    <div class="col-lg-8 col-xl-6">
+                        <div class="text-center">
+                            <h2 class="fw-bolder"><?php echo $lang['h_blog_title']; ?></h2>
+                            <p class="lead fw-normal text-muted mb-5"><?php echo $lang['h_blog_subtitle']; ?></p>
+                        </div>
+                    </div>
+                </div>
                 <div class="row gx-5">
                     <div class="col-lg-4 mb-5">
                         <div class="card h-100 shadow border-0">
-                            <img class="card-img-top" src="https://dummyimage.com/600x350/ced4da/6c757d" alt="..." />
+                            <img class="card-img-top" src="./assets/img/landing/blog1.jpg" alt="..." />
                             <div class="card-body p-4">
-                                <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
+                                <div class="badge bg-primary bg-gradient rounded-pill mb-2"><?php echo $lang['h_blog_badge1']; ?></div>
                                 <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                    <div class="h5 card-title mb-3">Blog post title</div>
+                                    <h5 class="card-title mb-3"><?php echo $lang['h_blog_title1']; ?></h5>
                                 </a>
-                                <p class="card-text mb-0">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text mb-0"><?php echo $lang['h_blog_desc1']; ?></p>
                             </div>
                             <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                 <div class="d-flex align-items-end justify-content-between">
                                     <div class="d-flex align-items-center">
                                         <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                                         <div class="small">
-                                            <div class="fw-bold">Kelly Rowan</div>
-                                            <div class="text-muted">March 12, 2022 &middot; 6 min read</div>
+                                            <div class="fw-bold"><?php echo $lang['h_blog_author1']; ?></div>
+                                            <div class="text-muted"><?php echo $lang['h_blog_date1']; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -140,21 +151,21 @@ include('./components/page-head.php');
                     </div>
                     <div class="col-lg-4 mb-5">
                         <div class="card h-100 shadow border-0">
-                            <img class="card-img-top" src="https://dummyimage.com/600x350/adb5bd/495057" alt="..." />
+                            <img class="card-img-top" src="./assets/img/landing/blog2.gif" alt="..." />
                             <div class="card-body p-4">
-                                <div class="badge bg-primary bg-gradient rounded-pill mb-2">Media</div>
+                                <div class="badge bg-primary bg-gradient rounded-pill mb-2"><?php echo $lang['h_blog_badge2']; ?></div>
                                 <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                    <div class="h5 card-title mb-3">Another blog post title</div>
+                                    <h5 class="card-title mb-3"><?php echo $lang['h_blog_title2']; ?></h5>
                                 </a>
-                                <p class="card-text mb-0">This text is a bit longer to illustrate the adaptive height of each card. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text mb-0"><?php echo $lang['h_blog_desc2']; ?></p>
                             </div>
                             <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                 <div class="d-flex align-items-end justify-content-between">
                                     <div class="d-flex align-items-center">
                                         <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                                         <div class="small">
-                                            <div class="fw-bold">Josiah Barclay</div>
-                                            <div class="text-muted">March 23, 2022 &middot; 4 min read</div>
+                                            <div class="fw-bold"><?php echo $lang['h_blog_author2']; ?></div>
+                                            <div class="text-muted"><?php echo $lang['h_blog_date2']; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -163,21 +174,21 @@ include('./components/page-head.php');
                     </div>
                     <div class="col-lg-4 mb-5">
                         <div class="card h-100 shadow border-0">
-                            <img class="card-img-top" src="https://dummyimage.com/600x350/6c757d/343a40" alt="..." />
+                            <img class="card-img-top" src="./assets/img/landing/blog3.png" alt="..." />
                             <div class="card-body p-4">
-                                <div class="badge bg-primary bg-gradient rounded-pill mb-2">News</div>
+                                <div class="badge bg-primary bg-gradient rounded-pill mb-2"><?php echo $lang['h_blog_badge3']; ?></div>
                                 <a class="text-decoration-none link-dark stretched-link" href="#!">
-                                    <div class="h5 card-title mb-3">The last blog post title is a little bit longer than the others</div>
+                                    <h5 class="card-title mb-3"><?php echo $lang['h_blog_title3']; ?></h5>
                                 </a>
-                                <p class="card-text mb-0">Some more quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text mb-0"><?php echo $lang['h_blog_desc3']; ?></p>
                             </div>
                             <div class="card-footer p-4 pt-0 bg-transparent border-top-0">
                                 <div class="d-flex align-items-end justify-content-between">
                                     <div class="d-flex align-items-center">
                                         <img class="rounded-circle me-3" src="https://dummyimage.com/40x40/ced4da/6c757d" alt="..." />
                                         <div class="small">
-                                            <div class="fw-bold">Evelyn Martinez</div>
-                                            <div class="text-muted">April 2, 2022 &middot; 10 min read</div>
+                                            <div class="fw-bold"><?php echo $lang['h_blog_author3']; ?></div>
+                                            <div class="text-muted"><?php echo $lang['h_blog_date3']; ?></div>
                                         </div>
                                     </div>
                                 </div>
@@ -187,7 +198,7 @@ include('./components/page-head.php');
                 </div>
                 <div class="text-end mb-5 mb-xl-0">
                     <a class="text-decoration-none" href="#!">
-                        More stories
+                        Mais artigos do nosso blog
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
