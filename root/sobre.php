@@ -21,7 +21,7 @@ include('./components/landing/lang/settings.php');
                     <div class="col-lg-12 col-xl-12 col-xxl-12">
                         <div class="my-5 text-center text-xl-start">
                             <h1 class="display-5 fw-bolder text-white mb-2"><?php echo $lang['s_banner_title']; ?></h1>
-                            <p class="lead fw-normal text-white-50 mb-4"><?php echo $lang['s-banner_subtitle']; ?></p>
+                            <p class="lead fw-normal text-white-50 mb-4"><?php echo $lang['s_banner_subtitle']; ?></p>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ include('./components/landing/lang/settings.php');
 
         <!-- INICIO CONTEUDO -->
 
-        <!-- SOBRE APP (BREVE) -->
+        <!-- FINALIDADE -->
         <section class="py-5">
             <div class="container px-5">
                 <div class="row justify-content-center">
@@ -44,27 +44,26 @@ include('./components/landing/lang/settings.php');
             </div>
         </section>
 
-        <!-- About section one-->
+        <!-- SOBRE PARTE 1 -->
         <section id="know-more" class="py-5 bg-light" >
             <div class="container px-5 my-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-5"><img class="img-fluid rounded mb-5 mb-lg-0 logo" src="./assets/img/landing/details-1.png" alt="..." /></div>
-                    <!-- <div class="col-lg-6 align-items-stretch logo" style="background-image: url(&quot;./assets/img/landing/details-1.png&quot;);">&nbsp;</div> -->
                     <div class="col-lg-7">
-                        <h2 class="fw-bolder">Objectivo Do Projecto</h2>
-                        <p class="lead fw-normal text-muted mb-0">Este Projeto teve como objetivo, dar apoio a empresas através de uma aplicação web. De modo a ajudar a equipa de IT a fazer toda a gestão de problemas existentes na empresa que por vezes vem de diversos meios. O grande objetivo é centralizar toda a informação em uma só plataforma.</p>
+                        <h2 class="fw-bolder"><?php echo $lang['s_sobre_title1']; ?></h2>
+                        <p class="lead fw-normal text-muted mb-0"><?php echo $lang['s_sobre_desc1']; ?></p>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- About section two-->
+        <!-- SOBRE PARTE 2-->
         <section class="py-5">
             <div class="container px-5 my-5">
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-5 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="./assets/img/landing/hero-img.png" alt="..." /></div>
                     <div class="col-lg-7">
-                        <h2 class="fw-bolder">Web App &amp; Funcionalidades</h2>
-                        <p class="lead fw-normal text-muted mb-0">Esta Web App esta desenhada para ter três modos de gestão, como Administradores, Agentes e Clientes. Introduziu-se painéis de funcionalidades com base num sistema de Tickting integrando, uma Knowledge Base que responde de forma automática perante o formulário de apoio preenchido pelo cliente.</p>
+                        <h2 class="fw-bolder"><?php echo $lang['s_sobre_title1']; ?></h2>
+                        <p class="lead fw-normal text-muted mb-0"><?php echo $lang['s_sobre_desc1']; ?></p>
                     </div>
                 </div>
             </div>

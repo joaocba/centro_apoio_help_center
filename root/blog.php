@@ -20,8 +20,8 @@ include('./components/landing/lang/settings.php');
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-12 col-xl-12 col-xxl-12">
                         <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Blog</h1>
-                            <p class="lead fw-normal text-white-50 mb-4">Saiba tudo sobre as últimas novidades</p>
+                            <h1 class="display-5 fw-bolder text-white mb-2"><?php echo $lang['b_banner_title']; ?></h1>
+                            <p class="lead fw-normal text-white-50 mb-4"><?php echo $lang['b_banner_subtitle']; ?></p>
                         </div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@ include('./components/landing/lang/settings.php');
 
         <!-- INICIO CONTEUDO -->
 
-        <!-- BLOG -->
+        <!-- BLOG HEADER -->
         <section id="blog-featured" class="py-5">
             <div class="container px-5">
                 <h1 class="fw-bolder fs-5 mb-4">Blog Centro de Apoio</h1>
@@ -39,11 +39,11 @@ include('./components/landing/lang/settings.php');
                         <div class="row gx-0">
                             <div class="col-lg-6 col-xl-5 py-lg-5">
                                 <div class="p-4 p-md-5">
-                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2">Noticias</div>
-                                    <div class="h2 fw-bolder">Como funciona o helpdesk</div>
-                                    <p>Helpdesk é um trabalho na area de IT que serve para dar apoio aos utilizadores de computadores, de uma empresa...</p>
+                                    <div class="badge bg-primary bg-gradient rounded-pill mb-2"><?php echo $lang['b_header_badge']; ?></div>
+                                    <div class="h2 fw-bolder"><?php echo $lang['b_header_title']; ?></div>
+                                    <p><?php echo $lang['b_header_desc']; ?></p>
                                     <a class="stretched-link text-decoration-none" href="#!">
-                                        Read more
+                                        <?php echo $lang['b_header_button']; ?>
                                         <i class="bi bi-arrow-right"></i>
                                     </a>
                                 </div>
@@ -60,26 +60,23 @@ include('./components/landing/lang/settings.php');
             <div class="container px-5">
                 <div class="row gx-5">
                 <div class="col-xl-8">
-                        <h2 class="fw-bolder fs-5 mb-4">Novidades futuras</h2>
-                        <!-- News item-->
+                        <h2 class="fw-bolder fs-5 mb-4"><?php echo $lang['b_novidades_title']; ?></h2>
                         <div class="mb-4">
-                            <div class="small text-muted">janeiro 12, 2023</div>
+                            <div class="small text-muted"><?php echo $lang['b_novidades_date1']; ?></div>
                             <a class="link-dark" href="#!">
-                                <h3>Recebe as respostas dos tecnicos, aos teus tickets, via SMS</h3>
+                                <h3><?php echo $lang['b_novidades_subtitle1']; ?></h3>
                             </a>
                         </div>
-                        <!-- News item-->
                         <div class="mb-5">
-                            <div class="small text-muted">janeiro 5, 2023</div>
+                            <div class="small text-muted"><?php echo $lang['b_novidades_date2']; ?></div>
                             <a class="link-dark" href="#!">
-                                <h3>Novos Artigos knowledgebase, a partir de Maio!</h3>
+                                <h3><?php echo $lang['b_novidades_subtitle2']; ?></h3>
                             </a>
                         </div>
-                        <!-- News item-->
                         <div class="mb-5">
-                            <div class="small text-muted">Dezembro 22, 2022</div>
+                            <div class="small text-muted"><?php echo $lang['b_novidades_date3']; ?></div>
                             <a class="link-dark" href="#!">
-                                <h3>Customisa as cores do teu perfil</h3>
+                                <h3><?php echo $lang['b_novidades_subtitle3']; ?></h3>
                             </a>
                         </div>
                         <div class="text-end mb-5 mb-xl-0">
@@ -94,13 +91,11 @@ include('./components/landing/lang/settings.php');
                             <div class="card-body p-4">
                                 <div class="d-flex h-100 align-items-center justify-content-center">
                                     <div class="text-center">
-                                        <div class="h6 fw-bolder">Contacta-nos</div>
+                                        <div class="h6 fw-bolder"><?php echo $lang['b_novidades_questions']; ?></div>
                                         <p class="text-muted mb-4">
-                                            Se tiveres alguma questao, envia email para
-                                            <br />
-                                            <a href="#!">Admin@admin.com</a>
+                                            <a class="btn btn-dark px-4" href="contacto.php<?= $_SESSION['lang_set'] ?>"><?php echo $lang['b_novidades_questions_link']; ?></a>
                                         </p>
-                                        <div class="h6 fw-bolder">Follow us</div>
+                                        <div class="h6 fw-bolder"><?php echo $lang['b_novidades_follow']; ?></div>
                                         <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-twitter"></i></a>
                                         <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-facebook"></i></a>
                                         <a class="fs-5 px-2 link-dark" href="#!"><i class="bi-linkedin"></i></a>
@@ -198,7 +193,7 @@ include('./components/landing/lang/settings.php');
                 </div>
                 <div class="text-end mb-5 mb-xl-0">
                     <a class="text-decoration-none" href="#!">
-                        Mais artigos do nosso blog
+                        <?php echo $lang['b_preview_showmore']; ?>
                         <i class="bi bi-arrow-right"></i>
                     </a>
                 </div>
