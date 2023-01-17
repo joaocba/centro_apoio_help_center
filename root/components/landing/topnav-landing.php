@@ -21,6 +21,8 @@
                     <ul class="dropdown-menu dropdown-menu-dark">
                         <li><a class="dropdown-item" href="<?= $_SERVER['PHP_SELF'] ?>?lang=pt-pt"><img src="./assets/img/landing/pt-pt.png" alt=""></a></li>
                         <li><a class="dropdown-item" href="<?= $_SERVER['PHP_SELF'] ?>?lang=en-us"><img src="./assets/img/landing/en-us.png" alt=""></a></li>
+                        <li><a class="dropdown-item" href="<?= $_SERVER['PHP_SELF'] ?>?lang=fr-fr"><img src="./assets/img/landing/fr-fr.png" alt=""></a></li>
+                        <li><a class="dropdown-item" href="<?= $_SERVER['PHP_SELF'] ?>?lang=es-sp"><img src="./assets/img/landing/es-sp.png" alt=""></a></li>
                     </ul>
                 </li>
 
