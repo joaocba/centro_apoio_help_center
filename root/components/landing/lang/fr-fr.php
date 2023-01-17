@@ -1,12 +1,12 @@
 <?php
 
 $lang=array(
-    //EN-US
+    //FR-FR
     //TOPNAV
-	'topnav_inicio' => 'Home',
-	'topnav_sobre' => 'About',
+	'topnav_inicio' => 'Inicio',
+	'topnav_sobre' => 'Sobre',
 	'topnav_blog' => 'Blog',
-	'topnav_contacto' => 'Contact Us',
+	'topnav_contacto' => 'Contacto',
 	'topnav_login' => 'Login',
 
 

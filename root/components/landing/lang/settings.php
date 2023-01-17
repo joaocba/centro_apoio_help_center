@@ -1,6 +1,6 @@
 <?php
 session_start();
-$langsAllowed=array('pt-pt','en-us');
+$langsAllowed=array('pt-pt','en-us','fr-fr','es-sp');
 
 if(isset($_GET['lang'])===true && in_array($_GET['lang'], $langsAllowed)){
 	$_SESSION['flag'] = $_GET['lang'];
