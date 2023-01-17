@@ -1,7 +1,7 @@
 <?php
 
 $lang=array(
-    //EN-SP
+    //EN-SP (ESPANHOL - ESPANHA)
     //TOPNAV
 	'topnav_inicio' => 'Inicio',
 	'topnav_sobre' => 'Sobre',
