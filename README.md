@@ -11,16 +11,18 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 ### Critério de avaliação PWEB
 
-- [ ] POO
-	- [ ] class DB - ligar a base de dados
-	- [ ] class utilizador - no login e criação de conta ??
+- [X] POO
+	- [x] class DB (db.php) - prepara ligação a base de dados
 - [ ] PHP Mailer
 	- [x] pagina contacto.php - sistema incorporado de mail com recaptcha
 	- [ ] teste requer hospedagem online
 - [x] CRUD
 - [x] BD
-- [x] Internacionalização
+- [ ] Internacionalização
+	- [x] paginas de langs criadas
+	- [ ] finalizar traduções
 - [x] Validação de formulários com JS ou JQuery
+	- [x] aplicado em criar-conta.php
 - [x] Bootstrap
 - [ ] Hospedagem online
 
@@ -34,20 +36,22 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 ## DEV
 ### Todo - Landing Page
 
-- [ ] Fazer textos de páginas em falta
+- [x] Fazer textos de páginas em falta
+	- [x] Politica de Privacidade
+	- [x] Termos
 - [ ] Melhorar a página de contacto
-	- [ ] Incorporar o PHP Mailer
+	- [x] Incorporar o PHP Mailer
 	- [ ] Incorporar Google Maps iFrame com localização
-	- [ ] Incorporar Recaptcha para submissão de formulário
+	- [x] Incorporar Recaptcha para submissão de formulário
 - [ ] Adicionar anchor to the top
 - [x] Adicionar seletor de lingua (PT ou EN) em dropdown
 - [x] Melhorar o alinhamento do footer-bottom
 - [ ] Verificar e corrigir responsividade para modo Tablet/Telefone
-- [ ] Adicionar páginas de Politica de Privacidade e Termos de Utilização
+- [x] Adicionar páginas de Politica de Privacidade e Termos de Utilização
 - [ ] Melhorar página de Criar Conta
-	- [ ] Incorporar Recaptcha para submissão de formulário
-	- [ ] Aplicar validação de campos (password e re-password) com JS / JQuery
-- [ ] Adicionar "loader animation" ao arrancar qualquer página
+	- [ ] (OPCIONAL) Incorporar Recaptcha para submissão de formulário
+	- [x] Aplicar validação de campos (password e re-password) com JS / JQuery
+- [ ] (OPCIONAL) Adicionar "loader animation" ao arrancar qualquer página
 
 ### Todo - Backoffice (paineis - global)
 
@@ -71,7 +75,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 ### Bugs
 
-- [ ] Anchor redirect de items da nav da KB está a falhar
+- [x] Anchor redirect de items da nav da KB está a falhar
 
 ### Done ✓
 

@@ -38,7 +38,6 @@ if (isset($_POST['email'])) {
     $sql = "SELECT * FROM users WHERE email = '$email' && password = '$password' LIMIT 1";
 
     //aplica a query na bd
-    //$result=$dbconn->query($sql);
     $result = mysqli_query($dbconn, $sql);
 
     //print do output da query
