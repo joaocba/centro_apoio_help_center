@@ -186,7 +186,7 @@ if (isset($_POST['submit'])) {
                                     <div class="form-check">
                                         <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" required>
                                         <label class="form-check-label" for="flexCheckDefault">
-                                            Concordo com os <a href="#">Termos de Utilização</a> e <a href="#">Politica de Privacidade</a>
+                                            Concordo com os <a href="./termos.php">Termos de Utilização</a> e <a href="./privacidade.php">Politica de Privacidade</a>
                                         </label>
                                     </div>
                                 </div>

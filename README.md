@@ -49,6 +49,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 - [ ] Melhorar design de topnav
 - [ ] Melhorar design de sidebar
+	- [ ] Adicionar menus dropdown para as paginas que contêm sub-páginas
 - [ ] Adicionar footer
 	- [ ] Incorporar copyright, titulo e termos de utilização
 

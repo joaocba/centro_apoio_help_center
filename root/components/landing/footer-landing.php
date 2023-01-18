@@ -51,9 +51,9 @@
                 <div class="small m-0 text-white">&copy; Copyright 2022-<script>document.write(new Date().getFullYear())</script>, Centro de Apoio</div>
             </div>
             <div class="col-auto">
-                <a class="link-light small" href="#!"><?php echo $lang['footer_privacy']; ?></a>
+                <a class="link-light small" href="./privacidade.php<?= $_SESSION['lang_set'] ?>"><?php echo $lang['footer_privacy']; ?></a>
                 <span class="text-white mx-1">&middot;</span>
-                <a class="link-light small" href="#!"><?php echo $lang['footer_terms']; ?></a>
+                <a class="link-light small" href="./termos.php<?= $_SESSION['lang_set'] ?>"><?php echo $lang['footer_terms']; ?></a>
                 <span class="text-white mx-1">&middot;</span>
                 <a class="link-light small" href="contacto.php<?= $_SESSION['lang_set'] ?>"><?php echo $lang['footer_contacto']; ?></a>
             </div>
