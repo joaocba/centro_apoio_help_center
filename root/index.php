@@ -11,6 +11,13 @@ include('./components/landing/lang/settings.php');
 
 <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
+        <!-- Animação Preloader -->
+        <div id="loading">
+                <div id="loading-image" class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+        </div>
+
         <!-- Menu Topo -->
         <?php include('./components/landing/topnav-landing.php'); ?>
 
@@ -323,6 +330,7 @@ include('./components/landing/lang/settings.php');
 
     <!-- PAGE BOTTOM -->
     <?php include('./components/page-bottom.php'); ?>
+
 </body>
 
 </html>

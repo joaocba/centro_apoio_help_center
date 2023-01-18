@@ -36,22 +36,22 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 ## DEV
 ### Todo - Landing Page
 
+- [ ] Verificar e corrigir responsividade para modo Tablet/Telefone
 - [x] Fazer textos de páginas em falta
 	- [x] Politica de Privacidade
 	- [x] Termos
-- [ ] Melhorar a página de contacto
+- [x] Melhorar a página de contacto
 	- [x] Incorporar o PHP Mailer
-	- [ ] Incorporar Google Maps iFrame com localização
+	- [x] Incorporar Google Maps iFrame com localização
 	- [x] Incorporar Recaptcha para submissão de formulário
-- [ ] Adicionar anchor to the top
+- [x] Adicionar anchor to the top
 - [x] Adicionar seletor de lingua (PT ou EN) em dropdown
 - [x] Melhorar o alinhamento do footer-bottom
-- [ ] Verificar e corrigir responsividade para modo Tablet/Telefone
 - [x] Adicionar páginas de Politica de Privacidade e Termos de Utilização
 - [ ] Melhorar página de Criar Conta
 	- [ ] (OPCIONAL) Incorporar Recaptcha para submissão de formulário
 	- [x] Aplicar validação de campos (password e re-password) com JS / JQuery
-- [ ] (OPCIONAL) Adicionar "loader animation" ao arrancar qualquer página
+- [x] (OPCIONAL) Adicionar "loader animation" ao arrancar qualquer página
 
 ### Todo - Backoffice (paineis - global)
 

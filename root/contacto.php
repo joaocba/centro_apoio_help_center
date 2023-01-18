@@ -11,6 +11,13 @@ include('./components/landing/lang/settings.php');
 
 <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
+        <!-- Animação Preloader -->
+        <div id="loading">
+                <div id="loading-image" class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+        </div>
+
         <!-- Menu Topo -->
         <?php include('./components/landing/topnav-landing.php'); ?>
 
@@ -33,7 +40,6 @@ include('./components/landing/lang/settings.php');
         <!-- FORMULARIO CONTACTO-->
         <section id="contacto_form" class="py-5">
             <div class="container px-5">
-                <!-- Contact form-->
                 <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
                     <div class="text-center mb-5">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
@@ -41,7 +47,12 @@ include('./components/landing/lang/settings.php');
                         <p class="lead fw-normal text-muted mb-0"><?php echo $lang['c_form_subtitle']; ?></p>
                     </div>
                     <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-8 col-xl-6">
+                        <!-- iFrame Google Maps -->
+                        <div class="col-lg-6 col-xl-6">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12418.522106128452!2d-9.0271713!3d38.9095636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5723af7a2a65cce2!2sOneshop%20Mazda!5e0!3m2!1spt-PT!2spt!4v1674068918058!5m2!1spt-PT!2spt" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                        <!-- Campos de contacto -->
+                        <div class="col-lg-6 col-xl-6">
                             <form id="contactForm" method="POST" action="./components/forms/contact.php" role="form">
                                 <!-- NOME -->
                                 <div class="form-floating mb-3">
