@@ -45,8 +45,10 @@ if ($result->num_rows > 0) {
 if (isset($_POST['submit'])) {
     //vars associadas ao formulario
     $categoria = $_POST['categoria'];
-    $assunto = $_POST['assunto'];
-    $message = $_POST['message'];
+    //$assunto = $_POST["assunto"];
+    //$message = $_POST["Message"];
+    $message = mysqli_real_escape_string($dbconn, $_POST["message"]);
+    $assunto = mysqli_real_escape_string($dbconn, $_POST["assunto"]);
 
     //Passar dados de assunto para variavel de sessao
     $_SESSION['tkt_categoria'] = $categoria;

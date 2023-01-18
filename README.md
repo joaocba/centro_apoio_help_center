@@ -12,11 +12,15 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 ### Critério de avaliação PWEB
 
 - [ ] POO
+	- [ ] class DB - ligar a base de dados
+	- [ ] class utilizador - no login e criação de conta ??
 - [ ] PHP Mailer
+	- [x] pagina contacto.php - sistema incorporado de mail com recaptcha
+	- [ ] teste requer hospedagem online
 - [x] CRUD
 - [x] BD
-- [ ] Internacionalização
-- [ ] Validação de formulários com JS ou JQuery
+- [x] Internacionalização
+- [x] Validação de formulários com JS ou JQuery
 - [x] Bootstrap
 - [ ] Hospedagem online
 

@@ -67,7 +67,7 @@ if (isset($_POST['submit'])) {
     if ($inset) {
         $success = 'Perfil atualizado com sucesso para o cliente ' . $nome . ' ' . $apelido;
 
-        header('Location: ./global-panel/perfil.php?status=updated');
+        header('Location: ../global-panel/perfil.php?status=updated');
     } else {
         $error = 'Não foi possivel atualizar o perfil, por favor tente mais tarde';
     }

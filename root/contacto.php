@@ -42,44 +42,51 @@ include('./components/landing/lang/settings.php');
                     </div>
                     <div class="row gx-5 justify-content-center">
                         <div class="col-lg-8 col-xl-6">
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                            <form id="contactForm" method="POST" action="./components/forms/contact.php" role="form">
                                 <!-- NOME -->
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                    <label for="name"><?php echo $lang['c_form_input_nome1']; ?></label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required"><?php echo $lang['c_form_input_nome2']; ?></div>
+                                    <input class="form-control" id="form_name" type="text" name="name" required="required" data-error="Deve inserir o nome" placeholder="">
+                                    <label for="form_name"><?php echo $lang['c_form_input_nome1']; ?></label>
                                 </div>
                                 <!-- EMAIL -->
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                    <label for="email"><?php echo $lang['c_form_input_email1']; ?></label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required"><?php echo $lang['c_form_input_email2']; ?></div>
-                                    <div class="invalid-feedback" data-sb-feedback="email:email"><?php echo $lang['c_form_input_email3']; ?></div>
+                                    <input class="form-control" id="form_email" type="email" name="email" required="required" data-error="Deve inserir um email válido" placeholder="">
+                                    <label for="form_email"><?php echo $lang['c_form_input_email1']; ?></label>
                                 </div>
                                 <!-- TELEFONE -->
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                    <label for="phone"><?php echo $lang['c_form_input_telefone1']; ?></label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required"><?php echo $lang['c_form_input_telefone2']; ?></div>
+                                    <input class="form-control" id="form_tel" type="tel" name="tel" required="required" data-error="Deve inserir um número de telefone" placeholder="">
+                                    <label for="form_tel"><?php echo $lang['c_form_input_telefone1']; ?></label>
                                 </div>
                                 <!-- MENSAGEM -->
                                 <div class="form-floating mb-3">
-                                    <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                    <label for="message"><?php echo $lang['c_form_input_mensagem1']; ?></label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required"><?php echo $lang['c_form_input_mensagem2']; ?></div>
+                                    <textarea class="form-control" id="form_message" type="text" name="message" style="height: 10rem" required="required" data-error="Deve inserir uma mensagem" placeholder=""></textarea>
+                                    <label for="form_message"><?php echo $lang['c_form_input_mensagem1']; ?></label>
                                 </div>
+
+
+                                <!-- ?? -->
                                 <div class="d-none" id="submitSuccessMessage">
                                     <div class="text-center mb-3">
                                         <div class="fw-bolder"><?php echo $lang['c_form_input_valid_ok']; ?></div>
-                                        <br />
-                                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
                                     </div>
                                 </div>
                                 <div class="d-none" id="submitErrorMessage">
                                     <div class="text-center text-danger mb-3"><?php echo $lang['c_form_input_valid_erro']; ?></div>
                                 </div>
+
+
+                                <!-- Google reCAPTCHA V2 -->
+                                <div class="col-md-12 my-3">
+                                    <div class="form-group">
+                                        <div class="g-recaptcha" data-sitekey="6LcQigckAAAAAJNuMFgj5WnDtW0MXkt40v2mW8y6"></div>
+                                    </div>
+                                </div>
+
                                 <!-- SUBMETER -->
-                                <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit"><?php echo $lang['c_form_input_button']; ?></button></div>
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit"><?php echo $lang['c_form_input_button']; ?></button>
+                                </div>
                             </form>
                         </div>
                     </div>
@@ -121,3 +128,10 @@ include('./components/landing/lang/settings.php');
 </body>
 
 </html>
+
+
+<!-- Form Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="./components/forms/contact.js"></script>
