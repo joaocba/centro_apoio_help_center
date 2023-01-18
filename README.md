@@ -18,8 +18,8 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 	- [ ] teste requer hospedagem online
 - [x] CRUD
 - [x] BD
-- [ ] Internacionalização
-	- [x] paginas de langs criadas
+- [ ] Internacionalização (landing page apenas)
+	- [x] paginas de langs criadas (PT-PT, EN-US, FR-FR, ES-SP)
 	- [ ] finalizar traduções
 - [x] Validação de formulários com JS ou JQuery
 	- [x] aplicado em criar-conta.php
