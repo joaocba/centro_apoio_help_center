@@ -117,7 +117,7 @@ include('./components/landing/lang/settings.php');
                     <p class="lead fw-normal text-muted mb-0"><?php echo $lang['h_features_subtitle']; ?></p>
                 </div>
                 <div class="row gx-5">
-                    <div class="col-lg-6 align-items-stretch order-1 order-lg-2 logo" style="background-image: url(&quot;./assets/img/landing/features.png&quot;);">&nbsp;</div>
+                    <div id="feature_image" class="col-lg-6 align-items-stretch order-1 order-lg-2 logo">&nbsp;</div>
                     <div class="col-lg-6 align-items-stretch order-2 order-lg-2">
                         <div class="row gx-5 row-cols-1 row-cols-md-2">
                             <div class="col mb-5 h-100">
@@ -323,6 +323,9 @@ include('./components/landing/lang/settings.php');
         </section>
 
         <!-- FIM CONTEUDO -->
+
+        <!-- Scroll To Top -->
+        <?php include('components/scroll-to-top.php'); ?>
     </main>
 
     <!-- Footer -->

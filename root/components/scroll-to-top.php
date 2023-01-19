@@ -1,4 +1,4 @@
-<!-- Botão To the Top -->
+<!-- Button -->
 <button type="button" class="btn btn-primary btn-floating rounded-circle opacity-75" id="btn-back-to-top">
     <i class="bi bi-arrow-up"></i>
 </button>
@@ -7,7 +7,7 @@
     //Get the button
     let mybutton = document.getElementById("btn-back-to-top");
 
-    // When the user scrolls down 20px from the top of the document, show the button
+    // When the user scrolls down 50px from the top of the document, show the button
     window.onscroll = function() {
         scrollFunction();
     };
@@ -22,6 +22,7 @@
             mybutton.style.display = "none";
         }
     }
+
     // When the user clicks on the button, scroll to the top of the document
     mybutton.addEventListener("click", backToTop);
 

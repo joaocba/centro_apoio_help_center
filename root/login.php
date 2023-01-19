@@ -114,8 +114,8 @@ if (isset($_POST['email'])) {
     <div class="bg-light d-flex align-items-center vh-100">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-12 col-md-5">
-                    <div class="card shadow mb-5 bg-body rounded">
+                <div class="col-auto">
+                    <div class="card shadow mb-5 bg-body rounded-3">
                         <div class="card-body">
                             <form method="POST">
 
@@ -139,7 +139,10 @@ if (isset($_POST['email'])) {
                                 }
                                 ?>
 
-                                <h1 class="text-center mt-4">Iniciar sessão</h1>
+                                <div>
+                                    <img class="mx-auto d-block" src="./assets/img/logos/logof.png" width="200px" alt="">
+                                </div>
+                                <h1 class="text-center mt-2">Iniciar sessão</h1>
                                 <div class="m-4">
                                     <div class="input-group mt-5 mb-3">
                                         <!--<label class="form-label">Email</label>-->

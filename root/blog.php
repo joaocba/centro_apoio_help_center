@@ -49,14 +49,10 @@ include('./components/landing/lang/settings.php');
                                     <div class="badge bg-primary bg-gradient rounded-pill mb-2"><?php echo $lang['b_header_badge']; ?></div>
                                     <div class="h2 fw-bolder"><?php echo $lang['b_header_title']; ?></div>
                                     <p><?php echo $lang['b_header_desc']; ?></p>
-                                    <a class="stretched-link text-decoration-none" href="#!">
-                                        <?php echo $lang['b_header_button']; ?>
-                                        <i class="bi bi-arrow-right"></i>
-                                    </a>
                                 </div>
                             </div>
                             <div class="col-lg-6 col-xl-7">
-                                <div class="bg-featured-blog"><iframe width="700" height="450" border-radius:10px src="https://www.youtube.com/embed/m_kD9-JVWm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                                <div class="bg-featured-blog"><iframe width="100%" height="100%" border-radius:10px src="https://www.youtube.com/embed/m_kD9-JVWm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                             </div>
                         </div>
                     </div>
@@ -208,6 +204,9 @@ include('./components/landing/lang/settings.php');
         </section>
 
         <!-- FIM CONTEUDO -->
+
+        <!-- Scroll To Top -->
+        <?php include('components/scroll-to-top.php'); ?>
     </main>
 
     <!-- Footer -->

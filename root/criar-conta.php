@@ -64,11 +64,11 @@ if (isset($_POST['submit'])) {
 
 <body>
     <!-- FORMULARIO CRIAR CONTA -->
-    <div class="bg-light d-flex align-items-center vh-100">
+    <div class="bg-light d-flex align-items-center">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-10 col-md-8">
-                    <div class="card shadow mb-5 bg-body rounded">
+                <div class="col-auto">
+                    <div class="card shadow my-3 bg-body rounded">
                         <div class="card-body">
                             <form method="POST" class="needs-validation" onSubmit="return validate();">
                                 <h1>Criar conta</h1>

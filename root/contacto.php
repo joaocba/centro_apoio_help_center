@@ -39,7 +39,7 @@ include('./components/landing/lang/settings.php');
 
         <!-- FORMULARIO CONTACTO-->
         <section id="contacto_form" class="py-5">
-            <div class="container px-5">
+            <div class="container">
                 <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
                     <div class="text-center mb-5">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
@@ -47,10 +47,12 @@ include('./components/landing/lang/settings.php');
                         <p class="lead fw-normal text-muted mb-0"><?php echo $lang['c_form_subtitle']; ?></p>
                     </div>
                     <div class="row gx-5 justify-content-center">
+
                         <!-- iFrame Google Maps -->
-                        <div class="col-lg-6 col-xl-6">
+                        <div class="col-lg-6 col-xl-6 d-none d-xl-block">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12418.522106128452!2d-9.0271713!3d38.9095636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5723af7a2a65cce2!2sOneshop%20Mazda!5e0!3m2!1spt-PT!2spt!4v1674068918058!5m2!1spt-PT!2spt" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
+
                         <!-- Campos de contacto -->
                         <div class="col-lg-6 col-xl-6">
                             <form id="contactForm" method="POST" action="./components/forms/contact.php" role="form">
@@ -103,23 +105,23 @@ include('./components/landing/lang/settings.php');
                     </div>
                 </div>
                 <!-- CARDS -->
-                <div class="row gx-5 row-cols-2 row-cols-lg-4 py-5">
-                    <div class="col">
+                <div class="row gx-5 row-cols-1 row-cols-lg-4 py-5">
+                    <div class="col mb-4 mb-lg-0">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-chat-dots"></i></div>
                         <div class="h5 mb-2"><?php echo $lang['c_cards_box1_title']; ?></div>
                         <p class="text-muted mb-0"><?php echo $lang['c_cards_box1_subtitle']; ?></p>
                     </div>
-                    <div class="col">
+                    <div class="col mb-4 mb-lg-0">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-people"></i></div>
                         <div class="h5"><?php echo $lang['c_cards_box2_title']; ?></div>
                         <p class="text-muted mb-0"><?php echo $lang['c_cards_box2_subtitle']; ?></p>
                     </div>
-                    <div class="col">
+                    <div class="col mb-4 mb-lg-0">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-question-circle"></i></div>
                         <div class="h5"><?php echo $lang['c_cards_box3_title']; ?></div>
                         <p class="text-muted mb-0"><?php echo $lang['c_cards_box3_subtitle']; ?></p>
                     </div>
-                    <div class="col">
+                    <div class="col mb-4 mb-lg-0">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-telephone"></i></div>
                         <div class="h5"><?php echo $lang['c_cards_box4_title']; ?></div>
                         <p class="text-muted mb-0"><?php echo $lang['c_cards_box4_subtitle']; ?></p>
@@ -129,6 +131,9 @@ include('./components/landing/lang/settings.php');
         </section>
 
         <!-- FIM CONTEUDO -->
+
+        <!-- Scroll To Top -->
+        <?php include('components/scroll-to-top.php'); ?>
     </main>
 
     <!-- Footer -->

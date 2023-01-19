@@ -23,9 +23,9 @@ include('./components/landing/lang/settings.php');
 
         <!-- INICIO CONTEUDO -->
 
-        <!-- FINALIDADE -->
+        <!-- POLITICA DE PRIVACIDADE -->
         <section class="py-5">
-            <div class="container px-5">
+            <div class="container px-0 px-lg-5">
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12">
                         <div class="m-5" style="text-align: justify; text-justify: inter-word;">
@@ -37,6 +37,9 @@ include('./components/landing/lang/settings.php');
         </section>
 
         <!-- FIM CONTEUDO -->
+
+        <!-- Scroll To Top -->
+        <?php include('components/scroll-to-top.php'); ?>
     </main>
 
     <!-- Footer -->
@@ -48,9 +51,9 @@ include('./components/landing/lang/settings.php');
                     <div class="small m-0 text-white">&copy; Copyright 2022-<script>document.write(new Date().getFullYear())</script>, Centro de Apoio</div>
                 </div>
                 <div class="col-auto">
-                    <a class="link-light small" href="#!"><?php echo $lang['footer_privacy']; ?></a>
+                    <a class="link-light small" href="./privacidade.php<?= $_SESSION['lang_set'] ?>"><?php echo $lang['footer_privacy']; ?></a>
                     <span class="text-white mx-1">&middot;</span>
-                    <a class="link-light small" href="#!"><?php echo $lang['footer_terms']; ?></a>
+                    <a class="link-light small" href="./termos.php<?= $_SESSION['lang_set'] ?>"><?php echo $lang['footer_terms']; ?></a>
                     <span class="text-white mx-1">&middot;</span>
                     <a class="link-light small" href="contacto.php<?= $_SESSION['lang_set'] ?>"><?php echo $lang['footer_contacto']; ?></a>
                 </div>

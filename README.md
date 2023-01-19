@@ -36,7 +36,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 ## DEV
 ### Todo - Landing Page
 
-- [ ] Verificar e corrigir responsividade para modo Tablet/Telefone
+- [x] Verificar e corrigir responsividade para modo Tablet/Telefone
 - [x] Fazer textos de páginas em falta
 	- [x] Politica de Privacidade
 	- [x] Termos

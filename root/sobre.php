@@ -77,6 +77,9 @@ include('./components/landing/lang/settings.php');
         </section>
 
         <!-- FIM CONTEUDO -->
+
+        <!-- Scroll To Top -->
+        <?php include('components/scroll-to-top.php'); ?>
     </main>
 
     <!-- Footer -->
