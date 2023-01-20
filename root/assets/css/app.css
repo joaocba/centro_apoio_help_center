@@ -55,6 +55,17 @@
 #############################*/
 
 
+/* GLOBAL PANEL - TOPNAV*/
+#global_panel_topnav {
+    transition: all 0.5s;
+    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+}
+
+
+/*#############################
+#############################*/
+
+
 /* LANDING PAGE - GLOBAL */
 /* Button to the top */
 #btn-back-to-top {

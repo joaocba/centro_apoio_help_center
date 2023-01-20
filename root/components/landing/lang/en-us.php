@@ -12,181 +12,183 @@ $lang=array(
 
 	//PAGINA HOME
     //HOME > BANNER
-	'h_banner_title' => 'Bem-vindo ao centro de apoio',
-	'h_banner_subtitle' => 'Siga os seus pedidos de apoio no painel de cliente',
-	'h_banner_link' => 'Acesso ao Painel',
+	'h_banner_title' => 'Welcome to Centro de Apoio',
+	'h_banner_subtitle' => 'Follow your support requests in the Customer Dashboards',
+	'h_banner_link' => 'Dashboard access',
 
-    //HOME > SOBRE
-	'h_sobre_title' => 'Objectivo do projecto',
-	'h_sobre_desc' => 'Planear e desenvolver uma Web App orientada ao apoio cliente introduzindo paineis de funcionalidades com base num sistema de Ticketing integrando uma Knowledge Base que responde de forma automática perante o formulário de apoio preenchido pelo cliente',
-	'h_sobre_link' => 'Saber mais',
+    //HOME > ABOUT
+	'h_sobre_title' => 'Projects objectives',
+	'h_sobre_desc' => 'Plan and develop a customer support-oriented Web App. It introduces feature dashboards based on a ticketing system, integrated a Knownledge Base that responds automatically to the support form completed by the customer.',
+	'h_sobre_link' => 'Know more',
 
 	//HOME > TEAM
-	'h_team_title' => 'A Equipa',
-	'h_team_subtitle' => 'Dedicados à qualidade e sucesso',
+	'h_team_title' => 'Projects team',
+	'h_team_subtitle' => 'Fully dedicated to quality and success',
 
-	//HOME > FUNCIONALIDADES
-	'h_features_title' => 'Funcionalidades',
+	//HOME > FUNCTIONALITIES
+	'h_features_title' => 'Functionalities',
     'h_features_subtitle' => 'da Web App Centro de Apoio',
 
-    'h_features_feature1_title' => 'Criação de pedidos de apoio',
-    'h_features_feature1_subtitle' => 'O cliente pode criar um pedido de apoio e interagir com o agente em formato de chat',
+    'h_features_feature1_title' => 'Create supprot tickets',
+    'h_features_feature1_subtitle' => 'The customer can create a support request (ticket) and interact with the agent in a chat format. ',
 
-	'h_features_feature2_title' => 'Gestão de pedidos de apoio',
-    'h_features_feature2_subtitle' => 'O agente pode gerir e responder aos pedidos de apoio dos clientes',
+	'h_features_feature2_title' => 'Ticket management',
+    'h_features_feature2_subtitle' => 'The agent can manage and respond to customer support requests',
 
-    'h_features_feature3_title' => 'Administração do centro de apoio',
-    'h_features_feature3_subtitle' => 'O painel de administrador permite uma gestão de clientes, agentes e knowledge base',
+    'h_features_feature3_title' => 'Centro de Apoios administration',
+    'h_features_feature3_subtitle' => 'The Admin Dashboard allows to manage customers, agents, and the Knowledge Base. ',
 
-    'h_features_feature4_title' => 'Knowledge Base integrada',
-    'h_features_feature4_subtitle' => 'O cliente pode aceder aos artigos disponiveis na knowledge base para uma resolução mais eficiente dos problemas apresentados',
+    'h_features_feature4_title' => 'Integrated Knowledge Base',
+    'h_features_feature4_subtitle' => 'The customer can access the articles available in the Knowledge Base for a more efficient problem resolution.',
 
 	//HOME > FAQ
-	'h_faq_title' => 'Perguntas Frequentes',
-    'h_faq_subtitle' => 'Como o podemos ajudar?',
-    'h_faq_category' => 'Apoio Tecnico',
-    'h_faq_faq1_title' => 'Como posso criar um pedido de apoio?',
-    'h_faq_faq1_desc' => 'Entre no Painel de Cliente (precisa ter uma conta registada) e escolha a opcao <strong>Criar Ticket</strong>, preencha os campos do formulario e a descricao do problema',
-	'h_faq_faq2_title' => 'Quanto tempo devo aguardar após submeter um ticket? A resposta é automática?',
-	'h_faq_faq2_desc' => 'Dependendo do tipo de serviço solicitado, irá receber uma resposta automática com os detalhes do seu pedido e o tempo máximo previsto de resolução.',
-	'h_faq_faq3_title' => 'Posso ver os pedidos que criei e o seu estado?', 'h_faq_faq3_desc' => '<strong>Sim!</strong>
-                                        Atraves do Painel de Cliente pode criar e ver o estado dos seus pedidos de ajuda, pode tambem deixar as suas respostas e visualizar as respostas dos nossos agentes.',
-	'h_faq_questions' => 'Tem mais questoes?',
-	'h_faq_follow' => 'Siga-nos',
-	'h_faq_questions_link' => 'Contacte-nos',
+	'h_faq_title' => 'Frequently asked questions',
+    'h_faq_subtitle' => 'How can we help?',
+    'h_faq_category' => 'Technical support',
+    'h_faq_faq1_title' => 'How can I submit a ticket?',
+    'h_faq_faq1_desc' => 'Enter the Customer Dashboard (you need to have a registered account) and choose the option <strong>Create Ticket</strong>, then fill in all form fields and description of the support request/problem.',
+	'h_faq_faq2_title' => 'How long should I wait after submitting a ticket? Is the answer automatic?',
+	'h_faq_faq2_desc' => 'Depending on the type of service requested, you will receive an automatic response with the details of your request and the expected maximum time for resolution.',
+	'h_faq_faq3_title' => 'Can I access all my tickets and their status?', 'h_faq_faq3_desc' => '<strong>Yes!</strong>
+                                        Through the customer dashboard you can create a new ticket and view the status of all the previously submitted ones. You can also leave your answers and view the responses of our agents.',
+	'h_faq_questions' => 'Any more questions?',
+	'h_faq_follow' => 'Follow us',
+	'h_faq_questions_link' => 'Contact us',
 
 	//HOME > BLOG
-	'h_blog_title' => 'Do nosso Blog',
-	'h_blog_subtitle' => 'Últimas noticias inseridas no blog',
+	'h_blog_title' => 'Our Blog',
+	'h_blog_subtitle' => 'Lastest updates on our Blog',
 
-	'h_blog_badge1' => 'Sistema',
-    'h_blog_title1' => 'Novas funcionalidades',
-    'h_blog_desc1' => 'Introduzimos novas funcionalidades na nossa web app',
+	'h_blog_badge1' => 'System',
+    'h_blog_title1' => 'New functionalities',
+    'h_blog_desc1' => 'Introducing new functionalities to our Web App',
 	'h_blog_author1' => 'Daniel Pereira',
-    'h_blog_date1' => '12 Janeiro, 2023 &middot; 6 min leitura',
+    'h_blog_date1' => '12 January, 2023 &middot; 6 min leitura',
 
-	'h_blog_badge2' => 'Noticias',
-    'h_blog_title2' => 'Formação disponivel',
-    'h_blog_desc2' => 'Nova formação disponivel em cibersegurança para colaboradores',
+	'h_blog_badge2' => 'News',
+    'h_blog_title2' => 'Training available',
+    'h_blog_desc2' => 'New training on cybersecurity available for employees.',
 	'h_blog_author2' => 'Daniel Pereira',
-    'h_blog_date2' => '16 Dezembro, 2022 &middot; 10 min leitura',
+    'h_blog_date2' => '16 December, 2022 &middot; 10 min leitura',
 
-	'h_blog_badge3' => 'Noticias',
-    'h_blog_title3' => 'App Movel',
-    'h_blog_desc3' => 'A nossa app movel encontra-se em desenvolvimento, esteja a par das novidades',
+	'h_blog_badge3' => 'News',
+    'h_blog_title3' => 'Mobile App',
+    'h_blog_desc3' => 'Our mobile app is under development, be aware of the news',
 	'h_blog_author3' => 'Daniel Pereira',
-    'h_blog_date3' => '5 Dezembro, 2022 &middot; 2 min leitura',
+    'h_blog_date3' => '5 December, 2022 &middot; 2 min leitura',
 
 	//HOME > NEWSLETTER
-	'h_newsletter_title' => 'Fique atento às novidades',
-    'h_newsletter_subtitle' => 'Receba a newsletter com as últimas noticias e atualizações',
-    'h_newsletter_input_email' => 'Insira o seu email',
-    'h_newsletter_input_btn' => 'Subscrever',
-    'h_newsletter_input_desc' => 'Ao subscrever concordo com as nossa politicas de privacidade.',
+	'h_newsletter_title' => 'Stay tuned for news and updates.',
+    'h_newsletter_subtitle' => 'Sign up for our newsletter with the latest news and updates.',
+    'h_newsletter_input_email' => 'Enter your email',
+    'h_newsletter_input_btn' => 'Subscribe',
+    'h_newsletter_input_desc' => 'By subscribing, I agree with the privacy policy.',
 
 
 	//FOOTER
-	'footer_links' => 'Links Úteis',
-	'footer_inicio' => 'Inicio',
-	'footer_sobre' => 'Sobre',
+	'footer_links' => 'Useful Links',
+	'footer_inicio' => 'Home',
+	'footer_sobre' => 'About',
 	'footer_blog' => 'Blog',
-	'footer_contacto' => 'Contacto',
+	'footer_contacto' => 'Contact',
 	'footer_login' => 'Login',
 
-	'footer_servicos' => 'Os nosso serviços',
-	'footer_servico1' => 'Apoio Técnico',
-	'footer_servico2' => 'Resposta a Incidentes',
-	'footer_servico3' => 'Segurança Informática',
-	'footer_servico4' => 'Hardware e Equipamento',
-	'footer_servico5' => 'Formação',
+	'footer_servicos' => 'Our services',
+	'footer_servico1' => 'Technical support',
+	'footer_servico2' => 'Incident response',
+	'footer_servico3' => 'It security',
+	'footer_servico4' => 'Hardware and equipment',
+	'footer_servico5' => 'Training',
 
-	'footer_social' => 'Redes sociais',
-	'footer_social_sub' => 'Siga-nos e subscreva',
+	'footer_social' => 'Social media',
+	'footer_social_sub' => 'Follow us and subscribe',
 
-	'footer_privacy' => 'Politica de Privacidade',
-    'footer_terms' => 'Termos de Utilização',
+	'footer_privacy' => 'Privacy Policy',
+    'footer_terms' => 'Terms and conditions of use',
 
 
 	//PAGINA SOBRE
 	//SOBRE > BANNER
-	's_banner_title' => 'Sobre',
-    's_banner_subtitle' => 'Quem somos',
+	's_banner_title' => 'About',
+    's_banner_subtitle' => 'Who are we?',
 
 	//SOBRE > FINALIDADE
-	's_finalidade_title' => 'Qual a finalidade do Projecto?',
-    's_finalidade_desc' => 'Este Projeto teve como finalidade planear e desenvolver uma Web App orientada ao apoio cliente, com a integração de três cadeiras, Gestão de Projetos, integração de sistemas de informação, Programação para web.',
+	's_finalidade_title' => 'What is the projects main purpose?',
+    's_finalidade_desc' => 'This project aimed to plan and develop a Web App designed for customer support, with the integration of three subjects: Project management, integration of information systems, and web programming.',
 
 	//SOBRE > PARTE 1
-	's_sobre_title1' => 'Objectivo Do Projecto',
-    's_sobre_desc1' => 'Este Projeto teve como objetivo, dar apoio a empresas através de uma aplicação web. De modo a ajudar a equipa de IT a fazer toda a gestão de problemas existentes na empresa que por vezes vem de diversos meios. O grande objetivo é centralizar toda a informação em uma só plataforma.',
+	's_sobre_title1' => 'Projects objective',
+    's_sobre_desc1' => 'This project aims to support companies through a Web Application. The goal is to support the IT team with the management of exisiting problemas in the company that sometimes come from different communications means, The main objective is to centralize all support information on a single platform.',
 
 	//SOBRE > PARTE 2
-	's_sobre_title2' => 'Web App &amp; Funcionalidades',
-    's_sobre_desc2' => 'Esta Web App esta desenhada para ter três modos de gestão, como Administradores, Agentes e Clientes. Introduziu-se painéis de funcionalidades com base num sistema de Tickting integrando, uma Knowledge Base que responde de forma automática perante o formulário de apoio preenchido pelo cliente.',
+	's_sobre_title2' => 'Web App &amp; Functionalities',
+    's_sobre_desc2' => 'This Web App is designed to have three management profiles: Admins, Agents and Customers. All feature dashboards were introduced based on a ticketing system integrating a knowlage base that responds automatically to the support form (ticket) sumitted by the customer.',
 
 
 	//PAGINA BLOG
 	//BLOG > BANNER
 	'b_banner_title' => 'Blog',
-    'b_banner_subtitle' => 'Saiba tudo sobre as últimas novidades',
+    'b_banner_subtitle' => 'Find out about our latest news and updates',
 
 	//BLOG > HEADER
-	'b_header_badge' => 'Noticias',
-    'b_header_title' => 'Como funciona o helpdesk',
-    'b_header_desc' => 'Helpdesk é um trabalho na area de IT que serve para dar apoio aos utilizadores de computadores, de uma empresa...',
+	'b_header_badge' => 'News',
+    'b_header_title' => 'Helpdesk: how it works?',
+    'b_header_desc' => 'Helpdesk is an IT area that serves to support computer users of a company...',
     'b_header_button' => 'Read more',
 
 	//BLOG > NOVIDADES
-	'b_novidades_title' => 'Novidades futuras',
-    'b_novidades_date1' => 'janeiro 12, 2023',
-    'b_novidades_subtitle1' => 'Recebe as respostas dos tecnicos, aos teus tickets, via SMS',
-	'b_novidades_date2' => 'janeiro 5, 2023',
-    'b_novidades_subtitle2' => 'Novos Artigos knowledgebase, a partir de Maio!',
-	'b_novidades_date3' => 'Dezembro 22, 2022',
-    'b_novidades_subtitle3' => 'Customisa as cores do teu perfil',
-	'b_novidades_button' => 'Ler mais',
-	'b_novidades_questions' => 'Tem mais questoes?',
-	'b_novidades_follow' => 'Siga-nos',
-	'b_novidades_questions_link' => 'Contacte-nos',
+	'b_novidades_title' => 'Future news',
+    'b_novidades_date1' => 'january 12, 2023',
+    'b_novidades_subtitle1' => 'Receive all technical responses to your tickets via SMS.',
+	'b_novidades_date2' => 'january 5, 2023',
+    'b_novidades_subtitle2' => 'New knowledgebase articles, starting in May!',
+	'b_novidades_date3' => 'December 22, 2022',
+    'b_novidades_subtitle3' => 'Customize your dashboard colours',
+	'b_novidades_button' => 'Read more',
+	'b_novidades_questions' => 'Any more questions?',
+	'b_novidades_follow' => 'Follow us',
+	'b_novidades_questions_link' => 'Contact us',
 
 	//BLOG > PREVIEW
-	'b_preview_showmore' => 'Mais artigos do nosso blog',
+	'b_preview_showmore' => 'More articles from our Blog',
 
 
 	//PAGINA CONTACTO
 	//CONTACTO > BANNER
-	'c_banner_title' => 'Contacte-nos',
-    'c_banner_subtitle' => 'Para qualquer duvida ou questão',
+	'c_banner_title' => 'Contact us',
+    'c_banner_subtitle' => 'With any questions or concerns',
 
 	//CONTACTO > FORMULARIO
-	'c_form_title' => 'Alguma dúvida ou questão não hesites!',
-    'c_form_subtitle' => 'Queremos a tua opinião',
+	'c_form_title' => 'Any questions or concerns dont hesitate!',
+    'c_form_subtitle' => 'We want your opinion',
 
-	'c_form_input_nome1' => 'Nome Completo',
-    'c_form_input_nome2' => 'Nome é obrigatório',
+	'c_form_input_nome1' => 'Full name',
+    'c_form_input_nome2' => 'Name is compulsory',
 
-	'c_form_input_email1' => 'Endereço de Email',
-	'c_form_input_email2' => 'Email é obrigatório',
-	'c_form_input_email3' => 'Email não é válido',
+	'c_form_input_email1' => 'Email address',
+	'c_form_input_email2' => 'Email is compulsory',
+	'c_form_input_email3' => 'Email not valid',
 
-	'c_form_input_telefone1' => 'Numero de telefone',
-    'c_form_input_telefone2' => 'o numero de telefone é obrigatório',
+	'c_form_input_telefone1' => 'Mobile number',
+    'c_form_input_telefone2' => 'Mobile number is compulsory',
 
-	'c_form_input_mensagem1' => 'Messagem',
-    'c_form_input_mensagem2' => 'A mensagem é obrigatória',
+	'c_form_input_mensagem1' => 'Message',
+    'c_form_input_mensagem2' => 'Message is compulsory',
 
-	'c_form_input_valid_ok' => 'Formulario submetido com sucesso!',
-    'c_form_input_valid_erro' => 'Erro ao enviar mensagem!',
-    'c_form_input_button' => 'Submeter',
+	'c_form_input_valid_ok' => 'Form submitted successfully!',
+    'c_form_input_valid_erro' => 'Sending error!',
+    'c_form_input_button' => 'Submit',
 
-	'c_cards_box1_title' => 'Envia-nos Email',
-    'c_cards_box1_subtitle' => 'Se tiveres alguma duvida ou questão contacta-nos.',
+	'c_cards_box1_title' => 'Email us',
+    'c_cards_box1_subtitle' => 'Conta us with any questions or concerns.',
     'c_cards_box2_title' => 'Blog',
-    'c_cards_box2_subtitle' => 'Verifica todas as novidades no nosso blog.',
-    'c_cards_box3_title' => 'Perguntas Frequentes',
-    'c_cards_box3_subtitle' => 'Verifica algumas das perguntas ferquentes dos nosso clientes.',
-    'c_cards_box4_title' => 'Liga-nos!',
-    'c_cards_box4_subtitle' => 'Liga-nos durante o periodo normal de trabalho, para (+351) 760 200 300',
+    'c_cards_box2_subtitle' => 'Follow all news and updates on our Blog.',
+    'c_cards_box3_title' => 'Frequently asked questions',
+    'c_cards_box3_subtitle' => 'Check some of our customers frequently asked questions',
+    'c_cards_box4_title' => 'Call us!',
+    'c_cards_box4_subtitle' => 'Call us, during working hours, on the number (+351) 760 200 300',
+
+
 
 
 

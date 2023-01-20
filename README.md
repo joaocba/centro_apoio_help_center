@@ -18,9 +18,9 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 	- [ ] teste requer hospedagem online
 - [x] CRUD
 - [x] BD
-- [ ] Internacionalização (landing page apenas)
+- [x] Internacionalização (landing page apenas)
 	- [x] paginas de langs criadas (PT-PT, EN-US, FR-FR, ES-SP)
-	- [ ] finalizar traduções
+	- [x] finalizar traduções
 - [x] Validação de formulários com JS ou JQuery
 	- [x] aplicado em criar-conta.php
 - [x] Bootstrap
@@ -64,6 +64,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 ### Todo - Painel Cliente
 
 - [ ] Melhorar design de página Ticket
+- [ ] Incorporar anexos em criar ticket
 
 ### Todo - Painel Agente
 

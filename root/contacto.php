@@ -50,7 +50,7 @@ include('./components/landing/lang/settings.php');
 
                         <!-- iFrame Google Maps -->
                         <div class="col-lg-6 col-xl-6 d-none d-xl-block">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12418.522106128452!2d-9.0271713!3d38.9095636!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x5723af7a2a65cce2!2sOneshop%20Mazda!5e0!3m2!1spt-PT!2spt!4v1674068918058!5m2!1spt-PT!2spt" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12418.512483862733!2d-9.0270321!3d38.9096186!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x80178deaa067712!2sFord%20Trucks!5e0!3m2!1spt-PT!2spt!4v1674154771859!5m2!1spt-PT!2spt" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
 
                         <!-- Campos de contacto -->
@@ -141,6 +141,10 @@ include('./components/landing/lang/settings.php');
 
     <!-- PAGE BOTTOM -->
     <?php include('./components/page-bottom.php'); ?>
+
+    <!-- Page Preloader -->
+    <?php include('./components/page-preloader.php'); ?>
+
 </body>
 
 </html>

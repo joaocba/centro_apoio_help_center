@@ -52,7 +52,7 @@ include('./components/landing/lang/settings.php');
                                 </div>
                             </div>
                             <div class="col-lg-6 col-xl-7">
-                                <div class="bg-featured-blog"><iframe width="100%" height="100%" border-radius:10px src="https://www.youtube.com/embed/m_kD9-JVWm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                                <div class="bg-featured-blog p-3 rounded-3"><iframe width="100%" height="100%" style="border-radius:10px;" src="https://www.youtube.com/embed/m_kD9-JVWm4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
                             </div>
                         </div>
                     </div>
@@ -214,6 +214,10 @@ include('./components/landing/lang/settings.php');
 
     <!-- PAGE BOTTOM -->
     <?php include('./components/page-bottom.php'); ?>
+
+    <!-- Page Preloader -->
+    <?php include('./components/page-preloader.php'); ?>
+
 </body>
 
 </html>

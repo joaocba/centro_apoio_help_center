@@ -1,192 +1,192 @@
 <?php
 
 $lang=array(
-    //FR-FR (FRANCES - FRANÇA)
+    //EN-US (INGLES - AMERICA)
     //TOPNAV
-	'topnav_inicio' => 'Inicio',
-	'topnav_sobre' => 'Sobre',
+	'topnav_inicio' => 'Accueil',
+	'topnav_sobre' => 'A propos',
 	'topnav_blog' => 'Blog',
-	'topnav_contacto' => 'Contacto',
-	'topnav_login' => 'Login',
+	'topnav_contacto' => 'Nous contacter',
+	'topnav_login' => 'Se connecter',
 
 
 	//PAGINA HOME
     //HOME > BANNER
-	'h_banner_title' => 'Bem-vindo ao centro de apoio',
-	'h_banner_subtitle' => 'Siga os seus pedidos de apoio no painel de cliente',
-	'h_banner_link' => 'Acesso ao Painel',
+	'h_banner_title' => 'Bienvenue au centre de support',
+	'h_banner_subtitle' => 'Suivez vos demandes de support dans le tableau de bord client',
+	'h_banner_link' => 'Accès au tableau de bord',
 
     //HOME > SOBRE
-	'h_sobre_title' => 'Objectivo do projecto',
-	'h_sobre_desc' => 'Planear e desenvolver uma Web App orientada ao apoio cliente introduzindo paineis de funcionalidades com base num sistema de Ticketing integrando uma Knowledge Base que responde de forma automática perante o formulário de apoio preenchido pelo cliente',
-	'h_sobre_link' => 'Saber mais',
+	'h_sobre_title' => 'Objectif du projet',
+	'h_sobre_desc' => 'Planifier et développer une application Web orientée support client en introduisant des tableaux de bord avec des fonctionnalités basés sur un système de tickets en intégrant une base de connaissances qui répond automatiquement au formulaire de support rempli par le client',
+	'h_sobre_link' => 'En savoir plus',
 
-	//HOME > TEAM
-	'h_team_title' => 'A Equipa',
-	'h_team_subtitle' => 'Dedicados à qualidade e sucesso',
+	//HOME > TEAM 
+	'h_team_title' => 'L’équipe', 
+	'h_team_subtitle' => 'Dédiés à la qualité et au succès',
 
 	//HOME > FUNCIONALIDADES
-	'h_features_title' => 'Funcionalidades',
-    'h_features_subtitle' => 'da Web App Centro de Apoio',
+	'h_features_title' => 'Fonctionnalités',
+    'h_features_subtitle' => 'de l’appli Web du centre de support',
 
-    'h_features_feature1_title' => 'Criação de pedidos de apoio',
-    'h_features_feature1_subtitle' => 'O cliente pode criar um pedido de apoio e interagir com o agente em formato de chat',
+    'h_features_feature1_title' => 'Création de demandes de support',
+    'h_features_feature1_subtitle' => 'Le client peut créer une demande de support et interagir avec l’agent par chat',
 
-	'h_features_feature2_title' => 'Gestão de pedidos de apoio',
-    'h_features_feature2_subtitle' => 'O agente pode gerir e responder aos pedidos de apoio dos clientes',
+	'h_features_feature2_title' => 'Gestion des demandes de support',
+    'h_features_feature2_subtitle' => 'L’agent peut gérer et répondre aux demandes de support client',
 
-    'h_features_feature3_title' => 'Administração do centro de apoio',
-    'h_features_feature3_subtitle' => 'O painel de administrador permite uma gestão de clientes, agentes e knowledge base',
+    'h_features_feature3_title' => 'Administration du centre de support',
+    'h_features_feature3_subtitle' => 'Le panneau d’administration permet la gestion des clients, des agents et de la base de connaissances',
 
-    'h_features_feature4_title' => 'Knowledge Base integrada',
-    'h_features_feature4_subtitle' => 'O cliente pode aceder aos artigos disponiveis na knowledge base para uma resolução mais eficiente dos problemas apresentados',
+    'h_features_feature4_title' => 'Base de connaissances intégrée',
+    'h_features_feature4_subtitle' => 'Le client peut accéder aux articles disponibles dans la base de connaissances pour une résolution plus efficace des problèmes présentés',
 
 	//HOME > FAQ
-	'h_faq_title' => 'Perguntas Frequentes',
-    'h_faq_subtitle' => 'Como o podemos ajudar?',
-    'h_faq_category' => 'Apoio Tecnico',
-    'h_faq_faq1_title' => 'Como posso criar um pedido de apoio?',
-    'h_faq_faq1_desc' => 'Entre no Painel de Cliente (precisa ter uma conta registada) e escolha a opcao <strong>Criar Ticket</strong>, preencha os campos do formulario e a descricao do problema',
-	'h_faq_faq2_title' => 'Quanto tempo devo aguardar após submeter um ticket? A resposta é automática?',
-	'h_faq_faq2_desc' => 'Dependendo do tipo de serviço solicitado, irá receber uma resposta automática com os detalhes do seu pedido e o tempo máximo previsto de resolução.',
-	'h_faq_faq3_title' => 'Posso ver os pedidos que criei e o seu estado?', 'h_faq_faq3_desc' => '<strong>Sim!</strong>
-                                        Atraves do Painel de Cliente pode criar e ver o estado dos seus pedidos de ajuda, pode tambem deixar as suas respostas e visualizar as respostas dos nossos agentes.',
-	'h_faq_questions' => 'Tem mais questoes?',
-	'h_faq_follow' => 'Siga-nos',
-	'h_faq_questions_link' => 'Contacte-nos',
+	'h_faq_title' => 'Questions fréquentes',
+    'h_faq_subtitle' => 'Comment pouvons-nous vous aider?',
+    'h_faq_category' => 'Support Technique',
+    'h_faq_faq1_title' => 'Comment créer une demande d’assistance ?',
+    'h_faq_faq1_desc' => 'Entrez dans le tableau de bord client (vous devez avoir un compte enregistré) et choisissez l’option <strong>Créer un Ticket</strong>, puis remplissez les champs du formulaire et la description du problème',
+	'h_faq_faq2_title' => 'Combien de temps dois-je attendre après avoir soumis un ticket? La réponse est-elle automatique?',
+	'h_faq_faq2_desc' => 'Selon le type de service demandé, vous recevrez une réponse automatique avec les détails de votre demande et le temps de résolution maximum attendu.',
+	'h_faq_faq3_title' => 'Puis-je voir les demandes que j’ai créées et son statut ?', 'h_faq_faq3_desc' => '<strong>Oui!</strong>
+                                        Grâce au tableau de bord client, vous pouvez créer et afficher l’état de vos demandes d’aide, vous pouvez également laisser vos réponses et consulter les réponses de nos agents.',
+	'h_faq_questions' => 'Avez-vous d’autres questions?',
+	'h_faq_follow' => 'Suivez-nous',
+	'h_faq_questions_link' => 'Contactez-nous',
 
 	//HOME > BLOG
-	'h_blog_title' => 'Do nosso Blog',
-	'h_blog_subtitle' => 'Últimas noticias inseridas no blog',
+	'h_blog_title' => 'De notre blog',
+	'h_blog_subtitle' => 'Dernières nouvelles insérées dans le blog',
 
-	'h_blog_badge1' => 'Sistema',
-    'h_blog_title1' => 'Novas funcionalidades',
-    'h_blog_desc1' => 'Introduzimos novas funcionalidades na nossa web app',
+	'h_blog_badge1' => 'Système',
+    'h_blog_title1' => 'Nouvelles fonctionnalités',
+    'h_blog_desc1' => 'Nous avons introduit de nouvelles fonctionnalités dans notre application Web',
 	'h_blog_author1' => 'Daniel Pereira',
-    'h_blog_date1' => '12 Janeiro, 2023 &middot; 6 min leitura',
+    'h_blog_date1' => '12 janvier, 2023 &middot; 6 min lecture',
 
-	'h_blog_badge2' => 'Noticias',
-    'h_blog_title2' => 'Formação disponivel',
-    'h_blog_desc2' => 'Nova formação disponivel em cibersegurança para colaboradores',
+	'h_blog_badge2' => 'Nouvelles',
+    'h_blog_title2' => 'Formation disponible',
+    'h_blog_desc2' => 'Nouvelle formation disponible en cybersécurité pour les collaborateurs',
 	'h_blog_author2' => 'Daniel Pereira',
-    'h_blog_date2' => '16 Dezembro, 2022 &middot; 10 min leitura',
+    'h_blog_date2' => '16 décembre, 2022 &middot; 10 min lecture',
 
-	'h_blog_badge3' => 'Noticias',
-    'h_blog_title3' => 'App Movel',
-    'h_blog_desc3' => 'A nossa app movel encontra-se em desenvolvimento, esteja a par das novidades',
+	'h_blog_badge3' => 'Nouvelles',
+    'h_blog_title3' => 'Appli mobile',
+    'h_blog_desc3' => 'Notre application mobile est en développement, soyez au courant des nouveautés',
 	'h_blog_author3' => 'Daniel Pereira',
-    'h_blog_date3' => '5 Dezembro, 2022 &middot; 2 min leitura',
+    'h_blog_date3' => '5 décembre, 2022 &middot; 2 min lecture',
 
 	//HOME > NEWSLETTER
-	'h_newsletter_title' => 'Fique atento às novidades',
-    'h_newsletter_subtitle' => 'Receba a newsletter com as últimas noticias e atualizações',
-    'h_newsletter_input_email' => 'Insira o seu email',
-    'h_newsletter_input_btn' => 'Subscrever',
-    'h_newsletter_input_desc' => 'Ao subscrever concordo com as nossa politicas de privacidade.',
+	'h_newsletter_title' => 'Soyez au courant des nouveautés',
+    'h_newsletter_subtitle' => 'Recevez la newsletter avec les dernières nouvelles et nouveautés',
+    'h_newsletter_input_email' => 'Entrez votre adresse e-mail',
+    'h_newsletter_input_btn' => 'S’abonner',
+    'h_newsletter_input_desc' => 'En m’abonnant, j’accepte les politiques de confidentialité.',
 
 
 	//FOOTER
-	'footer_links' => 'Links Úteis',
-	'footer_inicio' => 'Inicio',
-	'footer_sobre' => 'Sobre',
+	'footer_links' => 'Liens utiles',
+	'footer_inicio' => 'Accueil',
+	'footer_sobre' => 'A propos',
 	'footer_blog' => 'Blog',
-	'footer_contacto' => 'Contacto',
-	'footer_login' => 'Login',
+	'footer_contacto' => 'Nous contacter',
+	'footer_login' => 'Se connecter',
 
-	'footer_servicos' => 'Os nosso serviços',
-	'footer_servico1' => 'Apoio Técnico',
-	'footer_servico2' => 'Resposta a Incidentes',
-	'footer_servico3' => 'Segurança Informática',
-	'footer_servico4' => 'Hardware e Equipamento',
-	'footer_servico5' => 'Formação',
+	'footer_servicos' => 'Nos services',
+	'footer_servico1' => 'Support Technique',
+	'footer_servico2' => 'Réponse à des incidents',
+	'footer_servico3' => 'Sécurité Informatique',
+	'footer_servico4' => 'Hardware et equipement',
+	'footer_servico5' => 'Formation',
 
-	'footer_social' => 'Redes sociais',
-	'footer_social_sub' => 'Siga-nos e subscreva',
+	'footer_social' => 'Réseaux sociaux',
+	'footer_social_sub' => 'Suivez-nous et abonnez-vous',
 
-	'footer_privacy' => 'Politica de Privacidade',
-    'footer_terms' => 'Termos de Utilização',
+	'footer_privacy' => 'Politique de confidentialité',
+    'footer_terms' => 'Conditions d’utilisation',
 
 
 	//PAGINA SOBRE
 	//SOBRE > BANNER
-	's_banner_title' => 'Sobre',
-    's_banner_subtitle' => 'Quem somos',
+	's_banner_title' => 'A propos',
+    's_banner_subtitle' => 'Qui sommes-nous?',
 
 	//SOBRE > FINALIDADE
-	's_finalidade_title' => 'Qual a finalidade do Projecto?',
-    's_finalidade_desc' => 'Este Projeto teve como finalidade planear e desenvolver uma Web App orientada ao apoio cliente, com a integração de três cadeiras, Gestão de Projetos, integração de sistemas de informação, Programação para web.',
+	's_finalidade_title' => 'Quel est l’objectif du projet?',
+    's_finalidade_desc' => 'Ce projet vise à planifier et développer une application Web orientée support client, avec l’intégration de trois modules: la gestion de projet, l’intégration de systèmes d’information et la programmation web.',
 
 	//SOBRE > PARTE 1
-	's_sobre_title1' => 'Objectivo Do Projecto',
-    's_sobre_desc1' => 'Este Projeto teve como objetivo, dar apoio a empresas através de uma aplicação web. De modo a ajudar a equipa de IT a fazer toda a gestão de problemas existentes na empresa que por vezes vem de diversos meios. O grande objetivo é centralizar toda a informação em uma só plataforma.',
+	's_sobre_title1' => 'Objectif du projet',
+    's_sobre_desc1' => 'Ce projet visait à apporter un soutien aux entreprises par le biais d’une application web. Afin daider léquipe informatique à faire toute la gestion des problèmes existants dans l’entreprise qui proviennent parfois de sources diverses. L’objectif principal est de centraliser toutes les informations en une seule plateforme.',
 
 	//SOBRE > PARTE 2
-	's_sobre_title2' => 'Web App &amp; Funcionalidades',
-    's_sobre_desc2' => 'Esta Web App esta desenhada para ter três modos de gestão, como Administradores, Agentes e Clientes. Introduziu-se painéis de funcionalidades com base num sistema de Tickting integrando, uma Knowledge Base que responde de forma automática perante o formulário de apoio preenchido pelo cliente.',
+	's_sobre_title2' => 'Application App &amp; Fonctionnalités',
+    's_sobre_desc2' => 'Cette application Web est conçue pour avoir trois modes de gestion: administrateurs, agents et clients. Nous avons introduit des tableaux de bord basés sur un système de tickting intégrant une base de connaissances qui répond automatiquement au formulaire d’assistance rempli par le client.',
 
 
 	//PAGINA BLOG
 	//BLOG > BANNER
 	'b_banner_title' => 'Blog',
-    'b_banner_subtitle' => 'Saiba tudo sobre as últimas novidades',
+    'b_banner_subtitle' => 'Découvrez toutes les dernières nouvelles',
 
 	//BLOG > HEADER
-	'b_header_badge' => 'Noticias',
-    'b_header_title' => 'Como funciona o helpdesk',
-    'b_header_desc' => 'Helpdesk é um trabalho na area de IT que serve para dar apoio aos utilizadores de computadores, de uma empresa...',
-    'b_header_button' => 'Read more',
+	'b_header_badge' => 'Nouvelles',
+    'b_header_title' => 'Comment fonctionne le service d’assistance (helpdesk)',
+    'b_header_desc' => 'Le Helpdesk est un emploi dans le domaine informatique qui sert à assister les utilisateurs d’ordinateurs d’une entreprise...',
+    'b_header_button' => 'Lisez plus',
 
 	//BLOG > NOVIDADES
-	'b_novidades_title' => 'Novidades futuras',
-    'b_novidades_date1' => 'janeiro 12, 2023',
-    'b_novidades_subtitle1' => 'Recebe as respostas dos tecnicos, aos teus tickets, via SMS',
-	'b_novidades_date2' => 'janeiro 5, 2023',
-    'b_novidades_subtitle2' => 'Novos Artigos knowledgebase, a partir de Maio!',
-	'b_novidades_date3' => 'Dezembro 22, 2022',
-    'b_novidades_subtitle3' => 'Customisa as cores do teu perfil',
-	'b_novidades_button' => 'Ler mais',
-	'b_novidades_questions' => 'Tem mais questoes?',
-	'b_novidades_follow' => 'Siga-nos',
-	'b_novidades_questions_link' => 'Contacte-nos',
+	'b_novidades_title' => 'Futures nouvautés',
+    'b_novidades_date1' => 'janvier 12, 2023',
+    'b_novidades_subtitle1' => 'Recevez les réponses des techniciens à vos tickets par SMS',
+	'b_novidades_date2' => 'janvier 5, 2023',
+    'b_novidades_subtitle2' => 'Nouveaux articles de la base de connaissances à partir de mai!',
+	'b_novidades_date3' => 'decembre 22, 2022',
+    'b_novidades_subtitle3' => 'Personnalisez les couleurs de votre profil',
+	'b_novidades_button' => 'En savoir plus',
+	'b_novidades_questions' => 'Avez-vous d’autres questions?',
+	'b_novidades_follow' => 'Suivez-nous',
+	'b_novidades_questions_link' => 'Contactez-nous',
 
 	//BLOG > PREVIEW
-	'b_preview_showmore' => 'Mais artigos do nosso blog',
+	'b_preview_showmore' => 'Encore plus d’articles de notre blog',
 
 
 	//PAGINA CONTACTO
 	//CONTACTO > BANNER
-	'c_banner_title' => 'Contacte-nos',
-    'c_banner_subtitle' => 'Para qualquer duvida ou questão',
+	'c_banner_title' => 'Contactez-nous',
+    'c_banner_subtitle' => 'Pour tout doute ou question',
 
 	//CONTACTO > FORMULARIO
-	'c_form_title' => 'Alguma dúvida ou questão não hesites!',
-    'c_form_subtitle' => 'Queremos a tua opinião',
+	'c_form_title' => 'Si vous avez des doutes ou des questions, n’hésitez pas !',
+    'c_form_subtitle' => 'Nous voulons votre opinion',
 
-	'c_form_input_nome1' => 'Nome Completo',
-    'c_form_input_nome2' => 'Nome é obrigatório',
+	'c_form_input_nome1' => 'Nom complet',
+    'c_form_input_nome2' => 'Nom obligatoire',
 
-	'c_form_input_email1' => 'Endereço de Email',
-	'c_form_input_email2' => 'Email é obrigatório',
-	'c_form_input_email3' => 'Email não é válido',
+	'c_form_input_email1' => 'L’adresse email',
+	'c_form_input_email2' => 'L’adresse email est obligatoire',
+	'c_form_input_email3' => 'L’adresse email n’est pas valide',
 
-	'c_form_input_telefone1' => 'Numero de telefone',
-    'c_form_input_telefone2' => 'o numero de telefone é obrigatório',
+	'c_form_input_telefone1' => 'Numéro de téléphone',
+    'c_form_input_telefone2' => 'Le numéro de téléphone est obligatoire',
 
-	'c_form_input_mensagem1' => 'Messagem',
-    'c_form_input_mensagem2' => 'A mensagem é obrigatória',
+	'c_form_input_mensagem1' => 'Message',
+    'c_form_input_mensagem2' => 'Le message est obligatoire',
 
-	'c_form_input_valid_ok' => 'Formulario submetido com sucesso!',
-    'c_form_input_valid_erro' => 'Erro ao enviar mensagem!',
-    'c_form_input_button' => 'Submeter',
+	'c_form_input_valid_ok' => 'Formulaire soumis avec succès!',
+    'c_form_input_valid_erro' => 'Problème lors de l’envoi du message',
+    'c_form_input_button' => 'Sousmettre',
 
-	'c_cards_box1_title' => 'Envia-nos Email',
-    'c_cards_box1_subtitle' => 'Se tiveres alguma duvida ou questão contacta-nos.',
+	'c_cards_box1_title' => 'Evoyez-nous un email',
+    'c_cards_box1_subtitle' => 'Si vous avez des doutes ou des questions, veuillez nous contacter.',
     'c_cards_box2_title' => 'Blog',
-    'c_cards_box2_subtitle' => 'Verifica todas as novidades no nosso blog.',
-    'c_cards_box3_title' => 'Perguntas Frequentes',
-    'c_cards_box3_subtitle' => 'Verifica algumas das perguntas ferquentes dos nosso clientes.',
-    'c_cards_box4_title' => 'Liga-nos!',
-    'c_cards_box4_subtitle' => 'Liga-nos durante o periodo normal de trabalho, para (+351) 760 200 300',
+    'c_cards_box2_subtitle' => 'Découvrez toutes les nouvelles sur notre blog.',
+    'c_cards_box3_title' => 'Questions fréquentes',
+    'c_cards_box3_subtitle' => 'Vérifiez certaines des questions fréquemment posées par nos clients.',
+    'c_cards_box4_title' => 'Appelez-nous!',
+    'c_cards_box4_subtitle' => 'Appelez-nous pendant les heures travail, au (+351) 760 200 300',
 
 
 

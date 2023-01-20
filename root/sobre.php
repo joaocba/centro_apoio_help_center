@@ -87,6 +87,10 @@ include('./components/landing/lang/settings.php');
 
     <!-- PAGE BOTTOM -->
     <?php include('./components/page-bottom.php'); ?>
+
+    <!-- Page Preloader -->
+    <?php include('./components/page-preloader.php'); ?>
+
 </body>
 
 </html>
