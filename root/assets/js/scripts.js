@@ -18,7 +18,6 @@ window.addEventListener('DOMContentLoaded', event => {
 
 });
 
-
 //Validar Password e Confirma Password - NAO TESTADO
 function validate() {
     var a = document.getElementById("password").value;

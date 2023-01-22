@@ -9,7 +9,7 @@ include('../components/page-head.php');
 <?php
 //AUTO REFRESH PAGINA
 $page = $_SERVER['PHP_SELF'];
-$sec = "30";
+$sec = "300";
 header("Refresh: $sec; url=$page");
 
 require_once('../int.php');
@@ -59,20 +59,29 @@ if ($recodes->num_rows > 0) {
         <?php include('../global-panel/components/sidebar-painel.php'); ?>
         <div class="bg-light" id="page-content-wrapper">
             <?php include('../global-panel/components/topnav-painel.php'); ?>
-            <div class="container-fluid">
+            <div class="container-fluid pt-2">
                 <!-- INICIO DE CONTEUDO DE PAGINA -->
 
-                <div class="container my-4">
+                <div class="container my-4 pt-5 sidebar-spacer">
                     <div class="row">
                         <div class="col-lg-12 col-md-12 col-sm-12">
 
                             <!-- LOGIN INFO -->
                             <h1 class="mb-3"><i class="bi bi-window"></i> Painel de Cliente</h1>
+
+                            <!-- Breadcrumbs -->
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item"><a href="./index.php">Home</a></li>
+                                    <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                                </ol>
+                            </nav>
+
                             <div class="card mb-3">
                                 <div class="card-body">
                                     <h3>Olá, <?php echo $_SESSION['nome'].' '.$_SESSION['apelido']; ?></h3>
-                                    <p>Última sessão inciada a <?php echo $_SESSION['last_login']; ?></p>
-                                    <a href="./components/logout.php" class="btn btn-dark">Terminar Sessão</a>
+                                    <span>Última sessão inciada a <?php echo $_SESSION['last_login']; ?></span>
+                                    <!-- <a href="./components/logout.php" class="btn btn-dark">Terminar Sessão</a> -->
                                 </div>
                             </div>
                         </div>
@@ -168,11 +177,16 @@ if ($recodes->num_rows > 0) {
 
                 <!-- FIM DE CONTEUDO DE PAGINA -->
             </div>
+
+            <!-- Footer Panel -->
+            <?php include('../components/panels/footer-panel.php'); ?>
+
         </div>
     </div>
 
     <!-- PAGE BOTTOM -->
     <?php include('../components/page-bottom.php'); ?>
+
 </body>
 
 </html>

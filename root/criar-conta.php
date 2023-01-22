@@ -65,6 +65,13 @@ if (isset($_POST['submit'])) {
 <body>
     <!-- FORMULARIO CRIAR CONTA -->
     <div class="bg-light d-flex align-items-center">
+        <!-- Animação Preloader -->
+        <div id="loading">
+            <div id="loading-image" class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">
@@ -206,20 +213,23 @@ if (isset($_POST['submit'])) {
 
     <!-- PAGE BOTTOM -->
     <?php include('./components/page-bottom.php'); ?>
+
+    <!-- Page Preloader -->
+    <?php include('./components/page-preloader.php'); ?>
 </body>
 
 </html>
 
 <!-- Validar Password e Confirma Password -->
 <script>
-$(document).ready(function () {
-   $("#confirm_password").on('keyup', function(){
-    var password = $("#password").val();
-    var confirmPassword = $("#confirm_password").val();
-    if (password != confirmPassword)
-        $("#CheckPasswordMatch").html("Passwords não coincidem").css("color","red");
-    else
-        $("#CheckPasswordMatch").html("Password coicidem").css("color","green");
-   });
-});
+    $(document).ready(function() {
+        $("#confirm_password").on('keyup', function() {
+            var password = $("#password").val();
+            var confirmPassword = $("#confirm_password").val();
+            if (password != confirmPassword)
+                $("#CheckPasswordMatch").html("Passwords não coincidem").css("color", "red");
+            else
+                $("#CheckPasswordMatch").html("Password coicidem").css("color", "green");
+        });
+    });
 </script>

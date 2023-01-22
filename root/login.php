@@ -112,6 +112,13 @@ if (isset($_POST['email'])) {
 <body>
     <!-- FORMULARIO LOGIN -->
     <div class="bg-light d-flex align-items-center vh-100">
+        <!-- Animação Preloader -->
+        <div id="loading">
+            <div id="loading-image" class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </div>
+
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-auto">
@@ -172,6 +179,9 @@ if (isset($_POST['email'])) {
 
     <!-- PAGE BOTTOM -->
     <?php include('./components/page-bottom.php'); ?>
+
+    <!-- Page Preloader -->
+    <?php include('./components/page-preloader.php'); ?>
 </body>
 
 </html>

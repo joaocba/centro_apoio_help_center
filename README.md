@@ -60,6 +60,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 	- [ ] Adicionar menus dropdown para as paginas que contêm sub-páginas
 - [ ] Adicionar footer
 	- [ ] Incorporar copyright, titulo e termos de utilização
+- [ ] Limpar codigo e aplicar comentários para
 
 ### Todo - Painel Cliente
 
