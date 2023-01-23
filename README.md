@@ -55,25 +55,30 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 ### Todo - Backoffice (paineis - global)
 
-- [ ] Melhorar design de topnav
-- [ ] Melhorar design de sidebar
-	- [ ] Adicionar menus dropdown para as paginas que contêm sub-páginas
-- [ ] Adicionar footer
-	- [ ] Incorporar copyright, titulo e termos de utilização
+- [x] Melhorar design de topnav
+- [x] Melhorar design de sidebar
+- [x] Adicionar footer
+	- [x] Incorporar copyright, titulo e termos de utilização
 - [ ] Limpar codigo e aplicar comentários para
+- [ ] Knowledge Base o scrollspy não funciona corretamente
+- [ ] Adicionar Page Preloader ao conteudo dos paineis
 
 ### Todo - Painel Cliente
 
 - [ ] Melhorar design de página Ticket
 - [ ] Incorporar anexos em criar ticket
+	- [ ] Adicionar texto de como usar na metade em branco do card de criação de ticket
 
 ### Todo - Painel Agente
 
 - [ ] Incorporar gráficos e estatisticas no Painel de Agente
+- [ ] Adicionar ao sidebar links para Tickets Em Espera (com counter) e Tickets Novos (com counter)
 
 ### Todo - Painel Administrador
 
 - [ ] Criar opções para a página de Definições no Painel de Administrador
+- [ ] Adicionar links dropdown para sidebar para Gerir Clientes, Gerir Agentes e Gerir KB
+- [ ] Paginas Registar Cliente e Registar Agente precisam ter validação de confirma password
 
 ### Bugs
 

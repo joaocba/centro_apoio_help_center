@@ -42,26 +42,34 @@ if ($recodes->num_rows > 0) {
 }
 ?>
 
-<body>
-    <div class="d-flex" id="wrapper">
+<body class="sb-nav-fixed">
+
+    <!-- TOP NAVBAR -->
+    <?php include('../global-panel/components/topnav-painel.php'); ?>
+
+    <!-- INICIO LAYOUT -->
+    <div id="layoutSidenav">
+
+        <!-- SIDEBAR -->
         <?php include('../global-panel/components/sidebar-painel.php'); ?>
-        <div class="bg-light" id="page-content-wrapper">
-            <?php include('../global-panel/components/topnav-painel.php'); ?>
-            <div class="container-fluid">
-                <!-- INICIO DE CONTEUDO DE PAGINA -->
 
-                <div class="container my-4">
+        <!-- INICIO CONTEUDO DO LAYOUT -->
+        <div id="layoutSidenav_content" class="bg-light">
+            <main>
+                <div class="container-fluid px-5">
+
+                    <!-- Cabeçalho de Painel + Breadcrumbs -->
+                    <h1 class="mt-4">Gestão Knowledge Base</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="./admin-panel/painel-admin.php">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Gerir Knowledge Base</li>
+                    </ol>
+
+                    <!-- Cards de Acesso -->
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-                            <!-- LOGIN INFO -->
-                            <h1 class="mb-3"><i class="bi bi-window"></i> Painel de Administrador</h1>
-                        </div>
-                    </div>
-
-                    <div class="row justify-content-center">
-                        <!-- CRIAR CATEGORIA -->
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="card">
+                        <!-- Criar Categoria -->
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
                                 <div class="card-body">
                                     <h3>Criar Categoria</h3>
                                     <p>Crie nova categoria de artigos</p>
@@ -69,10 +77,9 @@ if ($recodes->num_rows > 0) {
                                 </div>
                             </div>
                         </div>
-
-                        <!-- CRIAR ARTIGO -->
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="card">
+                        <!-- Criar Artigo -->
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
                                 <div class="card-body">
                                     <h3>Criar Artigo</h3>
                                     <p>Crie novo artigo</p>
@@ -136,7 +143,8 @@ if ($recodes->num_rows > 0) {
                                                         <a href="./admin-panel/eliminar-categoria-kb.php?id=' . $v['id'] . '" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i><a/>
                                                     </td>
                                                 </tr>
-                                                ';}?>
+                                                ';
+                                                } ?>
                                             </tbody>
                                         </table>
                                     <?php } else {
@@ -198,7 +206,8 @@ if ($recodes->num_rows > 0) {
                                                         <a href="./admin-panel/eliminar-artigo-kb.php?id=' . $v['id'] . '" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i><a/>
                                                     </td>
                                                 </tr>
-                                                ';}?>
+                                                ';
+                                                } ?>
                                             </tbody>
                                         </table>
                                     <?php } else {
@@ -208,15 +217,23 @@ if ($recodes->num_rows > 0) {
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- FIM DE CONTEUDO DE PAGINA -->
-            </div>
+                </div>
+            </main>
+
+            <!-- FOOTER PANEL -->
+            <?php include('../components/panels/footer-panel.php'); ?>
+
         </div>
+        <!-- FIM CONTEUDO LAYOUT -->
     </div>
+    <!-- FIM CONTEUDO PAGINA -->
+
+
 
     <!-- PAGE BOTTOM -->
     <?php include('../components/page-bottom.php'); ?>
+
 </body>
 
 </html>

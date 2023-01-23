@@ -73,33 +73,41 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<body>
-    <div class="d-flex" id="wrapper">
+<body class="sb-nav-fixed">
+
+    <!-- TOP NAVBAR -->
+    <?php include('../global-panel/components/topnav-painel.php'); ?>
+
+    <!-- INICIO LAYOUT -->
+    <div id="layoutSidenav">
+
+        <!-- SIDEBAR -->
         <?php include('../global-panel/components/sidebar-painel.php'); ?>
-        <div class="bg-light" id="page-content-wrapper">
-            <?php include('../global-panel/components/topnav-painel.php'); ?>
-            <div class="container-fluid">
-                <!-- INICIO DE CONTEUDO DE PAGINA -->
 
-                <div class="container mt-4">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-12">
+        <!-- INICIO CONTEUDO DO LAYOUT -->
+        <div id="layoutSidenav_content" class="bg-light">
+            <main>
+                <div class="container-fluid px-5">
 
-                            <!-- LOGIN INFO -->
-                            <h1 class="mb-3"><i class="bi bi-window"></i> Visualizar Ticket</h1>
+                    <!-- Cabeçalho de Painel + Breadcrumbs -->
+                    <h1 class="mt-4">Ticket</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="./user-panel/painel-cliente.php">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Ticket ID <?php echo $ticket['ticket_id']; ?></li>
+                    </ol>
 
-                            <!-- CRIAR TICKET FORM -->
-                            <div class="card mb-3">
-                                <div class="card-header">
-                                    <div class="d-flex justify-content-between">
-                                        <div>
-                                            <span>ID Ticket : </span>
-                                            <small class="d-inline-flex px-2 py-1 fw-semibold text-primary bg-primary bg-opacity-10 border border-primary border-opacity-10 rounded-2"><?php echo $ticket['ticket_id']; ?></small>
-                                        </div>
-                                        <div class="text-end">
-                                            <span>Prioridade : </span>
-                                            <?php
-                                            echo '
+                    <!-- CRIAR TICKET FORM -->
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            <div class="d-flex justify-content-between">
+                                <div>
+                                    <span>ID Ticket : </span>
+                                    <small class="d-inline-flex px-2 py-1 fw-semibold text-primary bg-primary bg-opacity-10 border border-primary border-opacity-10 rounded-2"><?php echo $ticket['ticket_id']; ?></small>
+                                </div>
+                                <div class="text-end">
+                                    <span>Prioridade : </span>
+                                    <?php
+                                    echo '
                                             <small class="d-inline-flex px-2 py-1 fw-semibold 
                                                                 ' . (($prioridade == 0) ? "text-success bg-success" : "text-danger bg-danger") . '
                                                                 bg-opacity-10 border 
@@ -107,10 +115,10 @@ if (isset($_POST['submit'])) {
                                                                 border-opacity-10 rounded-2 me-3">' . (($prioridade == 0) ? $prioridade_0 : $prioridade_1) . '
                                             </small>
                                             ';
-                                            ?>
-                                            <span>Estado : </span>
-                                            <?php
-                                            echo '
+                                    ?>
+                                    <span>Estado : </span>
+                                    <?php
+                                    echo '
                                             <small class="d-inline-flex px-2 py-1 fw-semibold 
                                                                 ' . (($status == 0) ? "text-info bg-info" : (($status == 1) ? "text-warning bg-warning" : "text-dark bg-dark")) . '
                                                                 bg-opacity-10 border 
@@ -118,123 +126,133 @@ if (isset($_POST['submit'])) {
                                                                 border-opacity-10 rounded-2">' . (($status == 0) ? $estado_0 : (($status == 1) ? $estado_1 : $estado_2)) . '
                                             </small>
                                             ';
-                                            ?>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <?php
-                                    if (isset($error) && $error != false) {
-                                        echo '<div class="alert alert-danger">' . $error . '</div>';
-                                    }
                                     ?>
-                                    <?php
-                                    if (isset($success) && $success != false) {
-                                        //header("Location: ./user-panel/ticket.php?id=".$row['id']);
-                                        echo '<div class="alert alert-success">' . $success . '</div>';
-                                    }
-                                    ?>
-                                    <table class="table">
-                                        <tr>
-                                            <th>Nome</th>
-                                            <td><?php echo $ticket['nome']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Telefone</th>
-                                            <td><?php echo $ticket['telefone']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Email</th>
-                                            <td><?php echo $ticket['email']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Empresa</th>
-                                            <td><?php echo $ticket['nome_empresa'].' -> '.$ticket['dep_empresa']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Assunto</th>
-                                            <td><?php echo $ticket['nome_categoria'].' -> '.$ticket['assunto']; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th>Descrição</th>
-                                            <td>
-                                                <p><?php echo $ticket['message']; ?></p>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                    <!-- <p><?php echo $ticket['message']; ?></p> -->
-                                    <div class="reply-area">
-                                        <ul>
-                                            <?php if (count($reps) > 0) { ?>
-                                                <?php foreach ($reps as $k => $v) {
-                                                    if ($v['send_by'] == 0) {
-                                                ?>
-                                                        <li class="reply-user">
-                                                            <div class="card mb-3 bg-primary bg-opacity-25 w-75">
-                                                                <div class="card-body">
-                                                                    <p><?php echo $v['message']; ?></p>
-                                                                    <div class="text-end">
-                                                                        <small class="text-muted"><?php echo $v['date']; ?></small>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                    <?php
-                                                    } else {
-                                                    ?>
-                                                        <li class="reply-me">
-                                                            <div class="card mb-3 bg-secondary bg-opacity-25 w-75 float-end">
-                                                                <div class="card-body">
-                                                                    <p><?php echo $v['message']; ?></p>
-                                                                    <div class="text-end">
-                                                                        <small class="text-muted"><?php echo $v['date']; ?></small>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </li>
-                                                <?php
-                                                    }
-                                                }
-                                                ?>
-
-                                            <?php } ?>
-                                        </ul>
-                                    </div>
-                                    <!-- TODO: Resolver problema com linha separadora -->
-                                    <hr class="my-3 form-control">
-                                    <div class="send-area">
-                                        <form method="POST">
-                                            <div class="my-3">
-                                                <textarea name="message" class="form-control" <?php if ($status == 2) { echo 'disabled hidden'; } ?> placeholder="Responder aqui" id="message" cols="30" rows="4"></textarea>
-                                            </div>
-                                            <div class="mb-3">
-                                                <input type="hidden" name="submit" value="send">
-                                                <button class="btn btn-success" <?php if ($status == 2) { echo 'disabled hidden'; } ?> type="submit">Enviar</button>
-                                                <?php
-                                                if (isset($_SESSION['user_logged']) && $_SESSION['user_logged'] == true) {
-                                                    echo '<a href="./user-panel/painel-cliente.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>';
-                                                } elseif (isset($_SESSION['agent_logged']) && $_SESSION['agent_logged'] == true) {
-                                                    echo '<a href="./agent-panel/painel-agente.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>';
-                                                } elseif (isset($_SESSION['admin_logged']) && $_SESSION['admin_logged'] == true) {
-                                                    echo '<a href="./admin-panel/painel-admin.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>';
-                                                }
-                                                ?>
-                                            </div>
-                                        </form>
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                        <div class="card-body">
+                            <?php
+                            if (isset($error) && $error != false) {
+                                echo '<div class="alert alert-danger">' . $error . '</div>';
+                            }
+                            ?>
+                            <?php
+                            if (isset($success) && $success != false) {
+                                //header("Location: ./user-panel/ticket.php?id=".$row['id']);
+                                echo '<div class="alert alert-success">' . $success . '</div>';
+                            }
+                            ?>
+                            <table class="table">
+                                <tr>
+                                    <th>Nome</th>
+                                    <td><?php echo $ticket['nome']; ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Telefone</th>
+                                    <td><?php echo $ticket['telefone']; ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Email</th>
+                                    <td><?php echo $ticket['email']; ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Empresa</th>
+                                    <td><?php echo $ticket['nome_empresa'] . ' -> ' . $ticket['dep_empresa']; ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Assunto</th>
+                                    <td><?php echo $ticket['nome_categoria'] . ' -> ' . $ticket['assunto']; ?></td>
+                                </tr>
+                                <tr>
+                                    <th>Descrição</th>
+                                    <td>
+                                        <p><?php echo $ticket['message']; ?></p>
+                                    </td>
+                                </tr>
+                            </table>
+                            <!-- <p><?php echo $ticket['message']; ?></p> -->
+                            <div class="reply-area">
+                                <ul>
+                                    <?php if (count($reps) > 0) { ?>
+                                        <?php foreach ($reps as $k => $v) {
+                                            if ($v['send_by'] == 0) {
+                                        ?>
+                                                <li class="reply-user">
+                                                    <div class="card mb-3 bg-primary bg-opacity-25 w-75">
+                                                        <div class="card-body">
+                                                            <p><?php echo $v['message']; ?></p>
+                                                            <div class="text-end">
+                                                                <small class="text-muted"><?php echo $v['date']; ?></small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            <?php
+                                            } else {
+                                            ?>
+                                                <li class="reply-me">
+                                                    <div class="card mb-3 bg-secondary bg-opacity-25 w-75 float-end">
+                                                        <div class="card-body">
+                                                            <p><?php echo $v['message']; ?></p>
+                                                            <div class="text-end">
+                                                                <small class="text-muted"><?php echo $v['date']; ?></small>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                        <?php
+                                            }
+                                        }
+                                        ?>
 
-                <!-- FIM DE CONTEUDO DE PAGINA -->
-            </div>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                            <!-- TODO: Resolver problema com linha separadora -->
+                            <hr class="my-3 form-control">
+                            <div class="send-area">
+                                <form method="POST">
+                                    <div class="my-3">
+                                        <textarea name="message" class="form-control" <?php if ($status == 2) {
+                                                                                            echo 'disabled hidden';
+                                                                                        } ?> placeholder="Responder aqui" id="message" cols="30" rows="4"></textarea>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="hidden" name="submit" value="send">
+                                        <button class="btn btn-success" <?php if ($status == 2) {
+                                                                            echo 'disabled hidden';
+                                                                        } ?> type="submit">Enviar</button>
+                                        <?php
+                                        if (isset($_SESSION['user_logged']) && $_SESSION['user_logged'] == true) {
+                                            echo '<a href="./user-panel/painel-cliente.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>';
+                                        } elseif (isset($_SESSION['agent_logged']) && $_SESSION['agent_logged'] == true) {
+                                            echo '<a href="./agent-panel/painel-agente.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>';
+                                        } elseif (isset($_SESSION['admin_logged']) && $_SESSION['admin_logged'] == true) {
+                                            echo '<a href="./admin-panel/painel-admin.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>';
+                                        }
+                                        ?>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </main>
+
+            <!-- FOOTER PANEL -->
+            <?php include('../components/panels/footer-panel.php'); ?>
+
         </div>
+        <!-- FIM CONTEUDO LAYOUT -->
     </div>
+    <!-- FIM CONTEUDO PAGINA -->
+
+
 
     <!-- PAGE BOTTOM -->
     <?php include('../components/page-bottom.php'); ?>
+
 </body>
 
 </html>

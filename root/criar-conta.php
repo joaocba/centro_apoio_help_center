@@ -229,7 +229,7 @@ if (isset($_POST['submit'])) {
             if (password != confirmPassword)
                 $("#CheckPasswordMatch").html("Passwords não coincidem").css("color", "red");
             else
-                $("#CheckPasswordMatch").html("Password coicidem").css("color", "green");
+                $("#CheckPasswordMatch").html("Passwords coicidem").css("color", "green");
         });
     });
 </script>

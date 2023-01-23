@@ -9,7 +9,7 @@ include('../components/page-head.php');
 <?php
 //AUTO REFRESH PAGINA
 $page = $_SERVER['PHP_SELF'];
-$sec = "30";
+$sec = "300";
 header("Refresh: $sec; url=$page");
 
 //VERIFICAR SESSAO
@@ -21,34 +21,46 @@ if (!isset($_SESSION['admin_logged']) && $_SESSION['admin_logged'] != true) {
 
 ?>
 
-<body>
-    <div class="d-flex" id="wrapper">
+<body class="sb-nav-fixed">
+
+    <!-- TOP NAVBAR -->
+    <?php include('../global-panel/components/topnav-painel.php'); ?>
+
+    <!-- INICIO LAYOUT -->
+    <div id="layoutSidenav">
+
+        <!-- SIDEBAR -->
         <?php include('../global-panel/components/sidebar-painel.php'); ?>
-        <div class="bg-light" id="page-content-wrapper">
-            <?php include('../global-panel/components/topnav-painel.php'); ?>
-            <div class="container-fluid">
-                <!-- INICIO DE CONTEUDO DE PAGINA -->
 
-                <div class="container mt-4">
+        <!-- INICIO CONTEUDO DO LAYOUT -->
+        <div id="layoutSidenav_content" class="bg-light">
+            <main>
+                <div class="container-fluid px-5">
+
+                    <!-- Cabeçalho de Painel + Breadcrumbs -->
+                    <h1 class="mt-4">Painel Administrador</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="./admin-panel/painel-admin.php">Dashboard</a></li>
+                    </ol>
+
+                    <!-- Card Boas Vindas -->
                     <div class="row">
-                        <div class="col-lg-12 col-md-12 col-sm-12">
-
-                            <!-- LOGIN INFO -->
-                            <h1 class="mb-3"><i class="bi bi-window"></i> Painel de Administrador</h1>
-                            <div class="card mb-3">
+                        <div class="col-xl-12">
+                            <div class="card mb-4">
                                 <div class="card-body">
                                     <h3>Olá, <?php echo $_SESSION['nome'] . ' ' . $_SESSION['apelido']; ?></h3>
-                                    <p>Última sessão inciada a <?php echo $_SESSION['last_login']; ?></p>
-                                    <a href="../components/logout.php" class="btn btn-dark">Terminar Sessão</a>
+                                    <span>Última sessão inciada a <?php echo $_SESSION['last_login']; ?></span>
+                                    <!-- <a href="./components/logout.php" class="btn btn-dark">Terminar Sessão</a> -->
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="row justify-content-center mb-3">
-                        <!-- GERIR CLIENTES -->
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="card">
+                    <!-- Cards de Acesso -->
+                    <div class="row">
+                        <!-- Gerir Clientes -->
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
                                 <div class="card-body">
                                     <h3>Gerir Clientes</h3>
                                     <p>Aceda ao gestor de clientes</p>
@@ -56,10 +68,9 @@ if (!isset($_SESSION['admin_logged']) && $_SESSION['admin_logged'] != true) {
                                 </div>
                             </div>
                         </div>
-
-                        <!-- GERIR AGENTES -->
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="card">
+                        <!-- Gerir Agentes -->
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
                                 <div class="card-body">
                                     <h3>Gerir Agentes</h3>
                                     <p>Aceda ao gestor de agentes</p>
@@ -69,10 +80,10 @@ if (!isset($_SESSION['admin_logged']) && $_SESSION['admin_logged'] != true) {
                         </div>
                     </div>
 
-                    <div class="row justify-content-center mb-3">
-                        <!-- GERIR ARTIGOS -->
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="card">
+                    <div class="row">
+                        <!-- Gerir KB -->
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
                                 <div class="card-body">
                                     <h3>Gerir Knowledge Base</h3>
                                     <p>Aceda ao gestor de artigos e categorias da Knowledge Base</p>
@@ -80,10 +91,9 @@ if (!isset($_SESSION['admin_logged']) && $_SESSION['admin_logged'] != true) {
                                 </div>
                             </div>
                         </div>
-
-                        <!-- DEFINIÇÕES -->
-                        <div class="col-lg-6 col-md-6 col-sm-12">
-                            <div class="card">
+                        <!-- Gerir Definições -->
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
                                 <div class="card-body">
                                     <h3>Definições</h3>
                                     <p>Aceda ás definições do Painel de Apoio</p>
@@ -92,15 +102,23 @@ if (!isset($_SESSION['admin_logged']) && $_SESSION['admin_logged'] != true) {
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- FIM DE CONTEUDO DE PAGINA -->
-            </div>
+                </div>
+            </main>
+
+            <!-- FOOTER PANEL -->
+            <?php include('../components/panels/footer-panel.php'); ?>
+
         </div>
+        <!-- FIM CONTEUDO LAYOUT -->
     </div>
+    <!-- FIM CONTEUDO PAGINA -->
+
+
 
     <!-- PAGE BOTTOM -->
     <?php include('../components/page-bottom.php'); ?>
+
 </body>
 
 </html>

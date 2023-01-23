@@ -24,7 +24,7 @@ if (isset($_POST['submit'])) {
     $sql = "SELECT * FROM users WHERE role=0 AND email='" . $_POST['email'] . "'";
 
     //$inset = mysqli_query($dbconn, $sql);
-    $inset = mysqli_query($dbconn, $sql) or trigger_error("Query Failed! SQL: $sql - Error: ".mysqli_error($dbconn), E_USER_ERROR);
+    $inset = mysqli_query($dbconn, $sql) or trigger_error("Query Failed! SQL: $sql - Error: " . mysqli_error($dbconn), E_USER_ERROR);
     if ($inset->num_rows > 0) {
         while ($row = $inset->fetch_assoc()) {
             //$userid = $row['id'];
@@ -38,58 +38,73 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<body>
-    <div class="d-flex" id="wrapper">
+<body class="sb-nav-fixed">
+
+    <!-- TOP NAVBAR -->
+    <?php include('../global-panel/components/topnav-painel.php'); ?>
+
+    <!-- INICIO LAYOUT -->
+    <div id="layoutSidenav">
+
+        <!-- SIDEBAR -->
         <?php include('../global-panel/components/sidebar-painel.php'); ?>
-        <div class="bg-light" id="page-content-wrapper">
-            <?php include('../global-panel/components/topnav-painel.php'); ?>
-            <div class="container-fluid">
-                <!-- INICIO DE CONTEUDO DE PAGINA -->
 
-                <div class="container mt-4">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-12">
+        <!-- INICIO CONTEUDO DO LAYOUT -->
+        <div id="layoutSidenav_content" class="bg-light">
+            <main>
+                <div class="container-fluid px-5">
 
-                            <!-- INFO -->
-                            <h1 class="mb-3"><i class="bi bi-window"></i> Painel de Administrador</h1>
+                    <!-- Cabeçalho de Painel + Breadcrumbs -->
+                    <h1 class="mt-4">Gestão Clientes</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="./admin-panel/painel-admin.php">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="./admin-panel/gerir-clientes.php">Gerir Clientes</a></li>
+                        <li class="breadcrumb-item active">Procurar Cliente</li>
+                    </ol>
 
-                            <!-- PROCURAR CLIENTE -->
-                            <form method="POST">
-                                <div class="card mb-3">
-                                    <div class="card-header">Procurar Cliente</div>
-                                    <div class="card-body">
-                                        <?php
-                                        if (isset($error) && $error != false) {
-                                            echo '<div class="alert alert-danger">' . $error . '</div>';
-                                        }
-                                        ?>
-                                        <?php
-                                        if (isset($success) && $success != false) {
-                                            echo '<div class="alert alert-success">' . $success . '</div>';
-                                        }
-                                        ?>
-                                        <div class="mb-3">
-                                            <label class="form-label">Insira o email do cliente</label>
-                                            <input type="email" name="email" id="email" placeholder="Exemplo: utilizador@mail.com" class="form-control" required >
-                                        </div>
-                                        <div class="">
-                                            <button class="btn btn-success" type="submit" name="submit">Submeter</button>
-                                            <a href="./admin-panel/gerir-clientes.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>
-                                        </div>
-                                    </div>
+                    <!-- PROCURAR CLIENTE -->
+                    <form method="POST">
+                        <div class="card mb-3">
+                            <div class="card-header">Procurar Cliente</div>
+                            <div class="card-body">
+                                <?php
+                                if (isset($error) && $error != false) {
+                                    echo '<div class="alert alert-danger">' . $error . '</div>';
+                                }
+                                ?>
+                                <?php
+                                if (isset($success) && $success != false) {
+                                    echo '<div class="alert alert-success">' . $success . '</div>';
+                                }
+                                ?>
+                                <div class="mb-3">
+                                    <label class="form-label">Insira o email do cliente</label>
+                                    <input type="email" name="email" id="email" placeholder="Exemplo: utilizador@mail.com" class="form-control" required>
                                 </div>
-                            </form>
+                                <div class="">
+                                    <button class="btn btn-success" type="submit" name="submit">Submeter</button>
+                                    <a href="./admin-panel/gerir-clientes.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
+                    </form>
 
-                <!-- FIM DE CONTEUDO DE PAGINA -->
-            </div>
+                </div>
+            </main>
+
+            <!-- FOOTER PANEL -->
+            <?php include('../components/panels/footer-panel.php'); ?>
+
         </div>
+        <!-- FIM CONTEUDO LAYOUT -->
     </div>
+    <!-- FIM CONTEUDO PAGINA -->
+
+
 
     <!-- PAGE BOTTOM -->
     <?php include('../components/page-bottom.php'); ?>
+
 </body>
 
 </html>
