@@ -34,7 +34,7 @@ if ($this_art_query->num_rows > 0) {
 if (isset($_POST['submit'])) {
 
     $sql = "DELETE FROM kb_artigos WHERE id=" . $_GET['id'];
-    $inset = mysqli_query($dbconn, $sql) or trigger_error("Query Failed! SQL: $sql - Error: ".mysqli_error($dbconn), E_USER_ERROR);
+    $inset = mysqli_query($dbconn, $sql) or trigger_error("Query Failed! SQL: $sql - Error: " . mysqli_error($dbconn), E_USER_ERROR);
 
     if ($inset) {
         $success = 'Artigo eliminado com sucesso';
@@ -45,45 +45,59 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<body>
-    <div class="d-flex" id="wrapper">
+<body class="sb-nav-fixed">
+
+    <!-- TOP NAVBAR -->
+    <?php include('../global-panel/components/topnav-painel.php'); ?>
+
+    <!-- INICIO LAYOUT -->
+    <div id="layoutSidenav">
+
+        <!-- SIDEBAR -->
         <?php include('../global-panel/components/sidebar-painel.php'); ?>
-        <div class="bg-light" id="page-content-wrapper">
-            <?php include('../global-panel/components/topnav-painel.php'); ?>
-            <div class="container-fluid">
-                <!-- INICIO DE CONTEUDO DE PAGINA -->
 
-                <!-- PAGINA PRINCIPAL - UTILIZADOR -->
-                <div class="container mt-4">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-12">
+        <!-- INICIO CONTEUDO DO LAYOUT -->
+        <div id="layoutSidenav_content" class="bg-light">
+            <main>
+                <div class="container-fluid px-5">
 
-                            <!-- INFO -->
-                            <h1 class="mb-3"><i class="bi bi-window"></i> Painel de Administrador</h1>
+                    <!-- Cabeçalho de Painel + Breadcrumbs -->
+                    <h1 class="mt-4">Gestão Knowledge Base</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="./admin-panel/painel-admin.php">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="./admin-panel/gerir-kb.php">Gerir KB</a></li>
+                        <li class="breadcrumb-item active">Eliminar Artigo > <?php echo $art_assunto; ?></li>
+                    </ol>
 
-                            <!-- MOSTRAR PERFIL -->
-                            <div class="card mb-3">
-                                <div class="card-body">
-                                    <form method="POST">
-                                        <h4>Pretende eliminar o artigo <?php echo $art_assunto; ?>?</h4>
-                                        <div class="">
-                                            <button class="btn btn-danger" type="submit" name="submit">Confimar</button> 
-                                            <a href="./admin-panel/gerir-kb.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>
-                                        </div>
-                                    </form>
+                    <!-- ELIMINAR ARTIGO -->
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <form method="POST">
+                                <h4>Pretende eliminar o artigo <?php echo $art_assunto; ?>?</h4>
+                                <div class="">
+                                    <button class="btn btn-danger" type="submit" name="submit">Confimar</button>
+                                    <a href="./admin-panel/gerir-kb.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
-                </div>
 
-                <!-- FIM DE CONTEUDO DE PAGINA -->
-            </div>
+                </div>
+            </main>
+
+            <!-- FOOTER PANEL -->
+            <?php include('../components/panels/footer-panel.php'); ?>
+
         </div>
+        <!-- FIM CONTEUDO LAYOUT -->
     </div>
+    <!-- FIM CONTEUDO PAGINA -->
+
+
 
     <!-- PAGE BOTTOM -->
     <?php include('../components/page-bottom.php'); ?>
+
 </body>
 
 </html>

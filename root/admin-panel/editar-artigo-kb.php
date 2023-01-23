@@ -70,104 +70,118 @@ if (isset($_POST['submit'])) {
 }
 ?>
 
-<body>
-    <div class="d-flex" id="wrapper">
+<body class="sb-nav-fixed">
+
+    <!-- TOP NAVBAR -->
+    <?php include('../global-panel/components/topnav-painel.php'); ?>
+
+    <!-- INICIO LAYOUT -->
+    <div id="layoutSidenav">
+
+        <!-- SIDEBAR -->
         <?php include('../global-panel/components/sidebar-painel.php'); ?>
-        <div class="bg-light" id="page-content-wrapper">
-            <?php include('../global-panel/components/topnav-painel.php'); ?>
-            <div class="container-fluid">
-                <!-- INICIO DE CONTEUDO DE PAGINA -->
 
-                <!-- PAGINA PRINCIPAL - UTILIZADOR -->
-                <div class="container mt-4">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-12">
+        <!-- INICIO CONTEUDO DO LAYOUT -->
+        <div id="layoutSidenav_content" class="bg-light">
+            <main>
+                <div class="container-fluid px-5">
 
-                            <!-- INFO -->
-                            <h1 class="mb-3"><i class="bi bi-window"></i> Painel de Administrador</h1>
+                    <!-- Cabeçalho de Painel + Breadcrumbs -->
+                    <h1 class="mt-4">Gestão Knowledge Base</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="./admin-panel/painel-admin.php">Dashboard</a></li>
+                        <li class="breadcrumb-item"><a href="./admin-panel/gerir-kb.php">Gerir KB</a></li>
+                        <li class="breadcrumb-item active">Editar Artigo > <?php echo $art_assunto; ?></li>
+                    </ol>
 
-                            <!-- EDITAR PERFIL FORMULARIO -->
-                            <form method="POST">
-                                <div class="card mb-3">
-                                    <div class="card-body">
+                    <!-- EDITAR ARTIGO FORMULARIO -->
+                    <form method="POST">
+                        <div class="card mb-3">
+                            <div class="card-body">
 
-                                        <?php
-                                        if (isset($error) && $error != false) {
-                                            echo '<div class="alert alert-danger">' . $error . '</div>'; //box com mensagem de erro
-                                        }
-                                        ?>
-                                        <?php
-                                        if (isset($success) && $success != false) {
-                                            echo '<div class="alert alert-success">' . $success . '</div>'; //box com mensagem de sucesso
-                                        }
-                                        ?>
+                                <?php
+                                if (isset($error) && $error != false) {
+                                    echo '<div class="alert alert-danger">' . $error . '</div>'; //box com mensagem de erro
+                                }
+                                ?>
+                                <?php
+                                if (isset($success) && $success != false) {
+                                    echo '<div class="alert alert-success">' . $success . '</div>'; //box com mensagem de sucesso
+                                }
+                                ?>
 
-                                        <div class="profile-input-field">
-                                            <h3>Editar Artigo</h3>
-                                            <form method="post" onSubmit="return validate();">
-                                                <h5>Informações Artigo > <?php echo $art_assunto; ?></h5>
+                                <div class="profile-input-field">
+                                    <h3>Editar Artigo</h3>
+                                    <form method="post" onSubmit="return validate();">
+                                        <h5>Informações Artigo > <?php echo $art_assunto; ?></h5>
 
-                                                <div class="row mb-3">
-                                                    <div class="col-lg-4 col-md-4 col-sm-12">
-                                                        <label for="art_cat_id" class="form-label">Categoria:<span class="text-danger">*</span></label>
-                                                            <?php if (count($latest_cat) > 0) { ?>
-                                                            <select class="form-select" name="art_cat_id" id="art_cat_id" required>
-                                                                <option value="<?php echo $art_cat_id; ?>" selected><?php echo $art_cat_nome; ?></option>
-                                                                <?php
-                                                                foreach ($latest_cat as $k => $v) {
-                                                                    echo '
-                                                                    <option value="'. $v['id'] .'">'.$v['nome_categoria'].'</option>
+                                        <div class="row mb-3">
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <label for="art_cat_id" class="form-label">Categoria:<span class="text-danger">*</span></label>
+                                                <?php if (count($latest_cat) > 0) { ?>
+                                                    <select class="form-select" name="art_cat_id" id="art_cat_id" required>
+                                                        <option value="<?php echo $art_cat_id; ?>" selected><?php echo $art_cat_nome; ?></option>
+                                                        <?php
+                                                        foreach ($latest_cat as $k => $v) {
+                                                            echo '
+                                                                    <option value="' . $v['id'] . '">' . $v['nome_categoria'] . '</option>
                                                                     ';
-                                                                } ?>
-                                                            </select>
-                                                            <?php } else {
-                                                                echo '<div class="alert alert-info">Não existem categorias</div>';
-                                                            } ?>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row mb-3">
-                                                    <div class="col-lg-4 col-md-4 col-sm-12">
-                                                        <label for="art_assunto" class="form-label">Assunto:<span class="text-danger">*</span></label>
-                                                        <input type="text" class="form-control" id="art_assunto" name="art_assunto" value="<?php echo $art_assunto; ?>" required>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row mb-3">
-                                                    <div class="col col-lg-6 col-md-6 col-sm-12">
-                                                        <label for="art_descricao" class="form-label">Descrição:<span class="text-danger">*</span></label><br>
-                                                        <span class="text-muted">Edição suporta tags de HTML</span>
-                                                        <textarea name="art_descricao" class="form-control" id="art_descricao" cols="30" rows="5" required><?php echo $art_descricao; ?></textarea>
-                                                    </div>
-                                                </div>
-
-                                                <div class="row mb-3">
-                                                    <div class="col-lg-4 col-md-4 col-sm-12">
-                                                        <label for="art_keywords" class="form-label">Palavras-chave:<span class="text-danger">*</span></label>
-                                                        <input type="text" class="form-control" id="art_keywords" name="art_keywords" value="<?php echo $art_keywords; ?>" required>
-                                                    </div>
-                                                </div>
-
-                                                <div class="">
-                                                    <button class="btn btn-success" type="submit" name="submit">Submeter</button>
-                                                    <a href="./admin-panel/gerir-kb.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>
-                                                </div>
-                                            </form>
+                                                        } ?>
+                                                    </select>
+                                                <?php } else {
+                                                    echo '<div class="alert alert-info">Não existem categorias</div>';
+                                                } ?>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- FIM DE CONTEUDO DE PAGINA -->
-            </div>
+                                        <div class="row mb-3">
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <label for="art_assunto" class="form-label">Assunto:<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="art_assunto" name="art_assunto" value="<?php echo $art_assunto; ?>" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col col-lg-6 col-md-6 col-sm-12">
+                                                <label for="art_descricao" class="form-label">Descrição:<span class="text-danger">*</span></label><br>
+                                                <span class="text-muted">Edição suporta tags de HTML</span>
+                                                <textarea name="art_descricao" class="form-control" id="art_descricao" cols="30" rows="5" required><?php echo $art_descricao; ?></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="row mb-3">
+                                            <div class="col-lg-4 col-md-4 col-sm-12">
+                                                <label for="art_keywords" class="form-label">Palavras-chave:<span class="text-danger">*</span></label>
+                                                <input type="text" class="form-control" id="art_keywords" name="art_keywords" value="<?php echo $art_keywords; ?>" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="">
+                                            <button class="btn btn-success" type="submit" name="submit">Submeter</button>
+                                            <a href="./admin-panel/gerir-kb.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </main>
+
+            <!-- FOOTER PANEL -->
+            <?php include('../components/panels/footer-panel.php'); ?>
+
         </div>
+        <!-- FIM CONTEUDO LAYOUT -->
     </div>
+    <!-- FIM CONTEUDO PAGINA -->
+
+
 
     <!-- PAGE BOTTOM -->
     <?php include('../components/page-bottom.php'); ?>
+
 </body>
 
 </html>
