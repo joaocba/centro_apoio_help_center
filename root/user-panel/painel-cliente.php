@@ -113,7 +113,7 @@ if ($recodes->num_rows > 0) {
                         </div>
                     </div>
 
-                    <!-- Lista de Tickets do Utilizador-->
+                    <!-- Lista de Tickets do Utilizador -->
                     <h1 class="mt-2 mb-1">Tickets</h1>
                     <div class="text-muted">
                         Lista de tickets registados
