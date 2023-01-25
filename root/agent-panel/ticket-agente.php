@@ -102,11 +102,11 @@ if (isset($_POST['submit'])) {
                     <div class="card mb-3">
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
-                                <div class="d-flex align-items-center">
+                                <div class="align-items-center">
                                     <span>Ticket ID</span>
                                     <span style="width: 85px;" class="badge bg-primary mx-2"><?php echo $ticket['ticket_id']; ?></span>
                                 </div>
-                                <div class="d-flex align-items-center">
+                                <div class="align-items-center">
                                     <span>Prioridade</span>
                                     <?php
                                     echo '
