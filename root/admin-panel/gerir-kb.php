@@ -144,7 +144,7 @@ if ($recodes->num_rows > 0) {
                                 $contador = count($latest_cat);
                                 foreach ($latest_cat as $k => $v) {
                                     echo '
-                                    <li href="./user-panel/ticket.php?id=' . $v['id'] . '" class="list-group-item list-group-item-action my-1" aria-current="true">
+                                    <li class="list-group-item list-group-item-action my-1" aria-current="true">
                                         <div class="container-fluid">
                                             <div class="row d-flex justify-content-between align-items-center py-3">
                                                 <div class="col-lg-1 col-sm-12" style="width:4% !important;">
@@ -231,7 +231,7 @@ if ($recodes->num_rows > 0) {
                                 $contador = count($latest_art);
                                 foreach ($latest_art as $k => $v) {
                                     echo '
-                                    <li href="./user-panel/ticket.php?id=' . $v['id'] . '" class="list-group-item list-group-item-action my-1" aria-current="true">
+                                    <li class="list-group-item list-group-item-action my-1" aria-current="true">
                                         <div class="container-fluid">
                                             <div class="row d-flex justify-content-between align-items-center py-3">
                                                 <div class="col-lg-1 col-sm-12" style="width:4% !important;">

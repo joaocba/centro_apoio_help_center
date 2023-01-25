@@ -91,13 +91,23 @@ if ($rtc->num_rows > 0) {
     }
 }
 
-//MOSTRAR ULTIMOS 10 TICKETS
+//MOSTRAR TICKETS ABERTOS
 $latest = []; //definir array para guardar lista de tickets
-$sql = "SELECT * FROM tickets ORDER BY date DESC LIMIT 99";
+$sql = "SELECT * FROM tickets WHERE status!=$closed_status ORDER BY prioridade DESC, date DESC";
 $recodes = mysqli_query($dbconn, $sql);
 if ($recodes->num_rows > 0) {
     while ($row = $recodes->fetch_assoc()) {
         $latest[] = $row;
+    }
+}
+
+//MOSTRAR TICKETS FECHADOS
+$latest_closed = [];
+$sql = "SELECT * FROM tickets WHERE status=$closed_status ORDER BY date DESC LIMIT 99";
+$recodes = mysqli_query($dbconn, $sql);
+if ($recodes->num_rows > 0) {
+    while ($row = $recodes->fetch_assoc()) {
+        $latest_closed[] = $row;
     }
 }
 ?>
@@ -140,7 +150,7 @@ if ($recodes->num_rows > 0) {
                     <!-- Cards de Acesso -->
                     <div class="row">
                         <!-- Procurar Ticket -->
-                        <div class="col-xl-6">
+                        <div class="col-xl-4">
                             <div class="card mb-4">
                                 <div class="card-body">
                                     <h3>Procurar Ticket</h3>
@@ -150,12 +160,22 @@ if ($recodes->num_rows > 0) {
                             </div>
                         </div>
                         <!-- Ver Estatisticas -->
-                        <div class="col-xl-6">
+                        <div class="col-xl-4">
                             <div class="card mb-4">
                                 <div class="card-body">
                                     <h3>Estatisticas</h3>
                                     <p>Visualizar estatisticas</p>
                                     <a href="./agent-panel/estatisticas-agente.php" class="btn btn-success">Aceder Estatisticas</a>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Contactos -->
+                        <div class="col-xl-4">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h3>Contactos</h3>
+                                    <p>Lista telefónica interna</p>
+                                    <a href="./global-panel/consultar-contactos.php" class="btn btn-success">Aceder</a>
                                 </div>
                             </div>
                         </div>
@@ -209,10 +229,10 @@ if ($recodes->num_rows > 0) {
                         </div>
                     </div>
 
-                    <!-- Lista de Tickets do Utilizador -->
-                    <h1 class="mt-2 mb-1">Tickets</h1>
+                    <!-- Lista de Tickets Abertos (Global) -->
+                    <h1 class="mt-2 mb-1">Tickets Abertos</h1>
                     <div class="text-muted">
-                        Lista de tickets registados
+                        Lista de tickets registados em resolução
                     </div>
                     <div class="bg-light my-3">
                         <ul class="list-group">
@@ -310,6 +330,96 @@ if ($recodes->num_rows > 0) {
                                 }
                             } else {
                                 echo '<div class="alert alert-info">Não existem tickets</div>'; //caso não haja tickets
+                            } ?>
+                        </ul>
+                    </div>
+
+                    <!-- Lista de Tickets Fechados (Global) -->
+                    <h1 class="mt-5 mb-1">Tickets Resolvidos</h1>
+                    <div class="text-muted">
+                        Lista de tickets registados com estado Fechado
+                    </div>
+                    <div class="bg-light my-3">
+                        <ul class="list-group">
+
+                            <!-- Cabeçalho da lista -->
+                            <div class="d-none d-lg-block list-group-item bg-dark text-white mb-2">
+                                <div class="container-fluid">
+                                    <div class="row justify-content-between">
+                                        <div class="col-lg-1 col-sm-12" style="width:4% !important;">
+                                            <small>#</small>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-12">
+                                            <small>ID</small>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-12">
+                                            <small>Assunto</small>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-12">
+                                            <small>Data Criação</small>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-12">
+                                            <small>Prioridade</small>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-12">
+                                            <small>Data Resposta</small>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-12">
+                                            <small>Estado</small>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-12">
+                                            <small>Ações</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Gerar Lista de Tickets -->
+                            <?php if (count($latest_closed) > 0) {
+                                $contador = count($latest_closed);
+                                foreach ($latest_closed as $k => $v) {
+                                    echo '
+                                    <li href="./user-panel/ticket.php?id=' . $v['id'] . '" class="list-group-item list-group-item-action my-1" aria-current="true">
+                                        <div class="container-fluid">
+                                            <div class="row d-flex justify-content-between align-items-center py-3">
+                                                <div class="col-lg-1 col-sm-12" style="width:4% !important;">
+                                                    <span class="text-muted"><small># ' . ($contador > 0 ? $contador-- : $contador = 0) . '</small></span>
+                                                </div>
+                                                <div class="col-lg-1 col-sm-12">
+                                                    <small class="d-lg-none">ID:</small>
+                                                    <span style="width: 85px;" class="badge bg-primary">' . $v['ticket_id'] . '</span>
+                                                </div>
+                                                <div class="col-lg-3 col-sm-12">
+                                                    <small class="d-lg-none">Assunto:</small>
+                                                    <span>' . $v['assunto'] . '</span>
+                                                </div>
+                                                <div class="col-lg-2 col-sm-12">
+                                                    <small class="d-lg-none">Data:</small>
+                                                    <span>' . $v['date'] . '</span>
+                                                </div>
+                                                <div class="col-lg-1 col-sm-12">
+                                                    <small class="d-lg-none">Prioridade:</small>
+                                                    <span style="width: 60px; "class="badge ' . (($v['prioridade'] == 0) ? "bg-success" : "bg-danger") . '">' . (($v['prioridade'] == 0) ? $prioridade_0 : $prioridade_1) . '</span>
+                                                </div>
+                                                <div class="col-lg-2 col-sm-12">
+                                                    <small class="d-lg-none">Data Resposta:</small>
+                                                    <span>' . (($v['date_reply'] == '0000-00-00 00:00:00') ? '-' : $v['date_reply']) . '</span>
+                                                </div>
+                                                <div class="col-lg-1 col-sm-12">
+                                                    <small class="d-lg-none">Estado:</small>
+                                                    <span style="width: 65px;" class="badge ' . (($v['status'] == 0) ? "bg-info" : (($v['status'] == 1) ? "bg-warning" : "bg-dark")) . '">' . (($v['status'] == 0) ? $estado_0 : (($v['status'] == 1) ? $estado_1 : $estado_2)) . '</span>
+                                                </div>
+                                                <div class="col-lg-1 col-sm-12">
+                                                    <a class="btn btn-sm btn-primary px-3" href="./agent-panel/ticket-agente.php?id=' . $v['id'] . '"><i class="bi bi-search"></i></a>
+                                                    ' . (($v['status'] < 2) ? '<a href="./agent-panel/fechar-ticket.php?id=' . $v['id'] . '" class="btn btn-sm btn-secondary px-3"><i class="bi bi-lock"></i></a>' : '') . '
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                ';
+                                }
+                            } else {
+                                echo '<div class="alert alert-info">Sem tickets fechados</div>'; //caso não haja tickets
                             } ?>
                         </ul>
                     </div>

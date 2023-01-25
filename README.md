@@ -62,6 +62,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 - [ ] Limpar codigo e aplicar comentários para
 - [ ] Knowledge Base o scrollspy não funciona corretamente
 - [ ] Adicionar Page Preloader ao conteudo dos paineis
+- [ ] Adicionar pagina 404 por defeito
 
 ### Todo - Painel Cliente
 
@@ -84,6 +85,8 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 ### Bugs
 
 - [x] Anchor redirect de items da nav da KB está a falhar
+- [x] Em qualquer pagina de detalhes de Ticket se clicar no logotipo vai para pagina 404
+- [ ] Corrigir valores na página Criar Conta na parte do Departamento
 
 ### Done ✓
 

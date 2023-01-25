@@ -91,6 +91,19 @@ if (!isset($_SESSION['admin_logged']) && $_SESSION['admin_logged'] != true) {
                                 </div>
                             </div>
                         </div>
+                        <!-- Gerir Contactos -->
+                        <div class="col-xl-6">
+                            <div class="card mb-4">
+                                <div class="card-body">
+                                    <h3>Gerir Contactos</h3>
+                                    <p>Aceda ao gestor de contactos internos</p>
+                                    <a href="./admin-panel/gerir-contactos.php" class="btn btn-success">Gerir Contactos</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
                         <!-- Gerir Definições -->
                         <div class="col-xl-6">
                             <div class="card mb-4">

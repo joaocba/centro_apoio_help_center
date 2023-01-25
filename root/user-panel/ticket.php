@@ -134,7 +134,7 @@ if (isset($_POST['submit'])) {
                             ?>
                             <table class="table">
                                 <tr>
-                                    <th>Nome</th>
+                                    <th style="width:15% !important;">Nome</th>
                                     <td><?php echo $ticket['nome']; ?></td>
                                 </tr>
                                 <tr>
