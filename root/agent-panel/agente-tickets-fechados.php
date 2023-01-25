@@ -1,28 +1,37 @@
 <?php
 //TITULO PÁGINA
-$page_title = 'Gerir Agentes -';
+$page_title = 'Tickets Fechados -';
 
 //HTML HEAD
 include('../components/page-head.php');
 ?>
 
 <?php
+//VERIFICAR SESSAO
 require_once('../int.php');
 
-//VERIFICAR SESSAO
-if (!isset($_SESSION['admin_logged']) && $_SESSION['admin_logged'] != true) {
+if (!isset($_SESSION['agent_logged']) && $_SESSION['agent_logged'] != true) {
     header('Location: ../login.php');
 }
+
+
+//Vars estados de tickets:
+$estado_0 = "Novo";
+$estado_1 = "Aberto";
+$estado_2 = "Fechado";
+
+//Vars prioridades de tickets:
+$prioridade_0 = "Normal";
+$prioridade_1 = "Alta";
 
 
 $db = new DB();
 $dbconn = $db->conn;
 
-//MOSTRAR CLIENTES
+//MOSTRAR ULTIMOS TICKETS COM O ESTADO = 0 (novos)
 $latest = [];
-$sql = "SELECT * FROM users WHERE role='1' ORDER BY id ASC LIMIT 15";
+$sql = "SELECT * FROM tickets WHERE status=2 ORDER BY date DESC";
 $recodes = mysqli_query($dbconn, $sql);
-
 if ($recodes->num_rows > 0) {
     while ($row = $recodes->fetch_assoc()) {
         $latest[] = $row;
@@ -47,61 +56,46 @@ if ($recodes->num_rows > 0) {
                 <div class="container-fluid px-5">
 
                     <!-- Cabeçalho de Painel + Breadcrumbs -->
-                    <h1 class="mt-4">Gestão Agentes</h1>
+                    <h1 class="mt-4">Painel Agente</h1>
                     <ol class="breadcrumb mb-4">
-                        <li class="breadcrumb-item"><a href="./admin-panel/painel-admin.php">Dashboard</a></li>
-                        <li class="breadcrumb-item active">Gerir Agentes</li>
+                        <li class="breadcrumb-item"><a href="./agent-panel/painel-agente.php">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Tickets Fechados</li>
                     </ol>
 
                     <!-- Cards de Acesso -->
                     <div class="row">
-                        <!-- Procurar Agente -->
+                        <!-- Procurar Ticket -->
                         <div class="col-xl-6">
                             <div class="card mb-4">
                                 <div class="card-body">
-                                    <h3>Procurar Agente</h3>
-                                    <p>Pesquise agentes por email</p>
-                                    <a href="./admin-panel/procurar-agente.php" class="btn btn-success">Procurar</a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Registar Agente -->
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h3>Registar Agente</h3>
-                                    <p>Registe um novo agente</p>
-                                    <a href="./admin-panel/registar-agente.php" class="btn btn-success">Registar Agente</a>
+                                    <h3>Procurar Ticket</h3>
+                                    <p>Procurar ticket através de ID</p>
+                                    <a href="./global-panel/procurar-ticket.php" class="btn btn-success">Procurar</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Lista de Agentes Registados -->
-                    <h1 class="mt-2 mb-1">Agentes</h1>
+                    <!-- Lista de Tickets do Utilizador -->
+                    <h1 class="mt-2 mb-1">Tickets Fechados</h1>
                     <div class="text-muted">
-                        Lista de agentes registados
+                        Lista de tickets registados com estado Fechado
                     </div>
                     <div class="bg-light my-3">
                         <ul class="list-group">
 
                             <!-- CAIXA DE ALERTA -->
                             <?php
-                            //mensagem de registo criado
-                            if (!empty($_GET['status']) && ($_GET['status'] == "usercreated")) {
-                                echo '<div class="alert alert-success text-center">Registo criado com sucesso</div>';
+                            //mensagem de ticket fechado
+                            if (!empty($_GET['status']) && ($_GET['status'] == "ticketclosed")) {
+                                echo '<div class="alert alert-success text-center">Ticket fechado com sucesso</div>';
                             }
                             ?>
+
                             <?php
-                            //mensagem de registo alterado
-                            if (!empty($_GET['status']) && ($_GET['status'] == "userdeleted")) {
-                                echo '<div class="alert alert-success text-center">Registo removido com sucesso</div>';
-                            }
-                            ?>
-                            <?php
-                            //mensagem de registo removido
-                            if (!empty($_GET['status']) && ($_GET['status'] == "userupdated")) {
-                                echo '<div class="alert alert-success text-center">Registo atualizado com sucesso</div>';
+                            //mensagem de prioridade de ticket alterada
+                            if (!empty($_GET['status']) && ($_GET['status'] == "ticketprioritychange")) {
+                                echo '<div class="alert alert-success text-center">Prioridade de ticket alterada com sucesso</div>';
                             }
                             ?>
 
@@ -112,29 +106,32 @@ if ($recodes->num_rows > 0) {
                                         <div class="col-lg-1 col-sm-12" style="width:4% !important;">
                                             <small>#</small>
                                         </div>
+                                        <div class="col-lg-1 col-sm-12">
+                                            <small>ID</small>
+                                        </div>
                                         <div class="col-lg-3 col-sm-12">
-                                            <small>Nome</small>
-                                        </div>
-                                        <div class="col-lg-3 col-sm-12">
-                                            <small>Email</small>
-                                        </div>
-                                        <div class="col-lg-1 col-sm-12">
-                                            <small>Telefone</small>
-                                        </div>
-                                        <div class="col-lg-1 col-sm-12">
-                                            <small>Empresa</small>
-                                        </div>
-                                        <div class="col-lg-1 col-sm-12">
-                                            <small>Departamento</small>
+                                            <small>Assunto</small>
                                         </div>
                                         <div class="col-lg-2 col-sm-12">
+                                            <small>Data Criação</small>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-12">
+                                            <small>Prioridade</small>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-12">
+                                            <small>Data Resposta</small>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-12">
+                                            <small>Estado</small>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-12">
                                             <small>Ações</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
 
-                            <!-- Gerar Lista de Agentes -->
+                            <!-- Gerar Lista de Tickets -->
                             <?php if (count($latest) > 0) {
                                 $contador = count($latest);
                                 foreach ($latest as $k => $v) {
@@ -145,30 +142,33 @@ if ($recodes->num_rows > 0) {
                                                 <div class="col-lg-1 col-sm-12" style="width:4% !important;">
                                                     <span class="text-muted"><small># ' . ($contador > 0 ? $contador-- : $contador = 0) . '</small></span>
                                                 </div>
+                                                <div class="col-lg-1 col-sm-12">
+                                                    <small class="d-lg-none">ID:</small>
+                                                    <span style="width: 85px;" class="badge bg-primary">' . $v['ticket_id'] . '</span>
+                                                </div>
                                                 <div class="col-lg-3 col-sm-12">
-                                                    <small class="d-lg-none">Nome:</small>
-                                                    <span>' . $v['nome'] . ' ' . $v['apelido'] . '</span>
-                                                </div>
-                                                <div class="col-lg-3 col-sm-12">
-                                                    <small class="d-lg-none">Email:</small>
-                                                    <span>' . $v['email'] . '</span>
-                                                </div>
-                                                <div class="col-lg-1 col-sm-12">
-                                                    <small class="d-lg-none">Telefone:</small>
-                                                    <span>' . $v['telefone'] . '</span>
-                                                </div>
-                                                <div class="col-lg-1 col-sm-12">
-                                                    <small class="d-lg-none">Empresa:</small>
-                                                    <span>' . $v['nome_empresa'] . '</span>
-                                                </div>
-                                                <div class="col-lg-1 col-sm-12">
-                                                    <small class="d-lg-none">Departamento:</small>
-                                                    <span>' . $v['dep_empresa'] . '</span>
+                                                    <small class="d-lg-none">Assunto:</small>
+                                                    <span>' . $v['assunto'] . '</span>
                                                 </div>
                                                 <div class="col-lg-2 col-sm-12">
-                                                    <a class="btn btn-sm btn-success px-3" href="./admin-panel/agente.php?id=' . $v['id'] . '"><i class="bi bi-search"></i></a> 
-                                                    <a class="btn btn-sm btn-primary px-3" href="./admin-panel/editar-agente.php?id=' . $v['id'] . '"><i class="bi bi-pen"></i></a> 
-                                                    <a class="btn btn-sm btn-danger px-3" href="./admin-panel/eliminar-agente.php?id=' . $v['id'] . '"><i class="bi bi-trash"></i></a>
+                                                    <small class="d-lg-none">Data:</small>
+                                                    <span>' . $v['date'] . '</span>
+                                                </div>
+                                                <div class="col-lg-1 col-sm-12">
+                                                    <small class="d-lg-none">Prioridade:</small>
+                                                    <span style="width: 60px; "class="badge ' . (($v['prioridade'] == 0) ? "bg-success" : "bg-danger") . '">' . (($v['prioridade'] == 0) ? $prioridade_0 : $prioridade_1) . '</span>
+                                                </div>
+                                                <div class="col-lg-2 col-sm-12">
+                                                    <small class="d-lg-none">Data Resposta:</small>
+                                                    <span>' . (($v['date_reply'] == '0000-00-00 00:00:00') ? '-' : $v['date_reply']) . '</span>
+                                                </div>
+                                                <div class="col-lg-1 col-sm-12">
+                                                    <small class="d-lg-none">Estado:</small>
+                                                    <span style="width: 65px;" class="badge ' . (($v['status'] == 0) ? "bg-info" : (($v['status'] == 1) ? "bg-warning" : "bg-dark")) . '">' . (($v['status'] == 0) ? $estado_0 : (($v['status'] == 1) ? $estado_1 : $estado_2)) . '</span>
+                                                </div>
+                                                <div class="col-lg-1 col-sm-12">
+                                                    <a class="btn btn-sm btn-primary px-3" href="./agent-panel/ticket-agente.php?id=' . $v['id'] . '"><i class="bi bi-search"></i></a>
+                                                    ' . (($v['status'] < 2) ? '<a href="./agent-panel/fechar-ticket.php?id=' . $v['id'] . '" class="btn btn-sm btn-secondary px-3"><i class="bi bi-lock"></i></a>' : '') . '
                                                 </div>
                                             </div>
                                         </div>
@@ -176,7 +176,7 @@ if ($recodes->num_rows > 0) {
                                 ';
                                 }
                             } else {
-                                echo '<div class="alert alert-info">Não existem agentes registados</div>'; //caso não haja tickets
+                                echo '<div class="alert alert-info">Não existem tickets novos registados</div>'; //caso não haja tickets
                             } ?>
                         </ul>
                     </div>

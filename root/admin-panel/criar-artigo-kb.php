@@ -131,6 +131,7 @@ if (isset($_POST['submit'])) {
                                         <div class="row mb-3">
                                             <div class="col-lg-4 col-md-4 col-sm-12">
                                                 <label for="art_keywords" class="form-label">Palavras-chave:<span class="text-danger">*</span></label>
+                                                <span class="text-muted">Separar cada palavra-chave por virgulas</span>
                                                 <input type="text" class="form-control" id="art_keywords" name="art_keywords" required>
                                             </div>
                                         </div>

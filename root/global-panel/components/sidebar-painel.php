@@ -53,11 +53,22 @@ if (isset($_SESSION['agent_logged']) && $_SESSION['agent_logged'] == true) {
                         <div class="sb-nav-link-icon"><i class="bi bi-pie-chart"></i></div>
                         Dashboard
                     </a>
-                    <div class="sb-sidenav-menu-heading">Tickets</div>
-                    <a class="nav-link" href="./global-panel/procurar-ticket.php">
-                        <div class="sb-nav-link-icon"><i class="bi bi-search"></i></div>
-                        Procurar Ticket
+
+                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                        <div class="sb-nav-link-icon"><i class="bi bi-ticket-perforated"></i></div>
+                        Tickets
+                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                     </a>
+                    <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                        <nav class="sb-sidenav-menu-nested nav">
+                            <a class="nav-link" href="./global-panel/procurar-ticket.php">Procurar Ticket</a>
+                            <a class="nav-link" href="./agent-panel/agente-tickets-novos.php">Novos</a>
+                            <a class="nav-link" href="./agent-panel/agente-tickets-espera.php">Em Espera</a>
+                            <a class="nav-link" href="./agent-panel/agente-tickets-fechados.php">Fechados</a>
+                            <a class="nav-link" href="./agent-panel/agente-prioridade-um.php">Prioridade Alta</a>
+                            <a class="nav-link" href="./agent-panel/agente-prioridade-zero.php">Prioridade Normal</a>
+                        </nav>
+                    </div>
                     <div class="sb-sidenav-menu-heading">Estatisticas</div>
                     <a class="nav-link" href="./agent-panel/estatisticas-agente.php">
                         <div class="sb-nav-link-icon"><i class="bi bi-graph-up"></i></div>

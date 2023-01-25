@@ -65,6 +65,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 ### Todo - Painel Cliente
 
+- [x] Criar paginas listar tickets por tipos de estado e prioridades
 - [ ] Melhorar design de página Ticket
 - [ ] Incorporar anexos em criar ticket
 	- [ ] Adicionar texto de como usar na metade em branco do card de criação de ticket

@@ -20,7 +20,7 @@ $dbconn = $db->conn;
 
 //MOSTRAR CLIENTES
 $latest = [];
-$sql = "SELECT * FROM users WHERE role='0' ORDER BY id ASC LIMIT 15";
+$sql = "SELECT * FROM users WHERE role='0' ORDER BY id ASC";
 $recodes = mysqli_query($dbconn, $sql);
 
 if ($recodes->num_rows > 0) {
@@ -77,75 +77,108 @@ if ($recodes->num_rows > 0) {
                         </div>
                     </div>
 
-                    <!-- MOSTRAR ULTIMOS 5 TICKETS EM TABELA -->
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-12">
-                            <div class="card mt-3">
-                                <div class="card-header">
-                                    Clientes Registados
-                                </div>
-                                <div class="card-body">
-                                    <!-- CAIXA DE ALERTA -->
-                                    <?php
-                                    //mensagem de registo criado
-                                    if (!empty($_GET['status']) && ($_GET['status'] == "usercreated")) {
-                                        echo '<div class="alert alert-success text-center">Registo criado com sucesso</div>';
-                                    }
-                                    ?>
-                                    <?php
-                                    //mensagem de registo alterado
-                                    if (!empty($_GET['status']) && ($_GET['status'] == "userdeleted")) {
-                                        echo '<div class="alert alert-success text-center">Registo removido com sucesso</div>';
-                                    }
-                                    ?>
-                                    <?php
-                                    //mensagem de registo removido
-                                    if (!empty($_GET['status']) && ($_GET['status'] == "userupdated")) {
-                                        echo '<div class="alert alert-success text-center">Registo atualizado com sucesso</div>';
-                                    }
-                                    ?>
+                    <!-- Lista de Clientes Registados -->
+                    <h1 class="mt-2 mb-1">Clientes</h1>
+                    <div class="text-muted">
+                        Lista de clientes registados
+                    </div>
+                    <div class="bg-light my-3">
+                        <ul class="list-group">
 
-                                    <!-- GERA TABELA -->
-                                    <?php if (count($latest) > 0) { ?>
-                                        <table class="table table-striped align-middle css-serial">
-                                            <thead class="table-dark">
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Nome</th>
-                                                    <th>Email</th>
-                                                    <th>Telefone</th>
-                                                    <th>Empresa</th>
-                                                    <th>Departamento</th>
-                                                    <th>Ações</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                foreach ($latest as $k => $v) {
-                                                    echo '
-                                                <tr>
-                                                    <td></td>
-                                                    <td>' . $v['nome'] . ' ' . $v['apelido'] . '</td>
-                                                    <td>' . $v['email'] . '</td>
-                                                    <td>' . $v['telefone'] . '</td>
-                                                    <td>' . $v['nome_empresa'] . ' (' . $v['local_empresa'] . ')</td>
-                                                    <td>' . $v['dep_empresa'] . '</td>
-                                                    <td>
-                                                        <a href="./admin-panel/cliente.php?id=' . $v['id'] . '" class="btn btn-sm btn-success"><i class="bi bi-search"></i><a/> 
-                                                        <a href="./admin-panel/editar-cliente.php?id=' . $v['id'] . '" class="btn btn-sm btn-primary"><i class="bi bi-pen"></i><a/> 
-                                                        <a href="./admin-panel/eliminar-cliente.php?id=' . $v['id'] . '" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i><a/>
-                                                    </td>
-                                                </tr>
-                                                ';
-                                                } ?>
-                                            </tbody>
-                                        </table>
-                                    <?php } else {
-                                        echo '<div class="alert alert-info">Não existem clientes registados</div>';
-                                    } ?>
+                            <!-- CAIXA DE ALERTA -->
+                            <?php
+                            //mensagem de registo criado
+                            if (!empty($_GET['status']) && ($_GET['status'] == "usercreated")) {
+                                echo '<div class="alert alert-success text-center">Registo criado com sucesso</div>';
+                            }
+                            ?>
+                            <?php
+                            //mensagem de registo alterado
+                            if (!empty($_GET['status']) && ($_GET['status'] == "userdeleted")) {
+                                echo '<div class="alert alert-success text-center">Registo removido com sucesso</div>';
+                            }
+                            ?>
+                            <?php
+                            //mensagem de registo removido
+                            if (!empty($_GET['status']) && ($_GET['status'] == "userupdated")) {
+                                echo '<div class="alert alert-success text-center">Registo atualizado com sucesso</div>';
+                            }
+                            ?>
+
+                            <!-- Cabeçalho da lista -->
+                            <div class="d-none d-lg-block list-group-item bg-dark text-white mb-2">
+                                <div class="container-fluid">
+                                    <div class="row justify-content-between">
+                                        <div class="col-lg-1 col-sm-12" style="width:4% !important;">
+                                            <small>#</small>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-12">
+                                            <small>Nome</small>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-12">
+                                            <small>Email</small>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-12">
+                                            <small>Telefone</small>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-12">
+                                            <small>Empresa</small>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-12">
+                                            <small>Departamento</small>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-12">
+                                            <small>Ações</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
+                            <!-- Gerar Lista de Clientes -->
+                            <?php if (count($latest) > 0) {
+                                $contador = count($latest);
+                                foreach ($latest as $k => $v) {
+                                    echo '
+                                    <li href="./user-panel/ticket.php?id=' . $v['id'] . '" class="list-group-item list-group-item-action my-1" aria-current="true">
+                                        <div class="container-fluid">
+                                            <div class="row d-flex justify-content-between align-items-center py-3">
+                                                <div class="col-lg-1 col-sm-12" style="width:4% !important;">
+                                                    <span class="text-muted"><small># ' . ($contador > 0 ? $contador-- : $contador = 0) . '</small></span>
+                                                </div>
+                                                <div class="col-lg-3 col-sm-12">
+                                                    <small class="d-lg-none">Nome:</small>
+                                                    <span>' . $v['nome'] . ' ' . $v['apelido'] . '</span>
+                                                </div>
+                                                <div class="col-lg-3 col-sm-12">
+                                                    <small class="d-lg-none">Email:</small>
+                                                    <span>' . $v['email'] . '</span>
+                                                </div>
+                                                <div class="col-lg-1 col-sm-12">
+                                                    <small class="d-lg-none">Telefone:</small>
+                                                    <span>' . $v['telefone'] . '</span>
+                                                </div>
+                                                <div class="col-lg-1 col-sm-12">
+                                                    <small class="d-lg-none">Empresa:</small>
+                                                    <span>' . $v['nome_empresa'] . '</span>
+                                                </div>
+                                                <div class="col-lg-1 col-sm-12">
+                                                    <small class="d-lg-none">Departamento:</small>
+                                                    <span>' . $v['dep_empresa'] . '</span>
+                                                </div>
+                                                <div class="col-lg-2 col-sm-12">
+                                                    <a class="btn btn-sm btn-success px-3" href="./admin-panel/cliente.php?id=' . $v['id'] . '"><i class="bi bi-search"></i></a> 
+                                                    <a class="btn btn-sm btn-primary px-3" href="./admin-panel/editar-cliente.php?id=' . $v['id'] . '"><i class="bi bi-pen"></i></a> 
+                                                    <a class="btn btn-sm btn-danger px-3" href="./admin-panel/eliminar-cliente.php?id=' . $v['id'] . '"><i class="bi bi-trash"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                ';
+                                }
+                            } else {
+                                echo '<div class="alert alert-info">Não existem clientes registados</div>'; //caso não haja tickets
+                            } ?>
+                        </ul>
                     </div>
 
                 </div>

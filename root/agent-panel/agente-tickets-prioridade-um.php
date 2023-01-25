@@ -1,17 +1,12 @@
 <?php
 //TITULO PÁGINA
-$page_title = 'Painel Agente -';
+$page_title = 'Tickets Em Espera -';
 
 //HTML HEAD
 include('../components/page-head.php');
 ?>
 
 <?php
-//AUTO REFRESH PAGINA
-$page = $_SERVER['PHP_SELF'];
-$sec = "300";
-header("Refresh: $sec; url=$page");
-
 //VERIFICAR SESSAO
 require_once('../int.php');
 
@@ -19,16 +14,12 @@ if (!isset($_SESSION['agent_logged']) && $_SESSION['agent_logged'] != true) {
     header('Location: ../login.php');
 }
 
-//PREPARAR ESTATISTICAS DE TICKETS
-$new_status = 0; //definir vars de identificação de estado
+
+//Vars estados de tickets:
+$new_status = 0;
 $waiting_reply_status = 1;
 $closed_status = 2;
 
-$new_count = 0; //definir vars de contagem de tickets
-$reply_count = 0;
-$closed_count = 0;
-
-//Vars estados de tickets:
 $estado_0 = "Novo";
 $estado_1 = "Aberto";
 $estado_2 = "Fechado";
@@ -40,60 +31,13 @@ $prioridade_alta = 1;
 $prioridade_0 = "Normal";
 $prioridade_1 = "Alta";
 
-$priori_normal_count = 0;
-$priori_alta_count = 0;
 
 $db = new DB();
 $dbconn = $db->conn;
 
-//ESTATISTICAS: TICKETS NOVOS
-$sql = "SELECT COUNT(*) AS new_tickets FROM tickets WHERE status=$new_status";
-$ntr = mysqli_query($dbconn, $sql);
-if ($ntr->num_rows > 0) {
-    while ($row = $ntr->fetch_assoc()) {
-        $new_count = $row['new_tickets'];
-    }
-}
-
-//ESTATISTICAS: AGUARDAM RESPOSTA
-$sql = "SELECT COUNT(*) AS new_tickets FROM tickets WHERE status=$waiting_reply_status";
-$rtc = mysqli_query($dbconn, $sql);
-if ($rtc->num_rows > 0) {
-    while ($row = $rtc->fetch_assoc()) {
-        $reply_count = $row['new_tickets'];
-    }
-}
-
-//ESTATISTICAS: FECHADOS
-$sql = "SELECT COUNT(*) AS new_tickets FROM tickets WHERE status=$closed_status";
-$ctr = mysqli_query($dbconn, $sql);
-if ($ctr->num_rows > 0) {
-    while ($row = $ctr->fetch_assoc()) {
-        $closed_count = $row['new_tickets'];
-    }
-}
-
-//ESTATISTICAS: TICKETS PRIORIDADE NORMAL
-$sql = "SELECT COUNT(*) AS prioridade_tickets FROM tickets WHERE prioridade=$prioridade_normal AND status!=$closed_status";
-$ntr = mysqli_query($dbconn, $sql);
-if ($ntr->num_rows > 0) {
-    while ($row = $ntr->fetch_assoc()) {
-        $priori_normal_count = $row['prioridade_tickets'];
-    }
-}
-
-//ESTATISTICAS: TICKETS PRIORIDADE ALTA
-$sql = "SELECT COUNT(*) AS prioridade_tickets FROM tickets WHERE prioridade=$prioridade_alta AND status!=$closed_status";
-$rtc = mysqli_query($dbconn, $sql);
-if ($rtc->num_rows > 0) {
-    while ($row = $rtc->fetch_assoc()) {
-        $priori_alta_count = $row['prioridade_tickets'];
-    }
-}
-
-//MOSTRAR ULTIMOS 10 TICKETS
-$latest = []; //definir array para guardar lista de tickets
-$sql = "SELECT * FROM tickets ORDER BY date DESC LIMIT 99";
+//MOSTRAR ULTIMOS TICKETS COM O ESTADO = 0 (novos)
+$latest = [];
+$sql = "SELECT * FROM tickets WHERE prioridade=$prioridade_alta AND status!=$closed_status ORDER BY date DESC";
 $recodes = mysqli_query($dbconn, $sql);
 if ($recodes->num_rows > 0) {
     while ($row = $recodes->fetch_assoc()) {
@@ -122,20 +66,8 @@ if ($recodes->num_rows > 0) {
                     <h1 class="mt-4">Painel Agente</h1>
                     <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item"><a href="./agent-panel/painel-agente.php">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Tickets Prioridade <?php echo $prioridade_1; ?></li>
                     </ol>
-
-                    <!-- Card Boas Vindas -->
-                    <div class="row">
-                        <div class="col-xl-12">
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h3>Olá, <?php echo $_SESSION['nome'] . ' ' . $_SESSION['apelido']; ?></h3>
-                                    <span>Última sessão inciada a <?php echo $_SESSION['last_login']; ?></span>
-                                    <!-- <a href="./components/logout.php" class="btn btn-dark">Terminar Sessão</a> -->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
 
                     <!-- Cards de Acesso -->
                     <div class="row">
@@ -149,70 +81,12 @@ if ($recodes->num_rows > 0) {
                                 </div>
                             </div>
                         </div>
-                        <!-- Ver Estatisticas -->
-                        <div class="col-xl-6">
-                            <div class="card mb-4">
-                                <div class="card-body">
-                                    <h3>Estatisticas</h3>
-                                    <p>Visualizar estatisticas</p>
-                                    <a href="./agent-panel/estatisticas-agente.php" class="btn btn-success">Aceder Estatisticas</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ESTATISTICAS TICKETS -->
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-4">
-                                    <div class="list-group">
-                                        <a href="./agent-panel/agente-tickets-novos.php" class="bg-primary bg-opacity-25 list-group-item list-group-item-action m-1" aria-current="true">
-                                            <h4>Tickets Novos</h4>
-                                            <h3><?php echo $new_count; ?></h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-3 col-md-4">
-                                    <div class="list-group">
-                                        <a href="./agent-panel/agente-tickets-espera.php" class="bg-warning bg-opacity-25 list-group-item list-group-item-action m-1" aria-current="true">
-                                            <h4>Tickets Em Espera</h4>
-                                            <h3><?php echo $reply_count; ?></h2>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-4">
-                                    <div class="list-group">
-                                        <a href="./agent-panel/agente-tickets-fechados.php" class="bg-secondary bg-opacity-25 list-group-item list-group-item-action m-1" aria-current="true">
-                                            <h4>Tickets Fechados</h4>
-                                            <h3><?php echo $closed_count; ?></h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-4">
-                                    <div class="list-group">
-                                        <a href="./agent-panel/agente-tickets-prioridade-zero.php" class="bg-success bg-opacity-25 list-group-item list-group-item-action m-1" aria-current="true">
-                                            <h4>Prioridade Normal</h4>
-                                            <h3><?php echo $priori_normal_count; ?></h3>
-                                        </a>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 col-md-4">
-                                    <div class="list-group">
-                                        <a href="./agent-panel/agente-tickets-prioridade-um.php" class="bg-danger bg-opacity-25 list-group-item list-group-item-action m-1" aria-current="true">
-                                            <h4>Prioridade Alta</h4>
-                                            <h3><?php echo $priori_alta_count; ?></h3>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
 
                     <!-- Lista de Tickets do Utilizador -->
-                    <h1 class="mt-2 mb-1">Tickets</h1>
+                    <h1 class="mt-2 mb-1">Tickets Prioridade <?php echo $prioridade_1; ?></h1>
                     <div class="text-muted">
-                        Lista de tickets registados
+                        Lista de tickets registados que têm prioridade <?php echo $prioridade_1; ?>
                     </div>
                     <div class="bg-light my-3">
                         <ul class="list-group">
@@ -309,7 +183,7 @@ if ($recodes->num_rows > 0) {
                                 ';
                                 }
                             } else {
-                                echo '<div class="alert alert-info">Não existem tickets</div>'; //caso não haja tickets
+                                echo '<div class="alert alert-info">Não existem tickets novos registados</div>'; //caso não haja tickets
                             } ?>
                         </ul>
                     </div>

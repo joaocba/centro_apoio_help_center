@@ -48,7 +48,7 @@ if ($this_ticket_query->num_rows > 0) {
 //Selecionar as respostas ao ticket com base no Ticket_ID
 $ticket_id = $ticket['id'];
 $reps = [];
-$sql = "SELECT * FROM ticket_reply WHERE ticket_id=$ticket_id";
+$sql = "SELECT * FROM ticket_reply WHERE ticket_id=$ticket_id ORDER BY date DESC";
 if ($ticket != '') {
     $replies = mysqli_query($dbconn, $sql);
     if ($replies->num_rows > 0) {
@@ -98,42 +98,32 @@ if (isset($_POST['submit'])) {
                         <li class="breadcrumb-item active">Ticket ID <?php echo $ticket['ticket_id']; ?></li>
                     </ol>
 
-                    <!-- CRIAR TICKET FORM -->
+                    <!-- MOSTRAR TICKET -->
                     <div class="card mb-3">
                         <div class="card-header">
                             <div class="d-flex justify-content-between">
-                                <div>
-                                    <span>ID Ticket : </span>
-                                    <small class="d-inline-flex px-2 py-1 fw-semibold text-primary bg-primary bg-opacity-10 border border-primary border-opacity-10 rounded-2"><?php echo $ticket['ticket_id']; ?></small>
+                                <div class="d-flex align-items-center">
+                                    <span>Ticket ID</span>
+                                    <span style="width: 85px;" class="badge bg-primary mx-2"><?php echo $ticket['ticket_id']; ?></span>
                                 </div>
-                                <div class="text-end">
-                                    <span>Prioridade : </span>
+                                <div class="d-flex align-items-center">
+                                    <span>Prioridade</span>
                                     <?php
                                     echo '
-                                            <small class="d-inline-flex px-2 py-1 fw-semibold 
-                                                                ' . (($prioridade == 0) ? "text-success bg-success" : "text-danger bg-danger") . '
-                                                                bg-opacity-10 border 
-                                                                ' . (($prioridade == 0) ? "border-success" : "border-danger") . '
-                                                                border-opacity-10 rounded-2 me-3">' . (($prioridade == 0) ? $prioridade_0 : $prioridade_1) . '
-                                            </small>
+                                            <span style="width: 60px; "class="badge ' . (($prioridade == 0) ? "bg-success" : "bg-danger") . ' mx-2">' . (($prioridade == 0) ? $prioridade_0 : $prioridade_1) . '</span>
                                             ';
                                     //BOTAO ALTERAR PRIORIDADE TICKET
                                     if ($prioridade < 2) {
                                         echo '
-                                                <a href="./agent-panel/ticket-prioridade.php?id=' . $_GET['id'] . '" target="_self" rel="noopener noreferrer" class="btn btn-secondary btn-sm"><i class="bi bi-toggles"></i></a>
+                                                <a href="./agent-panel/ticket-prioridade.php?id=' . $_GET['id'] . '" target="_self" rel="noopener noreferrer" class="btn btn-secondary btn-sm me-3"><i class="bi bi-toggles"></i></a>
                                                 ';
                                     } else if ($status >= 2) {
                                         echo '';
                                     } ?>
-                                    <span> Estado : </span>
+                                    <span>Estado</span>
                                     <?php
                                     echo '
-                                            <small class="d-inline-flex px-2 py-1 fw-semibold 
-                                                                ' . (($status == 0) ? "text-info bg-info" : (($status == 1) ? "text-warning bg-warning" : "text-dark bg-dark")) . '
-                                                                bg-opacity-10 border 
-                                                                ' . (($status == 0) ? "border-info" : (($status == 1) ? "border-warning" : "border-dark")) . '
-                                                                border-opacity-10 rounded-2">' . (($status == 0) ? $estado_0 : (($status == 1) ? $estado_1 : $estado_2)) . '
-                                            </small>
+                                            <span style="width: 65px;" class="badge ' . (($status == 0) ? "bg-info" : (($status == 1) ? "bg-warning" : "bg-dark")) . ' mx-2">' . (($status == 0) ? $estado_0 : (($status == 1) ? $estado_1 : $estado_2)) . '</span>
                                             ';
                                     //BOTAO FECHAR TICKET
                                     if ($status < 2) {
@@ -179,7 +169,7 @@ if (isset($_POST['submit'])) {
                                     <th>Assunto</th>
                                     <td><?php echo $ticket['nome_categoria'] . ' -> ' . $ticket['assunto']; ?></td>
                                 </tr>
-                                <tr>
+                                <tr style="height: 100px;">
                                     <th>Descrição</th>
                                     <td>
                                         <p><?php echo $ticket['message']; ?></p>
@@ -193,8 +183,8 @@ if (isset($_POST['submit'])) {
                                         <?php foreach ($reps as $k => $v) {
                                             if ($v['send_by'] == 0) {
                                         ?>
-                                                <li class="reply-user">
-                                                    <div class="card mb-3 bg-primary bg-opacity-25 w-75">
+                                                <li class="reply-user my-4">
+                                                    <div class="card mb-3 bg-primary bg-opacity-25" style="border-radius: 0.80rem !important; width: 55%;">
                                                         <div class="card-body">
                                                             <p><?php echo $v['message']; ?></p>
                                                             <div class="text-end">
@@ -206,8 +196,8 @@ if (isset($_POST['submit'])) {
                                             <?php
                                             } else {
                                             ?>
-                                                <li class="reply-me">
-                                                    <div class="card mb-3 bg-secondary bg-opacity-25 w-75 float-end">
+                                                <li class="reply-me my-4">
+                                                    <div class="card mb-3 bg-secondary bg-opacity-25 float-end" style="border-radius: 0.80rem !important; width: 55%;">
                                                         <div class="card-body">
                                                             <p><?php echo $v['message']; ?></p>
                                                             <div class="text-end">
@@ -224,8 +214,6 @@ if (isset($_POST['submit'])) {
                                     <?php } ?>
                                 </ul>
                             </div>
-                            <!-- TODO: Resolver problema com linha separadora -->
-                            <hr class="my-3 form-control">
                             <div class="send-area">
                                 <form method="POST">
                                     <div class="my-3">

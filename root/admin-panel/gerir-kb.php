@@ -89,133 +89,180 @@ if ($recodes->num_rows > 0) {
                         </div>
                     </div>
 
-                    <!-- MOSTRAR ULTIMOS 5 TICKETS EM TABELA -->
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-12">
-                            <div class="card mt-3">
-                                <div class="card-header">
-                                    Categorias
-                                </div>
-                                <div class="card-body">
-                                    <!-- CAIXA DE ALERTA -->
-                                    <?php
-                                    //mensagem de categoria criada
-                                    if (!empty($_GET['status']) && ($_GET['status'] == "catcreated")) {
-                                        echo '<div class="alert alert-success text-center">Categoria criada com sucesso</div>';
-                                    }
-                                    ?>
+                    <!-- Lista de Categorias Registados -->
+                    <h1 class="mt-2 mb-1">Categorias</h1>
+                    <div class="text-muted">
+                        Lista de categorias disponiveis
+                    </div>
+                    <div class="bg-light my-3">
+                        <ul class="list-group">
 
-                                    <?php
-                                    //mensagem de categoria alterada
-                                    if (!empty($_GET['status']) && ($_GET['status'] == "catupdated")) {
-                                        echo '<div class="alert alert-success text-center">Categoria alterada com sucesso</div>';
-                                    }
-                                    ?>
+                            <!-- CAIXA DE ALERTA -->
+                            <?php
+                            //mensagem de categoria criada
+                            if (!empty($_GET['status']) && ($_GET['status'] == "catcreated")) {
+                                echo '<div class="alert alert-success text-center">Categoria criada com sucesso</div>';
+                            }
+                            ?>
 
-                                    <?php
-                                    //mensagem de categoria removida
-                                    if (!empty($_GET['status']) && ($_GET['status'] == "catdeleted")) {
-                                        echo '<div class="alert alert-success text-center">Categoria removida com sucesso</div>';
-                                    }
-                                    ?>
+                            <?php
+                            //mensagem de categoria alterada
+                            if (!empty($_GET['status']) && ($_GET['status'] == "catupdated")) {
+                                echo '<div class="alert alert-success text-center">Categoria alterada com sucesso</div>';
+                            }
+                            ?>
 
-                                    <!-- GERA TABELA CATEGORIAS -->
-                                    <?php if (count($latest_cat) > 0) { ?>
-                                        <table class="table table-striped align-middle css-serial" id="component_id2">
-                                            <thead class="table-dark">
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Nome</th>
-                                                    <th class="w-50">Descrição</th>
-                                                    <th>Ações</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                foreach ($latest_cat as $k => $v) {
-                                                    echo '
-                                                <tr>
-                                                    <td></td>
-                                                    <td>' . $v['nome_categoria'] . '</td>
-                                                    <td>' . $v['descricao_categoria'] . '</td>
-                                                    <td>
-                                                        <a href="./admin-panel/editar-categoria-kb.php?id=' . $v['id'] . '" class="btn btn-sm btn-primary"><i class="bi bi-pen"></i><a/> 
-                                                        <a href="./admin-panel/eliminar-categoria-kb.php?id=' . $v['id'] . '" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i><a/>
-                                                    </td>
-                                                </tr>
-                                                ';
-                                                } ?>
-                                            </tbody>
-                                        </table>
-                                    <?php } else {
-                                        echo '<div class="alert alert-info">Não existem categorias</div>';
-                                    } ?>
+                            <?php
+                            //mensagem de categoria removida
+                            if (!empty($_GET['status']) && ($_GET['status'] == "catdeleted")) {
+                                echo '<div class="alert alert-success text-center">Categoria removida com sucesso</div>';
+                            }
+                            ?>
+
+                            <!-- Cabeçalho da lista -->
+                            <div class="d-none d-lg-block list-group-item bg-dark text-white mb-2">
+                                <div class="container-fluid">
+                                    <div class="row justify-content-between">
+                                        <div class="col-lg-1 col-sm-12" style="width:4% !important;">
+                                            <small>#</small>
+                                        </div>
+                                        <div class="col-lg-3 col-sm-12">
+                                            <small>Nome</small>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-12">
+                                            <small>Descrição</small>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-12">
+                                            <small>Ações</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
-                            <div class="card mt-3">
-                                <div class="card-header">
-                                    Artigos
-                                </div>
-                                <div class="card-body">
-                                    <!-- CAIXA DE ALERTA -->
-                                    <?php
-                                    //mensagem de artigo criado
-                                    if (!empty($_GET['status']) && ($_GET['status'] == "artcreated")) {
-                                        echo '<div class="alert alert-success text-center">Artigo criado com sucesso</div>';
-                                    }
-                                    ?>
+                            <!-- Gerar Lista de Categorias -->
+                            <?php if (count($latest_cat) > 0) {
+                                $contador = count($latest_cat);
+                                foreach ($latest_cat as $k => $v) {
+                                    echo '
+                                    <li href="./user-panel/ticket.php?id=' . $v['id'] . '" class="list-group-item list-group-item-action my-1" aria-current="true">
+                                        <div class="container-fluid">
+                                            <div class="row d-flex justify-content-between align-items-center py-3">
+                                                <div class="col-lg-1 col-sm-12" style="width:4% !important;">
+                                                    <span class="text-muted"><small># ' . ($contador > 0 ? $contador-- : $contador = 0) . '</small></span>
+                                                </div>
+                                                <div class="col-lg-3 col-sm-12">
+                                                    <small class="d-lg-none">Nome:</small>
+                                                    <span>' . $v['nome_categoria'] . '</span>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-12">
+                                                    <small class="d-lg-none">Descrição:</small>
+                                                    <span>' . $v['descricao_categoria'] . '</span>
+                                                </div>
+                                                <div class="col-lg-2 col-sm-12">
+                                                    <a class="btn btn-sm btn-primary px-3" href="./admin-panel/editar-categoria-kb.php?id=' . $v['id'] . '"><i class="bi bi-pen"></i></a> 
+                                                    <a class="btn btn-sm btn-danger px-3" href="./admin-panel/eliminar-categoria-kb.php?id=' . $v['id'] . '"><i class="bi bi-trash"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                ';
+                                }
+                            } else {
+                                echo '<div class="alert alert-info">Não existem categorias criadas</div>'; //caso não haja tickets
+                            } ?>
+                        </ul>
+                    </div>
 
-                                    <?php
-                                    //mensagem de artigo alterado
-                                    if (!empty($_GET['status']) && ($_GET['status'] == "artupdated")) {
-                                        echo '<div class="alert alert-success text-center">Artigo alterado com sucesso</div>';
-                                    }
-                                    ?>
+                    <!-- Lista de Artigos Registados -->
+                    <h1 class="mt-2 mb-1">Artigos</h1>
+                    <div class="text-muted">
+                        Lista de artigos disponiveis
+                    </div>
+                    <div class="bg-light my-3">
+                        <ul class="list-group">
 
-                                    <?php
-                                    //mensagem de artigo removido
-                                    if (!empty($_GET['status']) && ($_GET['status'] == "artdeleted")) {
-                                        echo '<div class="alert alert-success text-center">Artigo removido com sucesso</div>';
-                                    }
-                                    ?>
+                            <!-- CAIXA DE ALERTA -->
+                            <?php
+                            //mensagem de categoria criada
+                            if (!empty($_GET['status']) && ($_GET['status'] == "catcreated")) {
+                                echo '<div class="alert alert-success text-center">Artigo criado com sucesso</div>';
+                            }
+                            ?>
 
-                                    <!-- GERA TABELA ARTIGOS -->
-                                    <?php if (count($latest_art) > 0) { ?>
-                                        <table class="table table-striped align-middle css-serial" id="component_id">
-                                            <thead class="table-dark">
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Categoria</th>
-                                                    <th class="w-25">Assunto</th>
-                                                    <th class="w-50">Descrição</th>
-                                                    <th>Ações</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <?php
-                                                foreach ($latest_art as $k => $v) {
-                                                    echo '
-                                                <tr>
-                                                    <td></td>
-                                                    <td>' . $v['nome_categoria'] . '</td>
-                                                    <td>' . $v['assunto'] . '</td>
-                                                    <td>' . $v['descricao'] . '</td>
-                                                    <td>
-                                                        <a href="./admin-panel/editar-artigo-kb.php?id=' . $v['id'] . '" class="btn btn-sm btn-primary"><i class="bi bi-pen"></i><a/> 
-                                                        <a href="./admin-panel/eliminar-artigo-kb.php?id=' . $v['id'] . '" class="btn btn-sm btn-danger"><i class="bi bi-trash"></i><a/>
-                                                    </td>
-                                                </tr>
-                                                ';
-                                                } ?>
-                                            </tbody>
-                                        </table>
-                                    <?php } else {
-                                        echo '<div class="alert alert-info">Não existem artigos</div>';
-                                    } ?>
+                            <?php
+                            //mensagem de categoria alterada
+                            if (!empty($_GET['status']) && ($_GET['status'] == "catupdated")) {
+                                echo '<div class="alert alert-success text-center">Artigo alterado com sucesso</div>';
+                            }
+                            ?>
+
+                            <?php
+                            //mensagem de categoria removida
+                            if (!empty($_GET['status']) && ($_GET['status'] == "catdeleted")) {
+                                echo '<div class="alert alert-success text-center">Artigo removido com sucesso</div>';
+                            }
+                            ?>
+
+                            <!-- Cabeçalho da lista -->
+                            <div class="d-none d-lg-block list-group-item bg-dark text-white mb-2">
+                                <div class="container-fluid">
+                                    <div class="row justify-content-between">
+                                        <div class="col-lg-1 col-sm-12" style="width:4% !important;">
+                                            <small>#</small>
+                                        </div>
+                                        <div class="col-lg-1 col-sm-12">
+                                            <small>Categoria</small>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-12">
+                                            <small>Assunto</small>
+                                        </div>
+                                        <div class="col-lg-6 col-sm-12">
+                                            <small>Descrição</small>
+                                        </div>
+                                        <div class="col-lg-2 col-sm-12">
+                                            <small>Ações</small>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
+
+                            <!-- Gerar Lista de Artigos -->
+                            <?php if (count($latest_art) > 0) {
+                                $contador = count($latest_art);
+                                foreach ($latest_art as $k => $v) {
+                                    echo '
+                                    <li href="./user-panel/ticket.php?id=' . $v['id'] . '" class="list-group-item list-group-item-action my-1" aria-current="true">
+                                        <div class="container-fluid">
+                                            <div class="row d-flex justify-content-between align-items-center py-3">
+                                                <div class="col-lg-1 col-sm-12" style="width:4% !important;">
+                                                    <span class="text-muted"><small># ' . ($contador > 0 ? $contador-- : $contador = 0) . '</small></span>
+                                                </div>
+                                                <div class="col-lg-1 col-sm-12">
+                                                    <small class="d-lg-none">Categoria:</small>
+                                                    <span>' . $v['nome_categoria'] . '</span>
+                                                </div>
+                                                <div class="col-lg-2 col-sm-12">
+                                                    <small class="d-lg-none">Assunto:</small>
+                                                    <span>' . $v['assunto'] . '</span>
+                                                </div>
+                                                <div class="col-lg-6 col-sm-12">
+                                                    <small class="d-lg-none">Descrição:</small>
+                                                    <!--<span>' . $v['descricao'] . '</span>-->
+                                                    <span>' . substr($v['descricao'], 0, 80) .((strlen($v['descricao']) > 80) ? '...' : '') . '</span>
+                                                </div>
+                                                <div class="col-lg-2 col-sm-12">
+                                                    <a class="btn btn-sm btn-primary px-3" href="./admin-panel/editar-artigo-kb.php?id=' . $v['id'] . '"><i class="bi bi-pen"></i></a> 
+                                                    <a class="btn btn-sm btn-danger px-3" href="./admin-panel/eliminar-artigo-kb.php?id=' . $v['id'] . '"><i class="bi bi-trash"></i></a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                ';
+                                }
+                            } else {
+                                echo '<div class="alert alert-info">Não existem artigos disponiveis</div>'; //caso não haja tickets
+                            } ?>
+                        </ul>
                     </div>
 
                 </div>
