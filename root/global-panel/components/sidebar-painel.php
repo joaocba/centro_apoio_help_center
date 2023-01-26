@@ -65,8 +65,8 @@ if (isset($_SESSION['agent_logged']) && $_SESSION['agent_logged'] == true) {
                             <a class="nav-link" href="./agent-panel/agente-tickets-novos.php">Novos</a>
                             <a class="nav-link" href="./agent-panel/agente-tickets-espera.php">Em Espera</a>
                             <a class="nav-link" href="./agent-panel/agente-tickets-fechados.php">Fechados</a>
-                            <a class="nav-link" href="./agent-panel/agente-prioridade-um.php">Prioridade Alta</a>
-                            <a class="nav-link" href="./agent-panel/agente-prioridade-zero.php">Prioridade Normal</a>
+                            <a class="nav-link" href="./agent-panel/agente-tickets-prioridade-um.php">Prioridade Alta</a>
+                            <a class="nav-link" href="./agent-panel/agente-tickets-prioridade-zero.php">Prioridade Normal</a>
                         </nav>
                     </div>
                     <div class="sb-sidenav-menu-heading">Estatisticas</div>

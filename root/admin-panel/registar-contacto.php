@@ -101,22 +101,22 @@ if (isset($_POST['submit'])) {
                                         <h5>Dados Contacto</h5>
                                         <div class="row mb-3">
                                             <div class="col-lg-3 col-sm-12">
-                                                <label for="num_directo" class="form-label">Nº Direto Fixo:<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" id="num_directo" name="num_directo" required>
+                                                <label for="num_directo" class="form-label">Nº Direto Fixo:</label>
+                                                <input type="text" class="form-control" id="num_directo" name="num_directo">
                                             </div>
                                             <div class="col-lg-2 col-sm-12">
-                                                <label for="curto_fixo" class="form-label">Nº Curto Fixo:<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" id="curto_fixo" name="curto_fixo" required>
+                                                <label for="curto_fixo" class="form-label">Nº Curto Fixo:</label>
+                                                <input type="text" class="form-control" id="curto_fixo" name="curto_fixo">
                                             </div>
                                         </div>
                                         <div class="row mb-3">
                                         <div class="col-lg-3 col-sm-12">
-                                                <label for="telemovel" class="form-label">Nº Direto Móvel:<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" id="telemovel" name="telemovel" required>
+                                                <label for="telemovel" class="form-label">Nº Direto Móvel:</label>
+                                                <input type="text" class="form-control" id="telemovel" name="telemovel">
                                             </div>
                                             <div class="col-lg-2 col-sm-12">
-                                                <label for="curto_movel" class="form-label">Nº Curto Móvel:<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control" id="curto_movel" name="curto_movel" required>
+                                                <label for="curto_movel" class="form-label">Nº Curto Móvel:</label>
+                                                <input type="text" class="form-control" id="curto_movel" name="curto_movel">
                                             </div>
                                         </div>
                                         <div class="row mb-3">

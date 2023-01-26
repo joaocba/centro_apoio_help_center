@@ -34,7 +34,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 
 ## DEV
-### Todo - Landing Page
+### Landing Page
 
 - [x] Verificar e corrigir responsividade para modo Tablet/Telefone
 - [x] Fazer textos de páginas em falta
@@ -53,7 +53,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 	- [x] Aplicar validação de campos (password e re-password) com JS / JQuery
 - [x] (OPCIONAL) Adicionar "loader animation" ao arrancar qualquer página
 
-### Todo - Backoffice (paineis - global)
+### Backoffice (paineis - global)
 
 - [x] Melhorar design de topnav
 - [x] Melhorar design de sidebar
@@ -64,30 +64,26 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 - [ ] Adicionar Page Preloader ao conteudo dos paineis
 - [ ] Adicionar pagina 404 por defeito
 
-### Todo - Painel Cliente
+### Painel Cliente
 
 - [x] Criar paginas listar tickets por tipos de estado e prioridades
-- [ ] Melhorar design de página Ticket
+- [x] Melhorar design de página Ticket
 - [ ] Incorporar anexos em criar ticket
 	- [ ] Adicionar texto de como usar na metade em branco do card de criação de ticket
 
-### Todo - Painel Agente
+### Painel Agente
 
 - [x] Incorporar gráficos e estatisticas no Painel de Agente
 - [ ] Adicionar ao sidebar links para Tickets Em Espera (com counter) e Tickets Novos (com counter)
 
-### Todo - Painel Administrador
+### Painel Administrador
 
 - [ ] Criar opções para a página de Definições no Painel de Administrador
 - [ ] Adicionar links dropdown para sidebar para Gerir Clientes, Gerir Agentes e Gerir KB
-- [ ] Paginas Registar Cliente e Registar Agente precisam ter validação de confirma password
+- [x] Paginas Registar Cliente e Registar Agente precisam ter validação de confirma password
 
 ### Bugs
 
 - [x] Anchor redirect de items da nav da KB está a falhar
 - [x] Em qualquer pagina de detalhes de Ticket se clicar no logotipo vai para pagina 404
-- [ ] Corrigir valores na página Criar Conta na parte do Departamento
-
-### Done ✓
-
-- [x] ...
+- [x] Corrigir valores na página Criar Conta na parte do Departamento

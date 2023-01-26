@@ -147,8 +147,9 @@ if (isset($_POST['submit'])) {
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12">
                                                 <label for="confirm_password" class="form-label"> Confirma Password:<span class="text-danger">*</span></label>
-                                                <input type="password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Deve conter pelo menos um número, uma letra maiuscula e minuscula, e 8 ou mais caracteres" placeholder="Confirme a sua Password" aria-label="confirm_password" id="confirm_password" name="confirm_password" required>
+                                                <input type="password" class="form-control" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Deve conter pelo menos um número, uma letra maiuscula e minuscula, e 8 ou mais caracteres" placeholder="Confirme a sua Password" aria-label="confirm_password" id="confirm_password" name="confirm_password" data-rule-equalTo="#password" required>
                                             </div>
+                                            <div style="margin-top: 7px;" id="CheckPasswordMatch"></div>
                                         </div>
 
                                         <h5>Dados Empresa</h5>
@@ -175,10 +176,10 @@ if (isset($_POST['submit'])) {
                                                 <label for="dep_empresa" class="form-label">Departamento:<span class="text-danger">*</span></label>
                                                 <select class="form-select" id="dep_empresa" name="dep_empresa" required>
                                                     <option value="">Escolher</option>
-                                                    <option valeu='Aveiro'>Oficina</option>
-                                                    <option valeu='Braga'>Financeiro</option>
-                                                    <option valeu='Faro'>Contabilidade</option>
-                                                    <option valeu='Leiria'>Técnico</option>
+                                                    <option valeu='Oficina'>Oficina</option>
+                                                    <option valeu='Financeiro'>Financeiro</option>
+                                                    <option valeu='Contabilidade'>Contabilidade</option>
+                                                    <option valeu='Técnico'>Técnico</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -212,3 +213,17 @@ if (isset($_POST['submit'])) {
 </body>
 
 </html>
+
+<!-- Validar Password e Confirma Password -->
+<script>
+    $(document).ready(function() {
+        $("#confirm_password").on('keyup', function() {
+            var password = $("#password").val();
+            var confirmPassword = $("#confirm_password").val();
+            if (password != confirmPassword)
+                $("#CheckPasswordMatch").html("Passwords não coincidem").css("color", "red");
+            else
+                $("#CheckPasswordMatch").html("Passwords coicidem").css("color", "green");
+        });
+    });
+</script>

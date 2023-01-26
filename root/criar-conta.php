@@ -182,10 +182,10 @@ if (isset($_POST['submit'])) {
                                         <label for="dep_empresa" class="form-label">Departamento:<span class="text-danger">*</span></label>
                                         <select class="form-select" id="dep_empresa" name="dep_empresa" required>
                                             <option value="">Escolher</option>
-                                            <option valeu='Aveiro'>Oficina</option>
-                                            <option valeu='Braga'>Financeiro</option>
-                                            <option valeu='Faro'>Contabilidade</option>
-                                            <option valeu='Leiria'>Técnico</option>
+                                            <option valeu='Oficina'>Oficina</option>
+                                            <option valeu='Financeiro'>Financeiro</option>
+                                            <option valeu='Contabilidade'>Contabilidade</option>
+                                            <option valeu='Técnico'>Técnico</option>
                                         </select>
                                     </div>
                                 </div>

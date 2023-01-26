@@ -5,7 +5,7 @@ $now = new DateTime();
 <!-- TOP NAVBAR -->
 <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark shadow">
     <!-- Logo -->
-    <a class="navbar-brand ps-3" href="<?= /*$_SERVER['PHP_SELF'].*/$_SERVER['REQUEST_URI'] ?>"><img src="./assets/img/logos/logof_white.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Centro de Apoio</a>
+    <a class="navbar-brand ps-3" href="<?= /*$_SERVER['PHP_SELF']*/$_SERVER['REQUEST_URI'] ?>"><img src="./assets/img/logos/logof_white.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top"> Centro de Apoio</a>
     <!-- Botão Sidebar -->
     <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
     <!-- Info Atualização -->
