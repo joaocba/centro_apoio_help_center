@@ -9,7 +9,7 @@ $fromEmail = $_POST['email'];
 $fromName = $_POST['name'];
 
 // an email address that will receive the email with the output of the form
-$sendToEmail = 'email_destino@email.com';
+$sendToEmail = 'contact@blakw.com';
 $sendToName = 'Nova mensagem de contacto recebida';
 
 // subject of the email
@@ -20,13 +20,13 @@ $subject = 'Nova mensagem de contacto recebida';
 $fields = array('name' => 'Name', 'email' => 'Email', 'message' => 'Message');
 
 // message that will be displayed when everything is OK :)
-$okMessage = 'Mensagem enviada com sucesso! Iremos responder com a maior brevidade possivel.';
+$okMessage = header('Location: ../../contacto.php?status=contactsent');
 
 // If something goes wrong, we will display this message.
-$errorMessage = 'Houve um erro ao enviar a mensagem. Por favor tente mais tarde.';
+$errorMessage = header('Location: ../../contacto.php?status=senderror');
 
 // ReCaptch Secret
-$recaptchaSecret = '6LcQigckAAAAAFVHj5_uFlg-aOHTHXAP16YpmN1N';
+$recaptchaSecret = '6Le87ikkAAAAAMNq1qGaRqecCKeuQbtv6LnfSU1h';
 
 // if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
 error_reporting(E_ALL & ~E_NOTICE);

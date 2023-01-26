@@ -20,10 +20,10 @@ $subject = 'Nova mensagem de contacto recebida';
 $fields = array('name' => 'Name', 'email' => 'Email', 'message' => 'Message');
 
 // message that will be displayed when everything is OK :)
-$okMessage = 'Mensagem enviada com sucesso! Iremos responder com a maior brevidade possivel.';
+$okMessage = header('Location: ../../contacto.php?status=contactsent');
 
 // If something goes wrong, we will display this message.
-$errorMessage = 'Houve um erro ao enviar a mensagem. Por favor tente mais tarde.';
+$errorMessage = header('Location: ../../contacto.php?status=senderror');
 
 // ReCaptch Secret
 $recaptchaSecret = '6LcQigckAAAAAFVHj5_uFlg-aOHTHXAP16YpmN1N';

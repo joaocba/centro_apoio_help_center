@@ -48,6 +48,20 @@ include('./components/landing/lang/settings.php');
                     </div>
                     <div class="row gx-5 justify-content-center">
 
+                        <!-- CAIXA DE ALERTA -->
+                        <?php
+                        //mensagem de sucesso
+                        if (!empty($_GET['status']) && ($_GET['status'] == "contactsent")) {
+                            echo '<div class="alert alert-success text-center">Mensagem enviada com sucesso! Iremos responder com a maior brevidade possivel.</div>';
+                        }
+                        ?>
+                        <?php
+                        //mensagem de erro
+                        if (!empty($_GET['status']) && ($_GET['status'] == "senderror")) {
+                            echo '<div class="alert alert-danger text-center">Houve um problema ao enviar mensagem, por favor tente mais tarde</div>';
+                        }
+                        ?>
+
                         <!-- iFrame Google Maps -->
                         <div class="col-lg-6 col-xl-6 d-none d-xl-block">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12418.512483862733!2d-9.0270321!3d38.9096186!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x80178deaa067712!2sFord%20Trucks!5e0!3m2!1spt-PT!2spt!4v1674154771859!5m2!1spt-PT!2spt" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -92,7 +106,7 @@ include('./components/landing/lang/settings.php');
                                 <!-- Google reCAPTCHA V2 -->
                                 <div class="col-md-12 my-3">
                                     <div class="form-group">
-                                        <div class="g-recaptcha" data-sitekey="6LcQigckAAAAAJNuMFgj5WnDtW0MXkt40v2mW8y6"></div>
+                                        <div class="g-recaptcha" data-sitekey="6Le87ikkAAAAAPYThGcW8QUzST967SRZv5PZl6oG"></div>
                                     </div>
                                 </div>
 
