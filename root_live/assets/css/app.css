@@ -1,0 +1,354 @@
+/*#############################
+#############################*/
+
+/* PANELS - GLOBAL */
+.admn_ul a {
+    padding: 10px;
+    border-right: 1px solid #eee;
+}
+
+.bg-gray {
+    background: #ddd;
+}
+
+.reply-area {
+    /*
+    max-height: auto;
+    overflow-y: auto;
+    */
+}
+
+.reply-area ul {
+    padding-left: 0px;
+    list-style: none;
+}
+
+.reply-area ul li {
+    margin-top: 10px;
+}
+
+#menu-footer ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#menu-footer a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* PARA NUMERAR TABELAS */
+.css-serial {
+    counter-reset: serial-number;
+    /* Set the serial number counter to 0 */
+}
+
+.css-serial td:first-child:before {
+    counter-increment: serial-number;
+    /* Increment the serial number counter */
+    content: counter(serial-number);
+    /* Display the counter */
+}
+
+/* Breadcrumbs */
+.breadcrumb {
+    text-decoration: none;
+}
+
+.breadcrumb-item > a {
+    color: #828a91;
+    text-decoration: none;
+}
+
+/* FOOTER PANEL */
+#footer-panel {
+    padding: 20px 0;
+    font-size: 14px;
+    transition: all 0.3s;
+    border-top: 1px solid #cddfff;
+}
+
+
+
+/*#############################
+#############################*/
+
+
+/* GLOBAL PANEL - TOPNAV*/
+#global_panel_topnav {
+    transition: all 0.5s;
+    box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+}
+
+/* GLOBAL PANEL - SIDEBAR*/
+#sidebar-wrapper {
+    z-index: 100 !important;
+    padding-top: 28px;
+}
+
+.sidebar-spacer {
+    padding-left: 250px;
+}
+
+/* GREEN ONLINE ICON */
+.blob {
+    background: rgb(8, 228, 100);
+    border-radius: 50% !important;
+    box-shadow: 0 0 0 0 rgba(8, 228, 100, 1);
+    margin: 10px 8px 0 0;
+    height: 8px;
+    width: 8px;
+    transform: scale(1);
+    float: left;
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(8, 228, 100, 0.7);
+	}
+
+	70% {
+		transform: scale(1);
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+	}
+
+	100% {
+		transform: scale(0.95);
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+	}
+}
+
+
+/*#############################
+#############################*/
+
+
+/* LANDING PAGE - GLOBAL */
+/* Button to the top */
+#btn-back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    z-index: 6666;
+}
+
+/* Page Loader */
+#loading {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0.7;
+    background-color: #fff;
+    z-index: 7777;
+}
+
+#loading-image {
+    z-index: 8888;
+}
+
+
+/* LANDING PAGE - TOP NAV */
+.dropdown-menu {
+    min-width: 0 !important;
+}
+
+
+
+/* LANDING PAGE - BANNER */
+#banner .animated {
+    animation: up-down 2s ease-in-out infinite alternate-reverse both;
+    position: relative;
+    -webkit-animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@-webkit-keyframes up-down {
+    from {
+        bottom: 0px;
+    }
+    to {
+        bottom: 20px;
+    }
+}
+
+
+/* LANDING PAGE - BRANDING SECTION */
+#branding-section img {
+    max-width: 45%;
+    transition: all 0.4s ease-in-out;
+    display: inline-block;
+    padding: 15px 0;
+    filter: grayscale(100);
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+}
+
+#branding-section .img-fluid {
+    height: auto;
+}
+
+/*
+#branding-section img {
+    opacity: 0.8;
+    transition: opacity 0.4s ease-in-out;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    -ms-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+}
+
+#branding-section img:hover {
+    opacity: 1.0;
+    transition: opacity .55s ease-in-out;
+    -moz-transition: opacity .55s ease-in-out;
+    -webkit-transition: opacity .55s ease-in-out;
+}
+*/
+
+#branding-section img {
+    transition: transform .5s ease;
+}
+
+#branding-section img:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+
+/* LANDING PAGE - FEATURES SECTION */
+#features .feature {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.5rem;
+}
+
+#features .logo {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#feature_image {
+    background-image: url("../img/landing/features.png");
+}
+
+@media only screen and (max-width: 992px) and (min-width: 0px) {
+    #feature_image {
+        background-image: none;
+    }
+}
+
+
+/* LANDING PAGE - FOOTER TOP */
+#footer .footer-top {
+    padding: 60px 0 30px 0;
+    background: #343a40;
+}
+
+#footer .footer-top h4 {
+    position: relative;
+    padding-bottom: 12px;
+}
+
+#footer .footer-top .footer-contact {
+    margin-bottom: 30px;
+}
+
+#footer .footer-top .footer-links {
+    margin-bottom: 30px;
+    text-decoration: none;
+}
+
+#footer .footer-top .social-links a {
+    font-size: 18px;
+    display: inline-block;
+    background: #47b2e4;
+    color: #fff;
+    line-height: 1;
+    padding: 8px 0;
+    margin-right: 4px;
+    border-radius: 50%;
+    text-align: center;
+    width: 36px;
+    height: 36px;
+    transition: 0.3s;
+}
+
+#footer .footer-top .footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer .footer-top .footer-links ul li {
+    padding: 10px 0;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+#footer .footer-top .footer-links ul li:first-child {
+    padding-top: 0;
+}
+
+#footer .footer-top .footer-links ul i {
+    padding-right: 2px;
+    color: #47b2e4;
+    font-size: 18px;
+    line-height: 1;
+}
+
+#footer .footer-top .footer-links ul a {
+    color: #fff;
+    display: inline-block;
+    line-height: 1;
+    text-decoration: none;
+}
+
+
+/* LANDING PAGE - FOOTER BOTTOM */
+#footer-bottom a {
+    text-decoration: none;
+}
+
+
+/* LANDING PAGE > SOBRE PAGE */
+#contacto_form .feature {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 3rem;
+    width: 3rem;
+    font-size: 1.5rem;
+}
+
+/* LANDING PAGE > SOBRE PAGE - FEATURES SECTION */
+#know-more img {
+    
+}
+
+
+/* LANDING PAGE > BLOG PAGE */
+#blog-featured .bg-featured-blog {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 15rem;
+}
