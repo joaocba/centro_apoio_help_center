@@ -13,9 +13,9 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 - [X] POO
 	- [x] class DB (db.php) - prepara ligação a base de dados
-- [ ] PHP Mailer
+- [x] PHP Mailer
 	- [x] pagina contacto.php - sistema incorporado de mail com recaptcha
-	- [ ] teste requer hospedagem online
+	- [x] teste requer hospedagem online
 - [x] CRUD
 - [x] BD
 - [x] Internacionalização (landing page apenas)
@@ -24,7 +24,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 - [x] Validação de formulários com JS ou JQuery
 	- [x] aplicado em criar-conta.php
 - [x] Bootstrap
-- [ ] Hospedagem online
+- [x] Hospedagem online
 
 ### Critério de avaliação GPSI / INT
 
@@ -69,7 +69,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 - [x] Criar paginas listar tickets por tipos de estado e prioridades
 - [x] Melhorar design de página Ticket
 - [ ] Incorporar anexos em criar ticket
-	- [ ] Adicionar texto de como usar na metade em branco do card de criação de ticket
+- [ ] Adicionar texto de como usar na metade em branco do card de criação de ticket
 
 ### Painel Agente
 
