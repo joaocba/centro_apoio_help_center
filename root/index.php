@@ -78,13 +78,6 @@ include('./components/landing/lang/settings.php');
                             <div class="fst-italic text-muted">Co-Founder, Developer &amp; Web Designer</div>
                         </div>
                     </div>
-                    <div class="col mb-5">
-                        <div class="text-center">
-                            <img class="img-fluid rounded-circle mb-4 px-4" src="./assets/img/landing/profile_leandro.jpg" alt="..." />
-                            <h5 class="fw-bolder">Leandro Miranda</h5>
-                            <div class="fst-italic text-muted">Developer &amp; Web Designer</div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
