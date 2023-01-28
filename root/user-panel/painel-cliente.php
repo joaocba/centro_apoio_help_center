@@ -311,8 +311,6 @@ if ($recodes->num_rows > 0) {
     </div>
     <!-- FIM CONTEUDO PAGINA -->
 
-
-
     <!-- PAGE BOTTOM -->
     <?php include('../components/page-bottom.php'); ?>
 

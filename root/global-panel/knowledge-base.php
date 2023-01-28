@@ -113,10 +113,10 @@ if ($result->num_rows > 0) {
                             ?>
 
                             <div class="row">
-                                <div class="col-lg-3 col-md-3 col-sm-12">
+                                <div class="col-lg-3 col-sm-12">
                                     <?php include('../global-panel/components/kb/kb-nav-scroll.php'); ?>
                                 </div>
-                                <div class="col-lg-9 col-md-9 col-sm-12" style="height: 70vh; overflow-y: auto;">
+                                <div class="col-lg-9 col-sm-12" style="height: 70vh; overflow-y: auto;">
                                     <?php include('../global-panel/components/kb/kb-artigos-scroll.php'); ?>
                                 </div>
                             </div>

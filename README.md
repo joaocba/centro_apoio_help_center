@@ -62,7 +62,8 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 - [ ] Limpar codigo e aplicar comentários para
 - [ ] Knowledge Base o scrollspy não funciona corretamente
 - [ ] Adicionar Page Preloader ao conteudo dos paineis
-- [ ] Adicionar pagina 404 por defeito
+- [x] Adicionar pagina 404 por defeito
+- [x] Adicionar botão scroll-to-top
 
 ### Painel Cliente
 
