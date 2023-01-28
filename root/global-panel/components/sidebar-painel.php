@@ -43,6 +43,52 @@ if (isset($_SESSION['admin_logged']) && $_SESSION['admin_logged'] == true) {
 
 //MENU AGENTE
 if (isset($_SESSION['agent_logged']) && $_SESSION['agent_logged'] == true) {
+
+    //Contador de tickets
+    $count_tickets_novos = 0;
+    $count_tickets_espera = 0;
+    $count_tickets_prioridade_alta = 0;
+    $count_tickets_prioridade_normal = 0;
+
+    $db = new DB();
+    $dbconn = $db->conn;
+
+    //Novos
+    $sql = "SELECT COUNT(*) AS new_tickets FROM tickets WHERE status=0";
+    $ntr = mysqli_query($dbconn, $sql);
+    if ($ntr->num_rows > 0) {
+        while ($row = $ntr->fetch_assoc()) {
+            $count_tickets_novos = $row['new_tickets'];
+        }
+    }
+
+    //Em Espera
+    $sql = "SELECT COUNT(*) AS new_tickets FROM tickets WHERE status=1";
+    $wtr = mysqli_query($dbconn, $sql);
+    if ($wtr->num_rows > 0) {
+        while ($row = $wtr->fetch_assoc()) {
+            $count_tickets_espera = $row['new_tickets'];
+        }
+    }
+
+    //Prioridade Alta
+    $sql = "SELECT COUNT(*) AS prioridade_tickets FROM tickets WHERE prioridade=1 AND status!=2";
+    $rtc = mysqli_query($dbconn, $sql);
+    if ($rtc->num_rows > 0) {
+        while ($row = $rtc->fetch_assoc()) {
+            $count_tickets_prioridade_alta = $row['prioridade_tickets'];
+        }
+    }
+
+    //Prioridade Normal
+    $sql = "SELECT COUNT(*) AS prioridade_tickets FROM tickets WHERE prioridade=0 AND status!=2";
+    $ntr = mysqli_query($dbconn, $sql);
+    if ($ntr->num_rows > 0) {
+        while ($row = $ntr->fetch_assoc()) {
+            $count_tickets_prioridade_normal = $row['prioridade_tickets'];
+        }
+    }
+
     echo '
     <div id="layoutSidenav_nav">
         <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
@@ -62,11 +108,11 @@ if (isset($_SESSION['agent_logged']) && $_SESSION['agent_logged'] == true) {
                     <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                         <nav class="sb-sidenav-menu-nested nav">
                             <a class="nav-link" href="./global-panel/procurar-ticket.php">Procurar Ticket</a>
-                            <a class="nav-link" href="./agent-panel/agente-tickets-novos.php">Novos</a>
-                            <a class="nav-link" href="./agent-panel/agente-tickets-espera.php">Em Espera</a>
+                            <a class="nav-link" href="./agent-panel/agente-tickets-novos.php">Novos <span class="align-items-center badge rounded-pill bg-secondary" style="margin-left: auto; !important">'.$count_tickets_novos.'</span></a>
+                            <a class="nav-link" href="./agent-panel/agente-tickets-espera.php">Em Espera <span class="align-items-center badge rounded-pill bg-secondary" style="margin-left: auto; !important">'.$count_tickets_espera.'</span></a>
                             <a class="nav-link" href="./agent-panel/agente-tickets-fechados.php">Fechados</a>
-                            <a class="nav-link" href="./agent-panel/agente-tickets-prioridade-um.php">Prioridade Alta</a>
-                            <a class="nav-link" href="./agent-panel/agente-tickets-prioridade-zero.php">Prioridade Normal</a>
+                            <a class="nav-link" href="./agent-panel/agente-tickets-prioridade-um.php">Prioridade Alta <span class="align-items-center badge rounded-pill bg-secondary" style="margin-left: auto; !important">'.$count_tickets_prioridade_alta.'</span></a>
+                            <a class="nav-link" href="./agent-panel/agente-tickets-prioridade-zero.php">Prioridade Normal <span class="align-items-center badge rounded-pill bg-secondary" style="margin-left: auto; !important">'.$count_tickets_prioridade_normal.'</span></a>
                         </nav>
                     </div>
                     <div class="sb-sidenav-menu-heading">Estatisticas</div>
@@ -96,6 +142,24 @@ if (isset($_SESSION['agent_logged']) && $_SESSION['agent_logged'] == true) {
 
 //MENU CLIENTE
 if (isset($_SESSION['user_logged']) && $_SESSION['user_logged'] == true) {
+
+    //Contador de tickets
+    $count_tickets_abertos = 0;
+
+    //Var User ID:
+    $userid = $_SESSION['id'];
+
+    $db = new DB();
+    $dbconn = $db->conn;
+
+    $sql = "SELECT COUNT(*) AS new_tickets FROM tickets WHERE user_id='$userid' AND status!=2";
+    $ntr = mysqli_query($dbconn, $sql);
+    if ($ntr->num_rows > 0) {
+        while ($row = $ntr->fetch_assoc()) {
+            $count_tickets_abertos = $row['new_tickets'];
+        }
+    }
+
     echo '
     <div id="layoutSidenav_nav">
         <nav class="sb-sidenav accordion sb-sidenav-dark shadow" id="sidenavAccordion">
@@ -114,6 +178,14 @@ if (isset($_SESSION['user_logged']) && $_SESSION['user_logged'] == true) {
                     <a class="nav-link" href="./user-panel/criar-ticket.php">
                         <div class="sb-nav-link-icon"><i class="bi bi-pencil-square"></i></div>
                         Novo Ticket
+                    </a>
+                    <a class="nav-link" href="./user-panel/tickets-abertos.php">
+                        <div class="sb-nav-link-icon"><i class="bi bi-ticket-perforated"></i></div>
+                        Tickets Abertos <span class="align-items-center badge rounded-pill bg-secondary" style="margin-left: auto; !important">'.$count_tickets_abertos.'</span>
+                    </a>
+                    <a class="nav-link" href="./user-panel/tickets-fechados.php">
+                        <div class="sb-nav-link-icon"><i class="bi bi-ticket-perforated"></i></div>
+                        Tickets Resolvidos
                     </a>
                     <div class="sb-sidenav-menu-heading">Knowledge Base</div>
                     <a class="nav-link" href="./global-panel/knowledge-base.php">

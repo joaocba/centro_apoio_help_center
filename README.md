@@ -75,7 +75,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 ### Painel Agente
 
 - [x] Incorporar gráficos e estatisticas no Painel de Agente
-- [ ] Adicionar ao sidebar links para Tickets Em Espera (com counter) e Tickets Novos (com counter)
+- [x] Adicionar ao sidebar links para Tickets Em Espera (com counter) e Tickets Novos (com counter)
 
 ### Painel Administrador
 

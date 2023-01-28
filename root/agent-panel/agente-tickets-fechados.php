@@ -62,15 +62,14 @@ if ($recodes->num_rows > 0) {
                         <li class="breadcrumb-item active">Tickets Fechados</li>
                     </ol>
 
-                    <!-- Cards de Acesso -->
+                    <!-- Cards de Info -->
                     <div class="row">
-                        <!-- Procurar Ticket -->
-                        <div class="col-xl-6">
+                        <!-- Info -->
+                        <div class="col-xl-12">
                             <div class="card mb-4">
                                 <div class="card-body">
-                                    <h3>Procurar Ticket</h3>
-                                    <p>Procurar ticket através de ID</p>
-                                    <a href="./global-panel/procurar-ticket.php" class="btn btn-success">Procurar</a>
+                                    <p>Aqui pode verificar todos os tickets que estão em resolvidos ou fechados</p>
+                                    <a href="./agent-panel/painel-agente.php" class="btn btn-dark">Voltar</a>
                                 </div>
                             </div>
                         </div>
@@ -83,21 +82,6 @@ if ($recodes->num_rows > 0) {
                     </div>
                     <div class="bg-light my-3">
                         <ul class="list-group">
-
-                            <!-- CAIXA DE ALERTA -->
-                            <?php
-                            //mensagem de ticket fechado
-                            if (!empty($_GET['status']) && ($_GET['status'] == "ticketclosed")) {
-                                echo '<div class="alert alert-success text-center">Ticket fechado com sucesso</div>';
-                            }
-                            ?>
-
-                            <?php
-                            //mensagem de prioridade de ticket alterada
-                            if (!empty($_GET['status']) && ($_GET['status'] == "ticketprioritychange")) {
-                                echo '<div class="alert alert-success text-center">Prioridade de ticket alterada com sucesso</div>';
-                            }
-                            ?>
 
                             <!-- Cabeçalho da lista -->
                             <div class="d-none d-lg-block list-group-item bg-dark text-white mb-2">

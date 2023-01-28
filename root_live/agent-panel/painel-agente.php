@@ -211,17 +211,17 @@ if ($recodes->num_rows > 0) {
                                 </div>
                                 <div class="col-lg-2 col-md-4">
                                     <div class="list-group">
-                                        <a href="../agent-panel/agente-tickets-prioridade-zero.php" class="bg-success bg-opacity-25 list-group-item list-group-item-action m-1" aria-current="true">
-                                            <h4>Prioridade Normal</h4>
-                                            <h3><?php echo $priori_normal_count; ?></h3>
+                                        <a href="../agent-panel/agente-tickets-prioridade-um.php" class="bg-danger bg-opacity-25 list-group-item list-group-item-action m-1" aria-current="true">
+                                            <h4>Prioridade Alta</h4>
+                                            <h3><?php echo $priori_alta_count; ?></h3>
                                         </a>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-4">
                                     <div class="list-group">
-                                        <a href="../agent-panel/agente-tickets-prioridade-um.php" class="bg-danger bg-opacity-25 list-group-item list-group-item-action m-1" aria-current="true">
-                                            <h4>Prioridade Alta</h4>
-                                            <h3><?php echo $priori_alta_count; ?></h3>
+                                        <a href="../agent-panel/agente-tickets-prioridade-zero.php" class="bg-success bg-opacity-25 list-group-item list-group-item-action m-1" aria-current="true">
+                                            <h4>Prioridade Normal</h4>
+                                            <h3><?php echo $priori_normal_count; ?></h3>
                                         </a>
                                     </div>
                                 </div>
