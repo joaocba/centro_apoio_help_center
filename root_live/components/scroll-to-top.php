@@ -4,10 +4,10 @@
 </button>
 
 <script>
-    //Get the button
+    //Identificar botão
     let mybutton = document.getElementById("btn-back-to-top");
 
-    // When the user scrolls down 50px from the top of the document, show the button
+    // A partir de 50px de scroll para baixo mostra o botão
     window.onscroll = function() {
         scrollFunction();
     };
@@ -23,7 +23,7 @@
         }
     }
 
-    // When the user clicks on the button, scroll to the top of the document
+    // Ao clicar no botão sobe para o topo
     mybutton.addEventListener("click", backToTop);
 
     function backToTop() {

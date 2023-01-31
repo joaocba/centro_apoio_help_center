@@ -118,11 +118,11 @@ if (isset($_POST['submit'])) {
 
                                 <!-- MORADA -->
                                 <div class="row mb-3">
-                                    <div class="col-lg-6 col-md-6 col-sm-12">
+                                    <div class="col-lg-5 col-md-6 col-sm-12">
                                         <label for="morada" class="form-label">Morada:<span class="text-danger">*</span></label>
                                         <input type="morada" class="form-control" placeholder="Morada e Nº Porta" aria-label="Morada e Nº Porta" id="morada" name="morada" required>
                                     </div>
-                                    <div class="col-lg-2 col-md-2 col-sm-2">
+                                    <div class="col-lg-3 col-md-2 col-sm-2">
                                         <label for="cod_postal" class="form-label">Codigo Postal:<span class="text-danger">*</span></label>
                                         <input type="cod_postal" class="form-control" placeholder="XXXX-YYY" aria-label="cod_postal" id="cod_postal" name="cod_postal" required>
                                     </div>

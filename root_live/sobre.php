@@ -69,8 +69,8 @@ include('./components/landing/lang/settings.php');
                 <div class="row gx-5 align-items-center">
                     <div class="col-lg-5 order-first order-lg-last"><img class="img-fluid rounded mb-5 mb-lg-0" src="./assets/img/landing/hero-img.png" alt="..." /></div>
                     <div class="col-lg-7">
-                        <h2 class="fw-bolder"><?php echo $lang['s_sobre_title1']; ?></h2>
-                        <p class="lead fw-normal text-muted mb-0"><?php echo $lang['s_sobre_desc1']; ?></p>
+                        <h2 class="fw-bolder"><?php echo $lang['s_sobre_title2']; ?></h2>
+                        <p class="lead fw-normal text-muted mb-0"><?php echo $lang['s_sobre_desc2']; ?></p>
                     </div>
                 </div>
             </div>

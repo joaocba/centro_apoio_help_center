@@ -319,6 +319,7 @@ include('./components/landing/lang/settings.php');
 
         <!-- Scroll To Top -->
         <?php include('components/scroll-to-top.php'); ?>
+
     </main>
 
     <!-- Footer -->
@@ -333,3 +334,4 @@ include('./components/landing/lang/settings.php');
 </body>
 
 </html>
+

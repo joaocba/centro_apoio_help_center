@@ -44,7 +44,7 @@ $dbconn = $db->conn;
 
 //MOSTRAR TICKETS ABERTOS
 $latest = [];
-$sql = "SELECT * FROM tickets WHERE user_id='$userid' AND status!=2 ORDER BY prioridade DESC, date DESC";
+$sql = "SELECT * FROM tickets WHERE user_id='$userid' AND status!=2 ORDER BY prioridade DESC, date_reply DESC";
 $recodes = mysqli_query($dbconn, $sql);
 
 if ($recodes->num_rows > 0) {

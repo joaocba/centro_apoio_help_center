@@ -1,4 +1,6 @@
 <?php
+    //Iniciar sessão e preparar mostragem de erros
+
     session_start();
     ob_start();
     ini_set('display_errors', 1);

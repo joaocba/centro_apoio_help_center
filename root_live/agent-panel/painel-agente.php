@@ -93,7 +93,7 @@ if ($rtc->num_rows > 0) {
 
 //MOSTRAR TICKETS ABERTOS
 $latest = []; //definir array para guardar lista de tickets
-$sql = "SELECT * FROM tickets WHERE status!=$closed_status ORDER BY prioridade DESC, date DESC";
+$sql = "SELECT * FROM tickets WHERE status!=$closed_status ORDER BY prioridade DESC, date_reply DESC";
 $recodes = mysqli_query($dbconn, $sql);
 if ($recodes->num_rows > 0) {
     while ($row = $recodes->fetch_assoc()) {

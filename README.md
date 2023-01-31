@@ -52,6 +52,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 	- [ ] (OPCIONAL) Incorporar Recaptcha para submissão de formulário
 	- [x] Aplicar validação de campos (password e re-password) com JS / JQuery
 - [x] (OPCIONAL) Adicionar "loader animation" ao arrancar qualquer página
+- [x] (OPCIONAL) Adicionar Cookies
 
 ### Backoffice (paineis - global)
 
@@ -59,7 +60,6 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 - [x] Melhorar design de sidebar
 - [x] Adicionar footer
 	- [x] Incorporar copyright, titulo e termos de utilização
-- [ ] Limpar codigo e aplicar comentários para
 - [ ] Knowledge Base o scrollspy não funciona corretamente
 - [ ] Adicionar Page Preloader ao conteudo dos paineis
 - [x] Adicionar pagina 404 por defeito
@@ -76,6 +76,7 @@ Prazo de conclusão de desenvolvimento - 28 de Janeiro 2023
 
 - [x] Incorporar gráficos e estatisticas no Painel de Agente
 - [x] Adicionar ao sidebar links para Tickets Em Espera (com counter) e Tickets Novos (com counter)
+- [ ] Adicionar filtros para mostragem de tickets
 
 ### Painel Administrador
 
