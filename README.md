@@ -2,7 +2,7 @@
 
 The Centro Apoio Web App is a comprehensive help center with a ticket system, built using HTML, CSS, Bootstrap 5, PHP, and MySQL. It provides a solution for managing customer support tickets, knowledge base articles, and user administration.
 
-This was developed as a final project of course "Tecnologias e Programação de Sistemas de Informação (TeSP)" of ISLA Santarém 
+This was developed as a final project for course "Tecnologias e Programação de Sistemas de Informação (TeSP)" of ISLA Santarém 
 
 ## Features
 
