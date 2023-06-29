@@ -66,7 +66,7 @@ if ($recodes->num_rows > 0) {
 if (isset($_POST['submit'])) {
     $sql = "UPDATE tickets SET status=2 WHERE id=$ticket_id_final";
     mysqli_query($dbconn, $sql);
-    header("Location: ./user-panel/ticket.php?id=" . $ticket_id_final);
+    header("Location: ./ticket.php?id=" . $ticket_id_final);
 
     //Limpa os dados da variavel de sessão
     unset($keywords_assunto, $ticket_categoria, $ticket_id_criado);
@@ -74,97 +74,111 @@ if (isset($_POST['submit'])) {
 //FIM DE FECHAR TICKET (BTN RESOLVIDO)
 ?>
 
-<body>
-    <div class="d-flex" id="wrapper">
+<body class="sb-nav-fixed">
+
+    <!-- TOP NAVBAR -->
+    <?php include('../global-panel/components/topnav-painel.php'); ?>
+
+    <!-- INICIO LAYOUT -->
+    <div id="layoutSidenav">
+
+        <!-- SIDEBAR -->
         <?php include('../global-panel/components/sidebar-painel.php'); ?>
-        <div class="bg-light" id="page-content-wrapper">
-            <?php include('../global-panel/components/topnav-painel.php'); ?>
-            <div class="container-fluid">
-                <!-- INICIO DE CONTEUDO DE PAGINA -->
 
-                <div class="container mt-4">
-                    <div class="row justify-content-center">
-                        <div class="col-12 col-md-12">
+        <!-- INICIO CONTEUDO DO LAYOUT -->
+        <div id="layoutSidenav_content" class="bg-light">
+            <main>
+                <div class="container-fluid px-5">
 
-                            <!-- INFO -->
-                            <h1 class="mb-3"><i class="bi bi-window"></i> Painel de Cliente</h1>
+                    <!-- Cabeçalho de Painel + Breadcrumbs -->
+                    <h1 class="mt-4">Ticket</h1>
+                    <ol class="breadcrumb mb-4">
+                        <li class="breadcrumb-item"><a href="./user-panel/painel-cliente.php">Dashboard</a></li>
+                        <li class="breadcrumb-item active">Validar Ticket</li>
+                    </ol>
 
-                            <!-- RESULTADOS DA PESQUISA DE ARTIGOS -->
-                            <div class="card mb-3">
-                                <div class="card-header"> Artigos relacionados</div>
-                                <div class="card-body">
+                    <!-- RESULTADOS DA PESQUISA DE ARTIGOS -->
+                    <div class="card mb-3">
+                        <div class="card-header"> Artigos relacionados</div>
+                        <div class="card-body">
 
-                                    <!-- CAIXA DE ALERTAS -->
-                                    <?php
-                                    if (isset($success) && $success != false) {
-                                        echo '<div class="alert alert-success">' . $success . '</div>';
-                                    }
-                                    ?>
+                            <!-- CAIXA DE ALERTAS -->
+                            <?php
+                            if (isset($success) && $success != false) {
+                                echo '<div class="alert alert-success">' . $success . '</div>';
+                            }
+                            ?>
 
-                                    <!-- DISPLAY BOX COM CARD -->
-                                    <?php if (count($artigos) > 0) { ?>
-                                        <div class="row row-cols-1 row-cols-md-1 g-4">
-                                            <?php foreach ($artigos as $k => $v) { ?>
-                                                <div class="col">
-                                                    <div class="card h-100">
-                                                        <h5 class="card-header"><?php echo $v['nome_categoria']; ?></h5>
-                                                        <div class="card-body">
-                                                            <h5 class="card-title"><?php echo $v['assunto']; ?></h5>
-                                                            <p class="card-text"><?php echo $v['descricao']; ?></p>
-                                                        </div>
-                                                        <div class="card-footer text-muted">
-                                                            Para mais informações visite a Knowledge Base
-                                                        </div>
-                                                    </div>
+                            <!-- DISPLAY BOX COM CARD -->
+                            <?php if (count($artigos) > 0) { ?>
+                                <div class="row row-cols-1 row-cols-md-1 g-4">
+                                    <?php foreach ($artigos as $k => $v) { ?>
+                                        <div class="col">
+                                            <div class="card h-100">
+                                                <h5 class="card-header"><?php echo $v['nome_categoria']; ?></h5>
+                                                <div class="card-body">
+                                                    <h5 class="card-title"><?php echo $v['assunto']; ?></h5>
+                                                    <p class="card-text"><?php echo $v['descricao']; ?></p>
                                                 </div>
-                                            <?php
-                                            }
-                                            ?>
+                                                <div class="card-footer text-muted">
+                                                    Para mais informações visite a Knowledge Base
+                                                </div>
+                                            </div>
                                         </div>
                                     <?php
-                                    } else {
-                                        if (isset($error) && $error != false) {
-                                            echo '<div class="alert alert-danger">' . $error . '</div>';
-                                        } else {
-                                            echo '<div class="alert alert-info">Sem dados para mostrar</div>';
-                                        }
                                     }
-                                    ?>
-
-                                    <?php if (count($artigos) > 0) { ?>
-                                    <form method="POST">
-                                        <div class="mt-3">
-                                            <input type="hidden" name="submit" value="send">
-                                            <button class="btn btn-success">Resolvido</button>
-                                            <a href="./user-panel/painel-cliente.php?tktunsolved=true" target="_self" rel="noopener noreferrer" class="btn btn-dark">Não Resolvido</a>
-                                            <!-- <a href="./user-panel/ticket.php?id=<?php echo $ticket_id_final ?>" target="_self" rel="noopener noreferrer" class="btn btn-success">Ver Ticket</a> -->
-                                            <!-- <a href="./user-panel/painel-cliente.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a> -->
-                                        </div>
-                                    </form>
-                                    <?php
-                                    } else if (count($artigos) == 0) { ?>
-                                    <form method="POST">
-                                        <div class="mt-3">
-                                            <input type="hidden" name="submit" value="send">
-                                            <a href="./user-panel/ticket.php?id=<?php echo $ticket_id_final ?>" target="_self" rel="noopener noreferrer" class="btn btn-success">Ver Ticket</a>
-                                            <a href="./user-panel/painel-cliente.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>
-                                        </div>
-                                    </form>
-                                    <?php }
                                     ?>
                                 </div>
-                            </div>
+                            <?php
+                            } else {
+                                if (isset($error) && $error != false) {
+                                    echo '<div class="alert alert-danger">' . $error . '</div>';
+                                } else {
+                                    echo '<div class="alert alert-info">Sem dados para mostrar</div>';
+                                }
+                            }
+                            ?>
+
+                            <?php if (count($artigos) > 0) { ?>
+                                <form method="POST">
+                                    <div class="mt-3">
+                                        <input type="hidden" name="submit" value="send">
+                                        <button class="btn btn-success">Resolvido</button>
+                                        <a href="./user-panel/painel-cliente.php?tktunsolved=true" target="_self" rel="noopener noreferrer" class="btn btn-dark">Não Resolvido</a>
+                                        <!-- <a href="./user-panel/ticket.php?id=<?php echo $ticket_id_final ?>" target="_self" rel="noopener noreferrer" class="btn btn-success">Ver Ticket</a> -->
+                                        <!-- <a href="./user-panel/painel-cliente.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a> -->
+                                    </div>
+                                </form>
+                            <?php
+                            } else if (count($artigos) == 0) { ?>
+                                <form method="POST">
+                                    <div class="mt-3">
+                                        <input type="hidden" name="submit" value="send">
+                                        <a href="./user-panel/ticket.php?id=<?php echo $ticket_id_final ?>" target="_self" rel="noopener noreferrer" class="btn btn-success">Ver Ticket</a>
+                                        <a href="./user-panel/painel-cliente.php" target="_self" rel="noopener noreferrer" class="btn btn-dark">Voltar</a>
+                                    </div>
+                                </form>
+                            <?php }
+                            ?>
                         </div>
                     </div>
-                </div>
 
-                <!-- FIM DE CONTEUDO DE PAGINA -->
-            </div>
+                </div>
+            </main>
+
+            <!-- FOOTER PANEL -->
+            <?php include('../components/panels/footer-panel.php'); ?>
+
         </div>
+        <!-- FIM CONTEUDO LAYOUT -->
     </div>
+    <!-- FIM CONTEUDO PAGINA -->
+
+
 
     <!-- PAGE BOTTOM -->
     <?php include('../components/page-bottom.php'); ?>
+
 </body>
 
 </html>

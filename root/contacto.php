@@ -4,10 +4,20 @@ $page_title = 'Contacto -';
 
 //HTML HEAD
 include('./components/page-head.php');
+
+//LANGS
+include('./components/landing/lang/settings.php');
 ?>
 
 <body class="d-flex flex-column h-100">
     <main class="flex-shrink-0">
+        <!-- Animação Preloader -->
+        <div id="loading">
+                <div id="loading-image" class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+        </div>
+
         <!-- Menu Topo -->
         <?php include('./components/landing/topnav-landing.php'); ?>
 
@@ -17,8 +27,8 @@ include('./components/page-head.php');
                 <div class="row gx-5 align-items-center justify-content-center">
                     <div class="col-lg-12 col-xl-12 col-xxl-12">
                         <div class="my-5 text-center text-xl-start">
-                            <h1 class="display-5 fw-bolder text-white mb-2">Contacte-nos</h1>
-                            <p class="lead fw-normal text-white-50 mb-4">Para qualquer duvida ou questão</p>
+                            <h1 class="display-5 fw-bolder text-white mb-2"><?php echo $lang['c_banner_title']; ?></h1>
+                            <p class="lead fw-normal text-white-50 mb-4"><?php echo $lang['c_banner_subtitle']; ?></p>
                         </div>
                     </div>
                 </div>
@@ -29,101 +39,115 @@ include('./components/page-head.php');
 
         <!-- FORMULARIO CONTACTO-->
         <section id="contacto_form" class="py-5">
-            <div class="container px-5">
-                <!-- Contact form-->
+            <div class="container">
                 <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
                     <div class="text-center mb-5">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
-                        <h1 class="fw-bolder">Get in touch</h1>
-                        <p class="lead fw-normal text-muted mb-0">We'd love to hear from you</p>
+                        <h1 class="fw-bolder"><?php echo $lang['c_form_title']; ?></h1>
+                        <p class="lead fw-normal text-muted mb-0"><?php echo $lang['c_form_subtitle']; ?></p>
                     </div>
                     <div class="row gx-5 justify-content-center">
-                        <div class="col-lg-8 col-xl-6">
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
-                            <form id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                <!-- Name input-->
+
+                        <!-- CAIXA DE ALERTA -->
+                        <?php
+                        //mensagem de sucesso
+                        if (!empty($_GET['status']) && ($_GET['status'] == "contactsent")) {
+                            echo '<div class="alert alert-success text-center">Mensagem enviada com sucesso! Iremos responder com a maior brevidade possivel.</div>';
+                        }
+                        ?>
+                        <?php
+                        //mensagem de erro
+                        if (!empty($_GET['status']) && ($_GET['status'] == "senderror")) {
+                            echo '<div class="alert alert-danger text-center">Houve um problema ao enviar mensagem, por favor tente mais tarde</div>';
+                        }
+                        ?>
+
+                        <!-- iFrame Google Maps -->
+                        <div class="col-lg-6 col-xl-6 d-none d-xl-block">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d12418.512483862733!2d-9.0270321!3d38.9096186!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x80178deaa067712!2sFord%20Trucks!5e0!3m2!1spt-PT!2spt!4v1674154771859!5m2!1spt-PT!2spt" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+
+                        <!-- Campos de contacto -->
+                        <div class="col-lg-6 col-xl-6">
+                            <form id="contactForm" method="POST" action="./components/forms/contact.php" role="form">
+                                <!-- NOME -->
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
-                                    <label for="name">Full name</label>
-                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                    <input class="form-control" id="form_name" type="text" name="name" required="required" data-error="Deve inserir o nome" placeholder="">
+                                    <label for="form_name"><?php echo $lang['c_form_input_nome1']; ?></label>
                                 </div>
-                                <!-- Email address input-->
+                                <!-- EMAIL -->
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="email" type="email" placeholder="name@example.com" data-sb-validations="required,email" />
-                                    <label for="email">Email address</label>
-                                    <div class="invalid-feedback" data-sb-feedback="email:required">An email is required.</div>
-                                    <div class="invalid-feedback" data-sb-feedback="email:email">Email is not valid.</div>
+                                    <input class="form-control" id="form_email" type="email" name="email" required="required" data-error="Deve inserir um email válido" placeholder="">
+                                    <label for="form_email"><?php echo $lang['c_form_input_email1']; ?></label>
                                 </div>
-                                <!-- Phone number input-->
+                                <!-- TELEFONE -->
                                 <div class="form-floating mb-3">
-                                    <input class="form-control" id="phone" type="tel" placeholder="(123) 456-7890" data-sb-validations="required" />
-                                    <label for="phone">Phone number</label>
-                                    <div class="invalid-feedback" data-sb-feedback="phone:required">A phone number is required.</div>
+                                    <input class="form-control" id="form_tel" type="tel" name="tel" required="required" data-error="Deve inserir um número de telefone" placeholder="">
+                                    <label for="form_tel"><?php echo $lang['c_form_input_telefone1']; ?></label>
                                 </div>
-                                <!-- Message input-->
+                                <!-- MENSAGEM -->
                                 <div class="form-floating mb-3">
-                                    <textarea class="form-control" id="message" type="text" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
-                                    <label for="message">Message</label>
-                                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                                    <textarea class="form-control" id="form_message" type="text" name="message" style="height: 10rem" required="required" data-error="Deve inserir uma mensagem" placeholder=""></textarea>
+                                    <label for="form_message"><?php echo $lang['c_form_input_mensagem1']; ?></label>
                                 </div>
-                                <!-- Submit success message-->
-                                <!---->
-                                <!-- This is what your users will see when the form-->
-                                <!-- has successfully submitted-->
+
+
+                                <!-- ?? -->
                                 <div class="d-none" id="submitSuccessMessage">
                                     <div class="text-center mb-3">
-                                        <div class="fw-bolder">Form submission successful!</div>
-                                        To activate this form, sign up at
-                                        <br />
-                                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                        <div class="fw-bolder"><?php echo $lang['c_form_input_valid_ok']; ?></div>
                                     </div>
                                 </div>
-                                <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
                                 <div class="d-none" id="submitErrorMessage">
-                                    <div class="text-center text-danger mb-3">Error sending message!</div>
+                                    <div class="text-center text-danger mb-3"><?php echo $lang['c_form_input_valid_erro']; ?></div>
                                 </div>
-                                <!-- Submit Button-->
-                                <div class="d-grid"><button class="btn btn-primary btn-lg disabled" id="submitButton" type="submit">Submit</button></div>
+
+
+                                <!-- Google reCAPTCHA V2 -->
+                                <div class="col-md-12 my-3">
+                                    <div class="form-group">
+                                        <div class="g-recaptcha" data-sitekey="6LcQigckAAAAAJNuMFgj5WnDtW0MXkt40v2mW8y6"></div>
+                                    </div>
+                                </div>
+
+                                <!-- SUBMETER -->
+                                <div class="d-grid">
+                                    <button class="btn btn-primary btn-lg" id="submitButton" type="submit"><?php echo $lang['c_form_input_button']; ?></button>
+                                </div>
                             </form>
                         </div>
                     </div>
                 </div>
-                <!-- Contact cards-->
-                <div class="row gx-5 row-cols-2 row-cols-lg-4 py-5">
-                    <div class="col">
+                <!-- CARDS -->
+                <div class="row gx-5 row-cols-1 row-cols-lg-4 py-5">
+                    <div class="col mb-4 mb-lg-0">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-chat-dots"></i></div>
-                        <div class="h5 mb-2">Chat with us</div>
-                        <p class="text-muted mb-0">Chat live with one of our support specialists.</p>
+                        <div class="h5 mb-2"><?php echo $lang['c_cards_box1_title']; ?></div>
+                        <p class="text-muted mb-0"><?php echo $lang['c_cards_box1_subtitle']; ?></p>
                     </div>
-                    <div class="col">
+                    <div class="col mb-4 mb-lg-0">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-people"></i></div>
-                        <div class="h5">Ask the community</div>
-                        <p class="text-muted mb-0">Explore our community forums and communicate with other users.</p>
+                        <div class="h5"><?php echo $lang['c_cards_box2_title']; ?></div>
+                        <p class="text-muted mb-0"><?php echo $lang['c_cards_box2_subtitle']; ?></p>
                     </div>
-                    <div class="col">
+                    <div class="col mb-4 mb-lg-0">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-question-circle"></i></div>
-                        <div class="h5">Support center</div>
-                        <p class="text-muted mb-0">Browse FAQ's and support articles to find solutions.</p>
+                        <div class="h5"><?php echo $lang['c_cards_box3_title']; ?></div>
+                        <p class="text-muted mb-0"><?php echo $lang['c_cards_box3_subtitle']; ?></p>
                     </div>
-                    <div class="col">
+                    <div class="col mb-4 mb-lg-0">
                         <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-telephone"></i></div>
-                        <div class="h5">Call us</div>
-                        <p class="text-muted mb-0">Call us during normal business hours at (555) 892-9403.</p>
+                        <div class="h5"><?php echo $lang['c_cards_box4_title']; ?></div>
+                        <p class="text-muted mb-0"><?php echo $lang['c_cards_box4_subtitle']; ?></p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- FIM CONTEUDO -->
+
+        <!-- Scroll To Top -->
+        <?php include('components/scroll-to-top.php'); ?>
     </main>
 
     <!-- Footer -->
@@ -131,6 +155,17 @@ include('./components/page-head.php');
 
     <!-- PAGE BOTTOM -->
     <?php include('./components/page-bottom.php'); ?>
+
+    <!-- Page Preloader -->
+    <?php include('./components/page-preloader.php'); ?>
+
 </body>
 
 </html>
+
+
+<!-- Form Scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js" integrity="sha256-dHf/YjH1A4tewEsKUSmNnV05DDbfGN3g7NMq86xgGh8=" crossorigin="anonymous"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<script src="./components/forms/contact.js"></script>
