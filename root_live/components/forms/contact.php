@@ -26,7 +26,7 @@ $okMessage = header('Location: ../../contacto.php?status=contactsent');
 $errorMessage = header('Location: ../../contacto.php?status=senderror');
 
 // ReCaptch Secret
-$recaptchaSecret = '6Le87ikkAAAAAMNq1qGaRqecCKeuQbtv6LnfSU1h';
+$recaptchaSecret = '';
 
 // if you are not debugging and don't need error reporting, turn this off by error_reporting(0);
 error_reporting(E_ALL & ~E_NOTICE);
