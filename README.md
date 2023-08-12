@@ -14,7 +14,7 @@ This was developed as a final project for course "Tecnologias e Programação de
 
 - **Login Portal**: A secure login portal for users to access their accounts. Also provide a new account registration feature.
 
-![Alt text](/screenshots/main_page_header?raw=true "Main Page Header")
+![Alt text]([/screenshots/main_page_header](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/main_page_header.png)?raw=true "Main Page Header")
 
 ### User Functionality (Backoffice)
 
