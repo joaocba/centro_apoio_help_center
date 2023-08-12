@@ -14,6 +14,8 @@ This was developed as a final project for course "Tecnologias e Programação de
 
 - **Login Portal**: A secure login portal for users to access their accounts. Also provide a new account registration feature.
 
+![Alt text](/screenshots/main_page_header?raw=true "Main Page Header")
+
 ### User Functionality (Backoffice)
 
 - **Ticket Management**: Registered users can open support tickets, view their status, and receive assistance.
