@@ -14,8 +14,6 @@ This was developed as a final project for course "Tecnologias e Programação de
 
 - **Login Portal**: A secure login portal for users to access their accounts. Also provide a new account registration feature.
 
-![Alt text]([/screenshots/main_page_header](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/main_page_header.png)?raw=true "Main Page Header")
-
 ### User Functionality (Backoffice)
 
 - **Ticket Management**: Registered users can open support tickets, view their status, and receive assistance.
@@ -35,6 +33,30 @@ This was developed as a final project for course "Tecnologias e Programação de
 - **Knowledge Base Management**: Administrators can add, edit, and delete knowledge base articles.
 
 - **Internal Contacts**: Administrators can maintain internal contacts for agents.
+
+## Screenshots
+
+![alt text](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/main_page_header.png?raw=true)
+
+![alt text](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/main_page_contact.png?raw=true)
+
+![alt text](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/backoffice_login.png?raw=true)
+
+![alt text](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/backoffice_user_panel_dashboard.png?raw=true)
+
+![alt text](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/backoffice_user_panel_new_ticket.png?raw=true)
+
+![alt text](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/backoffice_user_panel_knowledge_base.png?raw=true)
+
+![alt text](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/backoffice_agent_panel_dashboard.png?raw=true)
+
+![alt text](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/backoffice_agent_panel_stats.png?raw=true)
+
+![alt text](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/backoffice_admin_panel_dashboard.png?raw=true)
+
+![alt text](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/backoffice_admin_panel_manage_knowledge_base.png?raw=true)
+
+![alt text](https://github.com/joaocba/centro_apoio_help_center/blob/main/screenshots/backoffice_admin_panel_manage_users.png?raw=true)
 
 ## Installation and Setup
 
